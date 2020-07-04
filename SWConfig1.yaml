@@ -2,8 +2,12 @@
 - hosts: SW1
   gather_facts: false
   connection: network_cli
-
+  
   tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+       
    - name: Vlan creation
      eos_vlans:
        config:
