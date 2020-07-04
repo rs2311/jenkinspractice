@@ -1,5 +1,5 @@
 ---
-- hosts: SW1
+- hosts: switch
   gather_facts: false
   connection: network_cli
 
