@@ -1,16 +1,15 @@
----  
-- hosts: SW1
+- hosts: SW2
   gather_facts: false
   connection: network_cli
-  #ansible_become: yes
-  #ansible_become_method: enable
+
+  vars_files:
+   - "18v.yaml"
+
   tasks:
-   - name: 'enable'
-     eos_command:
-       commands: enable 
-         
-   - name: 'Create vlan'
-     eos_vlan:
-      vlan_id: 500
-      name: vlan-500
-      state: present
+   - name: create vlan
+     eos_vlans:
+       config:
+         - vlan_id: "{{VLAN_ID}}"
+           name: "{{CUST_NAME}}"
+           state: active
+
