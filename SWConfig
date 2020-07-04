@@ -1,0 +1,49 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: Vlan creation
+     eos_vlans:
+       config:
+         - vlan_id: 115
+           name: CUST115
+           state: active
+
+   - name: VRF definition
+     eos_config:
+       lines:
+         - rd 1:115
+       parents:
+         - vrf definition CUST115
+     register: output
+
+   - name: Static route
+     eos_config:
+       lines: ip routing vrf CUST115
+
+   - name: Interface configuration
+     eos_config:
+       lines:
+         - vrf forwarding CUST115
+         - description CUST115
+         - ip address 115.1.1.1/24
+       parents:
+         - interface vlan115
+     register: output
+
+   - name: BGP configuration
+     eos_config:
+       lines:
+         - rd 1:115
+         - route-target both 115:115
+         - neighbor 115.1.1.2 remote-as 65002
+         - neighbor 115.1.1.2 update-source vlan115
+         - neighbor 115.1.1.2 ebgp-multihop
+         - address-family ipv4
+         - neighbor 115.1.1.2 activate
+       parents:
+         - router bgp 65001
+         - vrf CUST115
+     register: output
