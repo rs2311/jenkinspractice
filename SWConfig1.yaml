@@ -4,7 +4,7 @@
   connection: network_cli
 
   vars:
-     "VLAN_ID": "106" 
+     "VLAN_ID": "116" 
  
   tasks:
    - name: to enable
