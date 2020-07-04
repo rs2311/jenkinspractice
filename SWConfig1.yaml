@@ -2,15 +2,16 @@
 - hosts: SW1
   gather_facts: false
   connection: network_cli
-  
+
+  vars:
+     "VLAN_ID": "105" 
+ 
   tasks:
    - name: to enable
      eos_command:
        commands: enable
    
-  vars:
-     "VLAN_ID": "105" 
-   
+     
    - name: Vlan creation
      eos_vlans:
        config:
