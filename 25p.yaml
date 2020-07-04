@@ -1,16 +1,17 @@
 ---
-- hosts: SW2
+- hosts: switch
   gather_facts: false
   connection: network_cli
 
-  #vars_files:
-   #- "18v.yaml"
-
   tasks:
+   - name: enter into enable
+     eos_command:
+       commands: enable
+
    - name: create vlan
      eos_vlans:
        config:
          - vlan_id: 501
-           name: S-TEST
+           name: CUST-501
            state: active
 
