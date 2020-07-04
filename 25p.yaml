@@ -10,7 +10,7 @@
    - name: create vlan
      eos_vlans:
        config:
-         - vlan_id: "{{VLAN_ID}}"
-           name: "{{CUST_NAME}}"
+         - vlan_id: 500
+           name: S-TEST
            state: active
 
