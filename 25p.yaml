@@ -1,0 +1,58 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./18v.yaml
+
+  tasks:
+   - name: create vlan
+     eos_vlans:
+       config:
+         - vlan_id: "{{VLAN_ID}}"
+           name: "{{CUST_NAME}}"
+           state: active
+
+   - name: interface config
+     eos_l3_interface:
+       name: "vlan{{VLAN_ID}}"
+       ipv4: "{{SW1_IP}}/24"
+
+   - name: bgp config
+     eos_bgp:
+       config:
+         bgp_as: 65001
+         neighbors:
+           - neighbor: "{{SW2_IP}}"
+             remote_as: 65002
+             update_source: "vlan{{VLAN_ID}}"
+- hosts: SW2
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./18v.yaml
+
+  tasks:
+   - name: create vlan
+     eos_vlans:
+       config:
+         - vlan_id: "{{VLAN_ID}}"
+           name: "{{CUST_NAME}}"
+           state: active
+
+   - name: interface config
+     eos_l3_interface:
+       name: "vlan{{VLAN_ID}}"
+       ipv4: "{{SW2_IP}}/24"
+
+   - name: bgp config
+     eos_bgp:
+       config:
+         bgp_as: 65002
+         neighbors:
+           - neighbor: "{{SW1_IP}}"
+             remote_as: 65001
+             update_source: "vlan{{VLAN_ID}}"
+
