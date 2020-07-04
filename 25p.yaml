@@ -2,8 +2,8 @@
   gather_facts: false
   connection: network_cli
 
-  vars_files:
-   - "18v.yaml"
+  #vars_files:
+   #- "18v.yaml"
 
   tasks:
    - name: create vlan
