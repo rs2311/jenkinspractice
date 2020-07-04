@@ -1,3 +1,4 @@
+---
 - hosts: SW2
   gather_facts: false
   connection: network_cli
