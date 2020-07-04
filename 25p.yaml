@@ -11,7 +11,7 @@
    - name: create vlan
      eos_vlans:
        config:
-         - vlan_id: 501
-           name: CUST-501
+         - vlan_id: 503
+           name: SM-503
            state: active
 
