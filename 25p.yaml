@@ -5,10 +5,10 @@
 
   vars_files:
    #- ./18v.yaml
-           CUST_NAME: CUST120
-           VLAN_ID: 120
-           SW1_IP: 120.1.1.1
-           SW2_IP: 120.1.1.2
+   - CUST_NAME: CUST120
+   - VLAN_ID: 120
+   - SW1_IP: 120.1.1.1
+   - SW2_IP: 120.1.1.2
 
   tasks:
    - name: create vlan
