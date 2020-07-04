@@ -8,8 +8,8 @@
      eos_command:
        commands: enable
    
-   vars:
-      "VLAN_ID": "105" 
+  vars:
+     "VLAN_ID": "105" 
    
    - name: Vlan creation
      eos_vlans:
