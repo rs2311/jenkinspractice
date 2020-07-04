@@ -1,5 +1,5 @@
 ---
-- hosts: switch
+- hosts: SW1
   gather_facts: false
   connection: network_cli
 
@@ -8,7 +8,7 @@
      eos_vlans:
        config:
          - vlan_id: 115
-           name: CUS115
+           name: CUST115
            state: active
 
    - name: VRF definition
