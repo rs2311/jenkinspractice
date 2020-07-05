@@ -1,0 +1,41 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  #vars:
+     #"FS_PATH": ${} 
+ 
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+        
+   - name: Vlan creation
+     eos_vlans:
+       config:
+         - vlan_id: "{{VLAN_ID}}"
+           name: '{{ C_NAME }}'
+           state: active
+
+   - name: VRF definition
+     eos_config:
+       lines:
+         - rd 1:{{VLAN_ID}}
+       parents:
+         - vrf definition {{C_NAME}}
+     register: output
+
+   - name: Static route
+     eos_config:
+       lines: ip routing vrf {{C_NAME}}
+
+   - name: Interface configuration
+     eos_config:
+       lines:
+         - vrf forwarding {{C_NAME}}
+         - description {{C_NAME}}
+         - ip address "{{SW1_IP}}"
+       parents:
+         - interface vlan{{VLAN_ID}}
+     register: output
