@@ -28,12 +28,12 @@
 
    - name: Static route
      eos_config:
-       lines: ip routing vrf '{{ C_NAME }}'
+       lines: ip routing vrf {{C_NAME}}
 
    - name: Interface configuration
      eos_config:
        lines:
-         - vrf forwarding '{{ C_NAME }}'
+         - vrf forwarding {{C_NAME}}
          - description {{C_NAME}}
          - ip address {{VLAN_ID}}.1.1.1/24
        parents:
