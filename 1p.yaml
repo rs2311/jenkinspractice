@@ -6,7 +6,7 @@
   tasks:
    - name: show command
      eos_command:
-       commands: "show run sec vrf HP"
+       commands: {{show run sec vrf HP}}
      register: OUTPUT
 
    - name: PRINT
