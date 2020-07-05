@@ -4,9 +4,9 @@
   connection: network_cli
 
   tasks:
-   - name: show sec vrf HP
+   - name: show command
      eos_command:
-       commands: show version
+       commands: show run sec vrf HP
      register: OUTPUT
 
    - name: PRINT
