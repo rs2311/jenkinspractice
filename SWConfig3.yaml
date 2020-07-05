@@ -23,7 +23,7 @@
        lines:
          - rd 1:{{VLAN_ID}}
        parents:
-         - vrf definition "{{C_NAME}}"
+         - vrf definition {{C_NAME}}
      register: output
 
    - name: Static route
