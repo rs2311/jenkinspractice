@@ -4,7 +4,7 @@
   connection: network_cli
 
   vars:
-     "FS_PATH": ${FS_NAME} 
+     "FS_PATH": ${} 
  
   tasks:
    - name: to enable
