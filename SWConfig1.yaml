@@ -3,8 +3,8 @@
   gather_facts: false
   connection: network_cli
 
-  vars:
-     "FS_PATH": ${} 
+  #vars:
+     #"FS_PATH": ${} 
  
   tasks:
    - name: to enable
