@@ -15,7 +15,7 @@
      eos_vlans:
        config:
          - vlan_id: "{{VLAN_ID}}"
-           name: {{C_NAME}}{{VLAN_ID}}
+           name: "{{C_NAME}}"{{VLAN_ID}}
            state: active
 
    - name: VRF definition
@@ -23,18 +23,18 @@
        lines:
          - rd 1:{{VLAN_ID}}
        parents:
-         - vrf definition {{C_NAME}}{{VLAN_ID}}
+         - vrf definition "{{C_NAME}}"{{VLAN_ID}}
      register: output
 
    - name: Static route
      eos_config:
-       lines: ip routing vrf {{C_NAME}}{{VLAN_ID}}
+       lines: ip routing vrf "{{C_NAME}}"{{VLAN_ID}}
 
    - name: Interface configuration
      eos_config:
        lines:
-         - vrf forwarding {{C_NAME}}{{VLAN_ID}}
-         - description {{C_NAME}}{{VLAN_ID}}
+         - vrf forwarding "{{C_NAME}}"{{VLAN_ID}}
+         - description "{{C_NAME}}"{{VLAN_ID}}
          - ip address {{VLAN_ID}}.1.1.1/24
        parents:
          - interface vlan{{VLAN_ID}}
