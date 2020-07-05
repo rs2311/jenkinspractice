@@ -14,7 +14,7 @@
    - name: Vlan creation
      eos_vlans:
        config:
-         - vlan_id: "{{VLAN_ID}}"
+         - vlan_id: {{VLAN_ID}}
            name: '{{ C_NAME }}'
            state: active
 
