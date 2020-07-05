@@ -35,7 +35,7 @@
        lines:
          - vrf forwarding {{C_NAME}}
          - description {{C_NAME}}
-         - ip address "{{SW1_IP}}"
+         #- ip address "{{SW1_IP}}"
        parents:
          - interface vlan{{VLAN_ID}}
      register: output
