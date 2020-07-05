@@ -15,7 +15,7 @@
      eos_vlans:
        config:
          - vlan_id: "{{VLAN_ID}}"
-           name: {{C_NAME}}"{{VLAN_ID}}"
+           name: {{C_NAME}}
            state: active
 
    - name: VRF definition
