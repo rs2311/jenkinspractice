@@ -1,0 +1,16 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines: ip routing vrf {{C_NAME}}
+
