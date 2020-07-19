@@ -1,0 +1,19 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: show command
+     eos_command:
+       commands: show bgp ipv4 uni summ vrf {{C_NAME}}
+     register: OUTPUT
+
+   - name: PRINT
+     debug:
+       var: OUTPUT
