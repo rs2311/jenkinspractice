@@ -1,0 +1,29 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - rd 1:{{VLAN_ID}}
+         - neighbor {{SW2_IP}} remote-as 65002
+         - neighbor {{SW2_IP}} update-source Vlan{{VLAN_ID}}
+         - neighbor {{SW2_IP}} ebgp-multihop
+         - neighbor {{SW2_IP}} maximum-routes 12000
+         - address-family ipv4
+         - neighbor {{SW2_IP}} activate
+       parents:
+         - router bgp 65001
+         - vrf forwarding CUST{{VLAN_ID}}
+     register: output
+
+
+
+
