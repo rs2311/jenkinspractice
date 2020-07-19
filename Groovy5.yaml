@@ -53,7 +53,6 @@
          - vrf forwarding CUST{{VLAN_ID}}
      register: output
 
----
 - hosts: SW2
   gather_facts: false
   connection: network_cli
