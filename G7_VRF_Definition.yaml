@@ -1,0 +1,18 @@
+---
+- hosts: SW1, SW2
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd 1:{{VLAN_ID}}
+       parents:
+         - vrf definition {{C_NAME}}
+     register: output
