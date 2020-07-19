@@ -50,7 +50,7 @@
          - neighbor {{SW2_IP}} activate
        parents:
          - router bgp 65001
-         - vrf forwarding {{C_NAME}}
+         - vrf {{C_NAME}}
      register: output
 
 - hosts: SW2
@@ -104,5 +104,5 @@
          - neighbor {{SW1_IP}} activate
        parents:
          - router bgp 65002
-         - vrf forwarding {{C_NAME}}
+         - vrf {{C_NAME}}
      register: output
