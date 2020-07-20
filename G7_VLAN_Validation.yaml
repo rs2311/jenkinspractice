@@ -1,0 +1,14 @@
+---
+- hosts: SW1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: SHOW VLAN
+     eos_command:
+       commands: show vlan
+     register: OUTPUT
+
+   - name: PRINT
+     debug:
+       var: OUTPUT
