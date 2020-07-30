@@ -7,8 +7,14 @@
    - name: SHOW VLAN
      eos_command:
        commands: show vlan
-     register: OUTPUT
+     register: output
 
    - name: PRINT
      debug:
-       var: OUTPUT
+       var: output.stdout[0]
+
+   - name: Fail when vlan already present
+     fail:
+       msg: “ Vlan exists”
+     when: output.stdout[0].find(VLAN_ID) != -1
+
