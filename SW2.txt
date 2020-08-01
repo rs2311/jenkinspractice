@@ -1,1 +1,2 @@
+[switch]
 SW2 ansible_host=192.168.181.142 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
