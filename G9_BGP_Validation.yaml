@@ -1,5 +1,5 @@
 ---
-- hosts: "{{D_NAME}}"
+- hosts: "{{ D_NAME }}"
   gather_facts: false
   connection: network_cli
 
