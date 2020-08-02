@@ -1,0 +1,19 @@
+---
+- hosts: switch
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: SHOW VLAN
+     eos_command:
+       commands: show vlan
+     register: output
+
+   - name: PRINT
+     debug:
+       var: output.stdout[0]
+
+   - name: Fail when vlan already present
+     fail:
+       msg: “ Vlan exists”
+     when: output.stdout[0].find(VLAN_ID) != -1
