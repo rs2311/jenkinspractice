@@ -1,0 +1,20 @@
+---
+- hosts: switch
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - vrf forwarding {{C_NAME}}
+         - description {{C_NAME}}
+         - ip address {{SW1_IP}}/24
+       parents:
+         - interface vlan{{VLAN_ID}}
+     register: output
