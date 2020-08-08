@@ -1,2 +1,0 @@
-[switch]
-SW1_BDC_IP ansible_host=192.168.181.201 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
