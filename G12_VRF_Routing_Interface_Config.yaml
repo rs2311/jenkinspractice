@@ -1,0 +1,36 @@
+---
+- hosts: switch
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./G12V.yaml
+
+  tasks:
+
+   - name: ENTER INTO ENABLE
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd 1:{{C_ID}}
+       parents:
+         - vrf definition C{{C_ID}}
+     register: output
+
+   - name: STATIC ROUTE
+     eos_config:
+       lines: ip routing vrf C{{C_ID}}
+
+   - name: INTERFACE CONFIGURTION
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}}
+         - description C{{C_ID}}
+         - ip address {{SW1_BDC_IP}}/24
+         - encapsulation dot1q vlan {{C_ID}}
+       parents:
+         - interface Ethernet1.{{C_ID}}
+     register: output
