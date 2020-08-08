@@ -3,8 +3,8 @@
   gather_facts: false
   connection: network_cli
 
-  vars_files:
-   - ./G12V.yaml
+  #vars_files:
+   #- ./G12V.yaml
 
   tasks:
 
