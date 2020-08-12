@@ -3,12 +3,11 @@
   gather_facts: false
   connection: network_cli
 
-  #vars_files:
-   #- ./G12V.yaml
+#  vars_files:
+#   - ./dv.yaml
 
   tasks:
-
-   - name: ENTER INTO ENABLE
+   - name: to enable
      eos_command:
        commands: enable
 
@@ -17,20 +16,25 @@
        lines:
          - rd 1:{{C_ID}}
        parents:
-         - vrf definition C{{C_ID}}
+         - vrf definition {{C_ID}}
      register: output
 
-   - name: STATIC ROUTE
+   - name: IP ROUTING ENABLEMENT
      eos_config:
-       lines: ip routing vrf C{{C_ID}}
+       lines: ip routing vrf {{C_ID}}
 
-   - name: INTERFACE CONFIGURTION
+   - name: BGP CONFIG
      eos_config:
        lines:
-         - vrf forwarding C{{C_ID}}
-         - description C{{C_ID}}
-         - ip address {{SW1_BDC_IP}}/24
-         - encapsulation dot1q vlan {{C_ID}}
+         - rd 1:{{C_ID}}
+         - neighbor {{SW2_IP}} remote-as {{ hostvars[remote_switch]['asn_num'] }}
+         - neighbor {{SW2_IP}} update-source Vlan{{C_ID}}
+         - neighbor {{SW2_IP}} ebgp-multihop
+         - neighbor {{SW2_IP}} maximum-routes 12000
+         - address-family ipv4
+         - neighbor {{SW2_IP}} activate
        parents:
-         - interface Ethernet1.{{C_ID}}
+         - router bgp {{asn_num}}
+         - vrf {{C_ID}}
      register: output
+
