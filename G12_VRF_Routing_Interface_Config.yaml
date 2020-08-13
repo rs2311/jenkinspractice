@@ -27,7 +27,7 @@
      eos_config:
        lines:
          - rd 1:{{C_ID}}
-         - neighbor {{SW2_IP}} remote-as {{ hostvars[remote_switch]['asn_num'] }}
+#         - neighbor {{SW2_IP}} remote-as {{ hostvars[remote_switch]['asn_num'] }}
          - neighbor {{SW2_IP}} update-source Vlan{{C_ID}}
          - neighbor {{SW2_IP}} ebgp-multihop
          - neighbor {{SW2_IP}} maximum-routes 12000
