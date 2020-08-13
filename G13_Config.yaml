@@ -24,7 +24,7 @@
          - ip address {{SOURCE_IP}}/24
          - encapsulation dot1q vlan {{C_ID}}
        parents:
-         - interface eth{{CDC_ETH.C_ID}}
+         - interface eth{{CDC_ETH}}.{{C_ID}}
      register: output
 
    - name: IP ROUTING ENABLEMENT
