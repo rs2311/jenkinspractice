@@ -1,0 +1,74 @@
+---
+- hosts: "{{SOURCE_LOCATION}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd 1:{{C_ID}}
+       parents:
+         - vrf definition {{C_ID}}
+     register: output
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines: ip routing vrf {{C_ID}}
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - rd 1:{{C_ID}}
+         - neighbor {{REMOTE_IP}} remote-as {{ hostvars[REMOTE_LOCATION]['asn_num'] }}
+         - neighbor {{REMOTE_IP}} update-source Vlan{{C_ID}}
+         - neighbor {{REMOTE_IP}} ebgp-multihop
+         - neighbor {{REMOTE_IP}} maximum-routes 12000
+         - address-family ipv4
+         - neighbor {{REMOTE_IP}} activate
+       parents:
+         - router bgp {{asn_num}}
+         - vrf {{C_ID}}
+     register: output
+
+
+- hosts: "{{REMOTE_LOCATION}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd 1:{{C_ID}}
+       parents:
+         - vrf definition {{C_ID}}
+     register: output
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines: ip routing vrf {{C_ID}}
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - rd 1:{{C_ID}}
+         - neighbor {{SOURCE_IP}} remote-as {{ hostvars[SOURCE_LOCATION]['asn_num'] }}
+         - neighbor {{SOURCE_IP}} update-source Vlan{{C_ID}}
+         - neighbor {{SOURCE_IP}} ebgp-multihop
+         - neighbor {{SOURCE_IP}} maximum-routes 12000
+         - address-family ipv4
+         - neighbor {{SOURCE_IP}} activate
+       parents:
+         - router bgp {{asn_num}}
+         - vrf {{C_ID}}
+     register: output
+
