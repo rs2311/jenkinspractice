@@ -1,0 +1,19 @@
+---
+- hosts: "{{SOURCE_LOCATION}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: SHOW VRF
+     eos_command:
+       commands: show vrf
+     register: output
+
+   - name: PRINT
+     debug:
+       var: output.stdout[0]
+
+   - name: Fail when customer vrf already present
+     fail:
+       msg: “ Customer exists”
+     when: output.stdout[0].find(C_ID) != -1
