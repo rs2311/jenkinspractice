@@ -36,8 +36,6 @@
        lines:
          - rd 1:{{C_ID}}
          - neighbor {{REMOTE_IP}} remote-as {{ hostvars[REMOTE_LOCATION]['asn_num'] }}
-         - neighbor {{REMOTE_IP}} update-source Vlan{{C_ID}}
-         - neighbor {{REMOTE_IP}} ebgp-multihop
          - neighbor {{REMOTE_IP}} maximum-routes 12000
          - address-family ipv4
          - neighbor {{REMOTE_IP}} activate
@@ -85,8 +83,6 @@
          - rd 1:{{C_ID}}
          - neighbor {{SOURCE_IP}} remote-as {{ hostvars[SOURCE_LOCATION]['asn_num'] }}
          - neighbor {{SOURCE_IP}} update-source Vlan{{C_ID}}
-         - neighbor {{SOURCE_IP}} ebgp-multihop
-         - neighbor {{SOURCE_IP}} maximum-routes 12000
          - address-family ipv4
          - neighbor {{SOURCE_IP}} activate
        parents:
