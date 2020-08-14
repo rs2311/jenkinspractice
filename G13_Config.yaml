@@ -68,6 +68,17 @@
      eos_config:
        lines: ip routing vrf {{C_ID}}
 
+   - name: INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - vrf forwarding {{C_ID}}
+         - description {{C_ID}}
+         - ip address {{REMOTE_IP}}/24
+         - encapsulation dot1q vlan {{C_ID}}
+       parents:
+         - interface eth{{ hostvars[REMOTE_LOCATION][SOURCE_LOCATION] }}.{{C_ID}}
+     register: output
+
    - name: BGP CONFIG
      eos_config:
        lines:
