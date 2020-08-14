@@ -1,5 +1,5 @@
 ---
-- hosts: "{{SOURCE_LOCATION}}"
+- hosts: "{{SOURCE_LOCATION}}, {{REMOTE_LOCATION}}"
   gather_facts: false
   connection: network_cli
 
