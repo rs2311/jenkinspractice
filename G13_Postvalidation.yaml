@@ -1,0 +1,24 @@
+---
+- hosts: "{{SOURCE_LOCATION}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: show bgp status
+     eos_command:
+       commands: show bgp ipv4 uni summ vrf {{C_ID}}
+     register: output
+
+   - name: PRINT
+     debug:
+       var: output.stdout[0]
+
+   - name: FAIL WHEN BGP NOT ESTABLISHED
+     fail:
+       msg: "BGP NOT ESTABLISHED CHECK THE CONFIGURATION"
+     when: output.stdout[0].find("Estab") == -1
