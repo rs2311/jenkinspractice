@@ -35,7 +35,7 @@
          - ip address {{SOURCE_NETWORK}}
          - encapsulation dot1q vlan {{C_ID}}
        parents:
-         - interface loopback.{{C_ID}}
+         - interface loopback{{C_ID}}
      register: output
 
    - name: IP ROUTING ENABLEMENT
@@ -96,7 +96,7 @@
          - ip address {{REMOTE_NETWORK}}
          - encapsulation dot1q vlan {{C_ID}}
        parents:
-         - interface loopback.{{C_ID}}
+         - interface loopback{{C_ID}}
      register: output
 
    - name: BGP CONFIG
