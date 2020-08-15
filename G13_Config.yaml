@@ -33,7 +33,6 @@
          - vrf forwarding {{C_ID}}
          - description {{C_ID}}
          - ip address {{SOURCE_NETWORK}}
-         - encapsulation dot1q vlan {{C_ID}}
        parents:
          - interface loopback{{C_ID}}
      register: output
@@ -94,7 +93,6 @@
          - vrf forwarding {{C_ID}}
          - description {{C_ID}}
          - ip address {{REMOTE_NETWORK}}
-         - encapsulation dot1q vlan {{C_ID}}
        parents:
          - interface loopback{{C_ID}}
      register: output
