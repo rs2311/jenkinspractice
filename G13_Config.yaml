@@ -16,7 +16,7 @@
          - vrf definition {{C_ID}}
      register: output
 
-   - name: INTERNFACE CONFIGURATION
+   - name: WAN INTERNFACE CONFIGURATION
      eos_config:
        lines:
          - vrf forwarding {{C_ID}}
@@ -25,6 +25,17 @@
          - encapsulation dot1q vlan {{C_ID}}
        parents:
          - interface eth{{ hostvars[SOURCE_LOCATION][REMOTE_LOCATION] }}.{{C_ID}}
+     register: output
+
+   - name: CUSTOMER NETWORK LOOPBACK CONFIGURATION
+     eos_config:
+       lines:
+         - vrf forwarding {{C_ID}}
+         - description {{C_ID}}
+         - ip address {{SOURCE_NETWORK}}
+         - encapsulation dot1q vlan {{C_ID}}
+       parents:
+         - interface loopback.{{C_ID}}
      register: output
 
    - name: IP ROUTING ENABLEMENT
@@ -38,6 +49,7 @@
          - neighbor {{REMOTE_IP}} remote-as {{ hostvars[REMOTE_LOCATION]['asn_num'] }}
          - address-family ipv4
          - neighbor {{REMOTE_IP}} activate
+         - network {{SOURCE_NETWORK}}
        parents:
          - router bgp {{asn_num}}
          - vrf {{C_ID}}
@@ -76,6 +88,17 @@
          - interface eth{{ hostvars[REMOTE_LOCATION][SOURCE_LOCATION] }}.{{C_ID}}
      register: output
 
+   - name: CUSTOMER NETWORK LOOPBACK CONFIGURATION
+     eos_config:
+       lines:
+         - vrf forwarding {{C_ID}}
+         - description {{C_ID}}
+         - ip address {{REMOTE_NETWORK}}
+         - encapsulation dot1q vlan {{C_ID}}
+       parents:
+         - interface loopback.{{C_ID}}
+     register: output
+
    - name: BGP CONFIG
      eos_config:
        lines:
@@ -83,8 +106,8 @@
          - neighbor {{SOURCE_IP}} remote-as {{ hostvars[SOURCE_LOCATION]['asn_num'] }}
          - address-family ipv4
          - neighbor {{SOURCE_IP}} activate
+         - network {{REMOTE_NETWORK}}
        parents:
          - router bgp {{asn_num}}
          - vrf {{C_ID}}
      register: output
-
