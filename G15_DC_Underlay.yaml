@@ -127,4 +127,4 @@
 
        parents:
          - router bgp {{LEAF_ASN}}
-     when: ansible_leaf_type == 1
+     when: ansible_leaf_type == 2
