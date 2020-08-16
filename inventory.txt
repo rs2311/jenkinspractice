@@ -9,3 +9,6 @@ BL2-SW12 ansible_host=192.168.181.12 ansible_user=admin ansible_ssh_pass=admin a
 [CL]
 CL1-SW15 ansible_host=192.168.181.15 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos ansible_leaf_type=1
 CL2-SW16 ansible_host=192.168.181.16 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos ansible_leaf_type=2
+[SPINE]
+SPINE1-SW13 ansible_host=192.168.181.13 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+SPINE2-SW14 ansible_host=192.168.181.14 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
