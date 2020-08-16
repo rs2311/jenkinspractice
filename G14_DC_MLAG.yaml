@@ -30,7 +30,7 @@
          - ip add 192.168.0.1/30
        parents:
          - interface vlan 4094
-     when: ansible_leaf_type == "1"
+     when: ansible_leaf_type == 1
 
    - name: VLAN INTERNFACE CONFIGURATION LEAF2 IP
      eos_config:
@@ -38,7 +38,7 @@
          - ip add 192.168.0.2/30
        parents:
          - interface vlan 4094
-     when: ansible_leaf_type == "2"
+     when: ansible_leaf_type == 2
 
    - name: PORT-CHANNEL INTERFACE CONFIGURATION
      eos_config:
