@@ -115,12 +115,12 @@
          - neighbor UNDERLAY-IBGP-IPV4 peer group
          - neighbor UNDERLAY-IBGP-IPV4 remote-as {{LEAF_ASN}}
          - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
-         - neighbor 192.168.0.2 peer group UNDERLAY-IBGP-IPV4
+         - neighbor 192.168.0.1 peer group UNDERLAY-IBGP-IPV4
 
          - add ipv4 
          - neighbor {{SP1_LEAF2_IP}} act
          - neighbor {{SP2_LEAF2_IP}} act
-         - neighbor 192.168.0.2 act
+         - neighbor 192.168.0.1 act
 
          - net {{LEAF2_LOOP_0}}/32
          - maximum-paths 4 ecmp 64
