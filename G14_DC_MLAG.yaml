@@ -77,11 +77,13 @@
    - name: MLAG CONFIGURATION LEAF-2 PEER IP
      eos_config:
        lines:
+         - mlag configuration
          - peer-address 192.168.0.2
      when: ansible_leaf_type == 1
 
    - name: MLAG CONFIGURATION LEAF-1 PEER IP
      eos_config:
        lines:
+         - mlag configuration
          - peer-address 192.168.0.1
      when: ansible_leaf_type == 2
