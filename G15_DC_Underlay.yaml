@@ -22,7 +22,7 @@
          - interface loopback 0
      when: ansible_leaf_type == 1
 
-   - name: LEAF1 EVPN LOOPBACK INTERNFACE CONFIGURATION
+   - name: LEAF2 EVPN LOOPBACK INTERNFACE CONFIGURATION
      eos_config:
        lines:
          - ip add {{LEAF2_LOOP_0}}/32
@@ -38,7 +38,7 @@
          - ip add {{LEAF1_SP1_IP}}/24
          - description TOWARDS SPINE-1
        parents:
-         - interface {{LEAF1_SP1_INT}}
+         - interface eth{{LEAF1_SP1_INT}}
      when: ansible_leaf_type == 1
 
    - name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
@@ -48,7 +48,7 @@
          - ip add {{LEAF1_SP2_IP}}/24
          - description TOWARDS SPINE-1
        parents:
-         - interface {{LEAF1_SP2_INT}}
+         - interface eth{{LEAF1_SP2_INT}}
      when: ansible_leaf_type == 1
 
    - name: ETHERNET INTERNFACE LEAF2 TO SPINE-1 CONFIGURATION
@@ -58,7 +58,7 @@
          - ip add {{LEAF2_SP1_IP}}/24
          - description TOWARDS SPINE-1
        parents:
-         - interface {{LEAF2_SP1_INT}}
+         - interface eth{{LEAF2_SP1_INT}}
      when: ansible_leaf_type == 2
 
    - name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
@@ -68,7 +68,7 @@
          - ip add {{LEAF2_SP2_IP}}/24
          - description TOWARDS SPINE-1
        parents:
-         - interface {{LEAF2_SP2_INT}}
+         - interface eth{{LEAF2_SP2_INT}}
      when: ansible_leaf_type == 2
 
    - name: BGP CONFIG
