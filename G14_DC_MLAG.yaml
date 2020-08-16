@@ -1,0 +1,60 @@
+---
+- hosts: "{{SW_HOSTNAME}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VLAN Configuration
+     eos_config:
+       lines:
+         - vlan 4094
+         - name MLGA-PEER
+         - trunk group MLAG-PEER
+       
+   - name: VLAN INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - int vlan 4094
+         - des MLAG-PEER
+         - mtu 9214
+         - ip add 192.168.0.1/30
+       parents:
+         - interface vlan 4094
+
+   - name: PORT-CHANNEL INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Port-channel-between-Leafs
+         - switchport mode trunk
+         - switchport trunk group MLAG-PEER
+       parents:
+         - interface port-channel 1
+
+   - name: ETHERNET 11 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Connection-between-Leafs
+         - channel-group 1 mode active
+       parents:
+         - interface eth 11
+
+   - name: ETHERNET 12 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Connection-between-Leafs
+         - channel-group 1 mode active
+       parents:
+         - interface eth 12
+
+   - name: MLAG CONFIGURATION
+     eos_config:
+       lines:
+         - mlag configuration
+         - domain-id MLAG-1
+         - local-interface vlan4094
+         - peer-address 192.168.0.2
+         - peer-link port-channel1
