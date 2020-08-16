@@ -3,3 +3,7 @@ SW1-BDC ansible_host=192.168.181.201 ansible_user=admin ansible_ssh_pass=admin a
 SW2-HDC ansible_host=192.168.181.202 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 SW3-CDC ansible_host=192.168.181.203 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 SW4-DDC ansible_host=192.168.181.204 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+BL1-SW11 ansible_host=192.168.181.11 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+BL2-SW12 ansible_host=192.168.181.12 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+CL1-SW15 ansible_host=192.168.181.15 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+CL2-SW16 ansible_host=192.168.181.16 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
