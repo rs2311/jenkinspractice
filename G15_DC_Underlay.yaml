@@ -128,3 +128,121 @@
        parents:
          - router bgp {{LEAF_ASN}}
      when: ansible_leaf_type == 2
+
+
+
+- hosts: SPINE
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines:
+         - ip routing
+                
+   - name: SPINE1 LOOPBACK 0 INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - ip add {{SPINE1_LOOP_0}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 0
+     when: SPINE_SW == 1
+
+   - name: SPINE2 EVPN LOOPBACK INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - ip add {{SPINE2_LOOP_0}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 0
+     when: SPINE_SW == 2
+            
+   - name: ETHERNET INTERNFACE SPINE1 TO LEAF1 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{SP1_LEAF1_IP}}/24
+         - description TOWARDS LEAF1
+       parents:
+         - interface eth{{SP1_LEAF1_INT}}
+     when: SPINE_SW == 1
+
+   - name: ETHERNET INTERNFACE SPINE1 TO LEAF2 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{SP1_LEAF2_IP}}/24
+         - description TOWARDS LEAF2
+       parents:
+         - interface eth{{SP1_LEAF2_INT}}
+     when: SPINE_SW == 1
+
+   - name: ETHERNET INTERNFACE SPINE2 TO LEAF1 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{SP2_LEAF1_IP}}/24
+         - description TOWARDS LEAF1
+       parents:
+         - interface eth{{SP2_LEAF1_INT}}
+     when: SPINE_SW == 2
+
+   - name: ETHERNET INTERNFACE SPINE2 TO LEAF2 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{SP2_LEAF2_IP}}/24
+         - description TOWARDS LEAF2
+       parents:
+         - interface eth{{SP2_LEAF2_INT}}
+     when: SPINE_SW == 2
+
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - router-id {{SPINE1_LOOP_0}}
+         - no bgp default ipv4-uni
+         - distance bgp 20 200 200
+       
+         - neighbor {{LEAF1_SP1_IP}} remote-as {{ groupvars[BL][LEAF_ASN] }}
+         - neighbor {{LEAF2_SP1_IP}} remote-as {{ groupvars[BL][LEAF_ASN] }}
+
+         - add ipv4 
+         - neighbor {{LEAF1_SP1_IP}} act
+         - neighbor {{LEAF1_SP1_IP}} act
+
+         - net {{SPINE1_LOOP_0}}/32
+         - maximum-paths 4 ecmp 64
+
+       parents:
+         - router bgp 65001
+     when: SPINE_SW == 1
+
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - router-id {{SPINE2_LOOP_0}}
+         - no bgp default ipv4-uni
+         - distance bgp 20 200 200
+       
+         - neighbor {{LEAF1_SP2_IP}} remote-as {{ groupvars[BL][LEAF_ASN] }}
+         - neighbor {{LEAF2_SP2_IP}} remote-as {{ groupvars[BL][LEAF_ASN] }}
+
+         - add ipv4 
+         - neighbor {{LEAF1_SP2_IP}} act
+         - neighbor {{LEAF1_SP2_IP}} act
+
+         - net {{SPINE1_LOOP_0}}/32
+         - maximum-paths 4 ecmp 64
+
+       parents:
+         - router bgp 65001
+     when: SPINE_SW == 2
