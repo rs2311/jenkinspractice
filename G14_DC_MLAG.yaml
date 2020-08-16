@@ -49,3 +49,39 @@
        parents:
          - interface port-channel 1
 
+   - name: ETHERNET 11 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Connection-between-Leafs
+         - channel-group 1 mode active
+       parents:
+         - interface eth 11
+
+   - name: ETHERNET 12 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Connection-between-Leafs
+         - channel-group 1 mode active
+       parents:
+         - interface eth 12
+
+   - name: MLAG CONFIGURATION
+     eos_config:
+       lines:
+         - mlag configuration
+         - domain-id MLAG-1
+         - local-interface vlan4094
+         - peer-address 192.168.0.2
+         - peer-link port-channel1
+
+   - name: MLAG CONFIGURATION LEAF-2 PEER IP
+     eos_config:
+       lines:
+         - peer-address 192.168.0.2
+     when: ansible_leaf_type == 1
+
+   - name: MLAG CONFIGURATION LEAF-1 PEER IP
+     eos_config:
+       lines:
+         - peer-address 192.168.0.1
+     when: ansible_leaf_type == 2
