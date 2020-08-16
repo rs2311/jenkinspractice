@@ -71,7 +71,6 @@
          - mlag configuration
          - domain-id MLAG-1
          - local-interface vlan4094
-         - peer-address 192.168.0.2
          - peer-link port-channel1
 
    - name: MLAG CONFIGURATION LEAF-2 PEER IP
