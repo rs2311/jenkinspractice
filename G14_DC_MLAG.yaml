@@ -1,5 +1,5 @@
 ---
-- hosts: "{{SW_HOSTNAME}}"
+- hosts: "{{LEAF_PAIR}}"
   gather_facts: false
   connection: network_cli
 
@@ -21,9 +21,24 @@
          - int vlan 4094
          - des MLAG-PEER
          - mtu 9214
+       parents:
+         - interface vlan 4094
+
+   - name: VLAN INTERNFACE CONFIGURATION LEAF1 IP
+     eos_config:
+       lines:
          - ip add 192.168.0.1/30
        parents:
          - interface vlan 4094
+     when: ansible_leaf_type: 1
+
+   - name: VLAN INTERNFACE CONFIGURATION LEAF2 IP
+     eos_config:
+       lines: 
+         - ip add 192.168.0.2/30
+       parents:
+         - interface vlan 4094
+     when: ansible_leaf_type: 2
 
    - name: PORT-CHANNEL INTERFACE CONFIGURATION
      eos_config:
@@ -34,27 +49,3 @@
        parents:
          - interface port-channel 1
 
-   - name: ETHERNET 11 INTERFACE CONFIGURATION
-     eos_config:
-       lines:
-         - des Connection-between-Leafs
-         - channel-group 1 mode active
-       parents:
-         - interface eth 11
-
-   - name: ETHERNET 12 INTERFACE CONFIGURATION
-     eos_config:
-       lines:
-         - des Connection-between-Leafs
-         - channel-group 1 mode active
-       parents:
-         - interface eth 12
-
-   - name: MLAG CONFIGURATION
-     eos_config:
-       lines:
-         - mlag configuration
-         - domain-id MLAG-1
-         - local-interface vlan4094
-         - peer-address 192.168.0.2
-         - peer-link port-channel1
