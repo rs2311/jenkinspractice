@@ -211,8 +211,8 @@
          - no bgp default ipv4-uni
          - distance bgp 20 200 200
        
-         - neighbor {{LEAF1_SP1_IP}} remote-as {{ groups['LEAF_PAIR'][LEAF_ASN] }}
-         - neighbor {{LEAF2_SP1_IP}} remote-as {{ groups['LEAF_PAIR'][LEAF_ASN] }}
+         - neighbor {{LEAF1_SP1_IP}} remote-as {{ groups[LEAF_PAIR][LEAF_ASN] }}
+         - neighbor {{LEAF2_SP1_IP}} remote-as {{ groups[LEAF_PAIR][LEAF_ASN] }}
 
          - add ipv4 
          - neighbor {{LEAF1_SP1_IP}} act
@@ -233,8 +233,8 @@
          - no bgp default ipv4-uni
          - distance bgp 20 200 200
        
-         - neighbor {{LEAF1_SP2_IP}} remote-as {{ groups['LEAF_PAIR'][LEAF_ASN] }}
-         - neighbor {{LEAF2_SP2_IP}} remote-as {{ groups['LEAF_PAIR'][LEAF_ASN] }}
+         - neighbor {{LEAF1_SP2_IP}} remote-as {{ groups[LEAF_PAIR][LEAF_ASN] }}
+         - neighbor {{LEAF2_SP2_IP}} remote-as {{ groups[LEAF_PAIR][LEAF_ASN] }}
 
          - add ipv4 
          - neighbor {{LEAF1_SP2_IP}} act
