@@ -4,7 +4,6 @@ SW2-HDC ansible_host=192.168.181.202 ansible_user=admin ansible_ssh_pass=admin a
 SW3-CDC ansible_host=192.168.181.203 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 SW4-DDC ansible_host=192.168.181.204 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 [BL]
-LEAF_ASN=61112
 BL1-SW11 ansible_host=192.168.181.11 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos ansible_leaf_type=1
 BL2-SW12 ansible_host=192.168.181.12 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos ansible_leaf_type=2
 [CL]
