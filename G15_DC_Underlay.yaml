@@ -5,6 +5,9 @@
   
   #vars: 
     #- LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
+    
+  set_fact:
+    LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
 
   tasks:
    - name: to enable
@@ -19,8 +22,8 @@
    - name: TEST LOOPBACK 5
      eos_config:
        lines:
-         - ip add {{ LEAF_PAIR }}_LEAF_LOOP_5/32
-         - description EVPN-PEER-LOOPBACK
+         - ip add {{LEAF_LOOP_5}}/32
+         - description TEST-LOOPBACK
        parents:
          - interface loopback 5
 
