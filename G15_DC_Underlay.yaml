@@ -4,7 +4,7 @@
   connection: network_cli
   
   vars: 
-    - LEAF_LOOP_5: {{LEAF_PAIR}}_LEAF_LOOP_5
+    - LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
 
   tasks:
    - name: to enable
@@ -19,7 +19,7 @@
    - name: TEST LOOPBACK 5
      eos_config:
        lines:
-         - ip add {{LEAF_LOOP_5}}/32
+         - "ip add {{LEAF_LOOP_5}}/32"
          - description EVPN-PEER-LOOPBACK
        parents:
          - interface loopback 5
