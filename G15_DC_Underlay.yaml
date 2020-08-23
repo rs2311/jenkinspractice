@@ -12,7 +12,15 @@
      eos_config:
        lines:
          - ip routing
-                
+
+   - name: TEST LOOPBACK 5
+     eos_config:
+       lines:
+         - ip add {{LOOP_PAIR}}_{{LEAF_LOOP_5}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 5
+
    - name: LEAF1 EVPN LOOPBACK INTERNFACE CONFIGURATION
      eos_config:
        lines:
