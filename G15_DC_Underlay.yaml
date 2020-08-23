@@ -1,13 +1,13 @@
 ---
-- hosts: {{LEAF_PAIR}}
+- hosts: "{{LEAF_PAIR}}"
   gather_facts: false
   connection: network_cli
   
   #vars: 
     #- LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
     
-  set_fact:
-    LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
+  #set_fact:
+    #LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
 
   tasks:
    - name: to enable
