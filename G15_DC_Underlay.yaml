@@ -19,7 +19,7 @@
    - name: TEST LOOPBACK 5
      eos_config:
        lines:
-         - ip add {{ LEAF_LOOP_X }}/32
+         - ip add {{ {{ LEAF_LOOP_X }} }}/32
          - description EVPN-PEER-LOOPBACK
        parents:
          - interface loopback 5
