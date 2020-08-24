@@ -121,7 +121,7 @@
 
          - neighbor UNDERLAY-EBGP-IPV4 peer group
          - neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
-         - neighbor {{SP1_LEAF2_IP}} peer group UNDERLAY-EBGP-IPV4
+         - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
          - neighbor {{SP2_LEAF2_IP}} peer group UNDERLAY-EBGP-IPV4
 
          - neighbor UNDERLAY-IBGP-IPV4 peer group
