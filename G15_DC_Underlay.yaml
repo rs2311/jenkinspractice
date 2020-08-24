@@ -17,83 +17,83 @@
        lines:
          - ip routing
 
-   - name: TEST LOOPBACK 5
-     eos_config:
-       lines:
-         - ip add {{ vars[LEAF_PAIR+'_LEAF_LOOP_5'] }}/32
-         - description TEST-LOOPBACK
-       parents:
-         - interface loopback 5
+   #- name: TEST LOOPBACK 5
+     #eos_config:
+       #lines:
+         #- ip add {{ vars[LEAF_PAIR+'_LEAF_LOOP_5'] }}/32
+         #- description TEST-LOOPBACK
+       #parents:
+         #- interface loopback 5
 
-   - name: LEAF1 EVPN LOOPBACK INTERNFACE CONFIGURATION
-     eos_config:
-       lines:
-         - ip add {{LEAF1_LOOP_0}}/32
-         - description EVPN-PEER-LOOPBACK
-       parents:
-         - interface loopback 0
-     when: ansible_leaf_type == 1
+   #- name: LEAF1 EVPN LOOPBACK INTERNFACE CONFIGURATION
+     #eos_config:
+       #lines:
+         #- ip add {{LEAF1_LOOP_0}}/32
+         #- description EVPN-PEER-LOOPBACK
+       #parents:
+         #- interface loopback 0
+     #when: ansible_leaf_type == 1
 
-   - name: LEAF2 EVPN LOOPBACK INTERNFACE CONFIGURATION
-     eos_config:
-       lines:
-         - ip add {{LEAF2_LOOP_0}}/32
-         - description EVPN-PEER-LOOPBACK
-       parents:
-         - interface loopback 0
-     when: ansible_leaf_type == 2
+   #- name: LEAF2 EVPN LOOPBACK INTERNFACE CONFIGURATION
+     #eos_config:
+       #lines:
+         #- ip add {{LEAF2_LOOP_0}}/32
+         #- description EVPN-PEER-LOOPBACK
+       #parents:
+         #- interface loopback 0
+     #when: ansible_leaf_type == 2
             
-   - name: ETHERNET INTERNFACE LEAF1 TO SPINE-1 CONFIGURATION
-     eos_config:
-       lines:
-         - no switchport
-         - ip add {{LEAF1_SP1_IP}}/24
-         - description TOWARDS SPINE-1
-       parents:
-         - interface eth{{LEAF1_SP1_INT}}
-     when: ansible_leaf_type == 1
+   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-1 CONFIGURATION
+     #eos_config:
+       #lines:
+         #- no switchport
+         #- ip add {{LEAF1_SP1_IP}}/24
+         #- description TOWARDS SPINE-1
+       #parents:
+         #- interface eth{{LEAF1_SP1_INT}}
+     #when: ansible_leaf_type == 1
 
-   - name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
-     eos_config:
-       lines:
-         - no switchport
-         - ip add {{LEAF1_SP2_IP}}/24
-         - description TOWARDS SPINE-1
-       parents:
-         - interface eth{{LEAF1_SP2_INT}}
-     when: ansible_leaf_type == 1
+   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
+     #eos_config:
+       #lines:
+         #- no switchport
+         #- ip add {{LEAF1_SP2_IP}}/24
+         #- description TOWARDS SPINE-1
+       #parents:
+         #- interface eth{{LEAF1_SP2_INT}}
+     #when: ansible_leaf_type == 1
 
-   - name: ETHERNET INTERNFACE LEAF2 TO SPINE-1 CONFIGURATION
-     eos_config:
-       lines:
-         - no switchport
-         - ip add {{LEAF2_SP1_IP}}/24
-         - description TOWARDS SPINE-1
-       parents:
-         - interface eth{{LEAF2_SP1_INT}}
-     when: ansible_leaf_type == 2
+   #- name: ETHERNET INTERNFACE LEAF2 TO SPINE-1 CONFIGURATION
+     #eos_config:
+       #lines:
+         #- no switchport
+         #- ip add {{LEAF2_SP1_IP}}/24
+         #- description TOWARDS SPINE-1
+       #parents:
+         #- interface eth{{LEAF2_SP1_INT}}
+     #when: ansible_leaf_type == 2
 
-   - name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
-     eos_config:
-       lines:
-         - no switchport
-         - ip add {{LEAF2_SP2_IP}}/24
-         - description TOWARDS SPINE-1
-       parents:
-         - interface eth{{LEAF2_SP2_INT}}
-     when: ansible_leaf_type == 2
+   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
+     #eos_config:
+       #lines:
+         #- no switchport
+         #- ip add {{LEAF2_SP2_IP}}/24
+         #- description TOWARDS SPINE-1
+       #parents:
+         #- interface eth{{LEAF2_SP2_INT}}
+     #when: ansible_leaf_type == 2
 
    - name: BGP CONFIG
      eos_config:
        lines:
-         - router-id {{LEAF1_LOOP_0}}
+         #- router-id {{LEAF1_LOOP_0}}
          - no bgp default ipv4-uni
          - distance bgp 20 200 200
 
          - neighbor UNDERLAY-EBGP-IPV4 peer group
          - neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
          - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
-         - neighbor {{SP2_LEAF1_IP}} peer group UNDERLAY-EBGP-IPV4
+         #- neighbor {{SP2_LEAF1_IP}} peer group UNDERLAY-EBGP-IPV4
 
          - neighbor UNDERLAY-IBGP-IPV4 peer group
          - neighbor UNDERLAY-IBGP-IPV4 remote-as {{LEAF_ASN}}
@@ -102,7 +102,7 @@
 
          - add ipv4 
          - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} act
-         - neighbor {{SP2_LEAF1_IP}} act
+         #- neighbor {{SP2_LEAF1_IP}} act
          - neighbor 192.168.0.2 act
 
          - net {{LEAF1_LOOP_0}}/32
