@@ -92,7 +92,7 @@
 
          - neighbor UNDERLAY-EBGP-IPV4 peer group
          - neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
-         - neighbor {{SP1_LEAF1_IP}} peer group UNDERLAY-EBGP-IPV4
+         - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
          - neighbor {{SP2_LEAF1_IP}} peer group UNDERLAY-EBGP-IPV4
 
          - neighbor UNDERLAY-IBGP-IPV4 peer group
@@ -101,7 +101,7 @@
          - neighbor 192.168.0.2 peer group UNDERLAY-IBGP-IPV4
 
          - add ipv4 
-         - neighbor {{SP1_LEAF1_IP}} act
+         - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} act
          - neighbor {{SP2_LEAF1_IP}} act
          - neighbor 192.168.0.2 act
 
