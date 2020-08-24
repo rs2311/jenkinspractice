@@ -20,7 +20,7 @@
    - name: TEST LOOPBACK 5
      eos_config:
        lines:
-         - ip add {{ vars[IP_SHEET][LEAF_PAIR+'_LEAF_LOOP_5'] }}/32
+         - ip add {{ vars[LEAF_PAIR+'_LEAF_LOOP_5'] }}/32
          - description TEST-LOOPBACK
        parents:
          - interface loopback 5
