@@ -5,11 +5,13 @@
   
   #vars: 
     #- LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
-    
-  #set_fact:
-    #LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
-
+  
   tasks:
+  
+  - name: define set_fact_var
+    set_fact:
+      LEAF_LOOP_5: "{{LEAF_PAIR}}_LEAF_LOOP_5"
+  
    - name: to enable
      eos_command:
        commands: enable
