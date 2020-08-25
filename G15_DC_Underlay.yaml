@@ -4,10 +4,7 @@
   connection: network_cli
 
   tasks:
-   #- name: define set_fact_var
-     #set_fact:
-       #LEAF_LOOP_5= "{{vars[LEAF_PAIR+'_LEAF_LOOP_5']}}"
-  
+   
    - name: to enable
      eos_command:
        commands: enable
@@ -25,123 +22,83 @@
        #parents:
          #- interface loopback 5
 
-   #- name: LEAF1 EVPN LOOPBACK INTERNFACE CONFIGURATION
-     #eos_config:
-       #lines:
-         #- ip add {{LEAF1_LOOP_0}}/32
-         #- description EVPN-PEER-LOOPBACK
-       #parents:
-         #- interface loopback 0
-     #when: ansible_leaf_type == 1
-
-   #- name: LEAF2 EVPN LOOPBACK INTERNFACE CONFIGURATION
-     #eos_config:
-       #lines:
-         #- ip add {{LEAF2_LOOP_0}}/32
-         #- description EVPN-PEER-LOOPBACK
-       #parents:
-         #- interface loopback 0
-     #when: ansible_leaf_type == 2
-            
-   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-1 CONFIGURATION
-     #eos_config:
-       #lines:
-         #- no switchport
-         #- ip add {{LEAF1_SP1_IP}}/24
-         #- description TOWARDS SPINE-1
-       #parents:
-         #- interface eth{{LEAF1_SP1_INT}}
-     #when: ansible_leaf_type == 1
-
-   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
-     #eos_config:
-       #lines:
-         #- no switchport
-         #- ip add {{LEAF1_SP2_IP}}/24
-         #- description TOWARDS SPINE-1
-       #parents:
-         #- interface eth{{LEAF1_SP2_INT}}
-     #when: ansible_leaf_type == 1
-
-   #- name: ETHERNET INTERNFACE LEAF2 TO SPINE-1 CONFIGURATION
-     #eos_config:
-       #lines:
-         #- no switchport
-         #- ip add {{LEAF2_SP1_IP}}/24
-         #- description TOWARDS SPINE-1
-       #parents:
-         #- interface eth{{LEAF2_SP1_INT}}
-     #when: ansible_leaf_type == 2
-
-   #- name: ETHERNET INTERNFACE LEAF1 TO SPINE-2 CONFIGURATION
-     #eos_config:
-       #lines:
-         #- no switchport
-         #- ip add {{LEAF2_SP2_IP}}/24
-         #- description TOWARDS SPINE-1
-       #parents:
-         #- interface eth{{LEAF2_SP2_INT}}
-     #when: ansible_leaf_type == 2
-
-   - name: BGP CONFIG
+   - name: LEAF EVPN LOOPBACK INTERNFACE CONFIGURATION
      eos_config:
        lines:
-         #- router-id {{LEAF1_LOOP_0}}
+         - ip add {{LOOP_0}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 0
+               
+   - name: ETHERNET INTERNFACE LEAF TO SPINE-1 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars[LEAF_PAIR+'_SP1_IP'] }}/24
+         - description TOWARDS SPINE-1
+       parents:
+         - interface eth{{ vars[LEAF_PAIR+'_SP1_INT'] }}
+     
+   - name: ETHERNET INTERNFACE LEAF TO SPINE-2 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars[LEAF_PAIR+'_SP2_IP'] }}/24
+         - description TOWARDS SPINE-2
+       parents:
+         - interface {{ vars[LEAF_PAIR+'_SP2_INT'] }}
+         
+   - name: EBGP CONFIG
+     eos_config:
+       lines:
+         - router-id {{LOOP_0}}
          - no bgp default ipv4-uni
          - distance bgp 20 200 200
 
          - neighbor UNDERLAY-EBGP-IPV4 peer group
          - neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
          - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
-         #- neighbor {{SP2_LEAF1_IP}} peer group UNDERLAY-EBGP-IPV4
-
-         - neighbor UNDERLAY-IBGP-IPV4 peer group
-         - neighbor UNDERLAY-IBGP-IPV4 remote-as {{LEAF_ASN}}
-         - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
-         - neighbor 192.168.0.2 peer group UNDERLAY-IBGP-IPV4
+         - neighbor {{ vars['SP2_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
 
          - add ipv4 
          - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} act
-         #- neighbor {{SP2_LEAF1_IP}} act
-         #- neighbor 192.168.0.2 act
-
+         - neighbor {{ vars['SP2_'+LEAF_PAIR+'_IP'] }} act
+         
          - net {{LOOP_0}}/32
          - maximum-paths 4 ecmp 64
 
        parents:
-         - router bgp {{LEAF_ASN}}
-     #when: ansible_leaf_type == 1
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
 
-   #- name: BGP CONFIG
-     #eos_config:
-       #lines:
-         #- router-id {{LEAF2_LOOP_0}}
-         #- no bgp default ipv4-uni
-         #- distance bgp 20 200 200
+   - name: IBGP CONFIG LEAF-1
+     eos_config:
+       lines:
+         - neighbor UNDERLAY-IBGP-IPV4 peer group
+         - neighbor UNDERLAY-IBGP-IPV4 remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
+         - neighbor 192.168.0.2 peer group UNDERLAY-IBGP-IPV4
 
-         #- neighbor UNDERLAY-EBGP-IPV4 peer group
-         #- neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
-         #- neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
-         #- neighbor {{SP2_LEAF2_IP}} peer group UNDERLAY-EBGP-IPV4
+         - add ipv4 
+         - neighbor 192.168.0.2 act
+       
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+     when: ansible_leaf_type == 1
 
-         #- neighbor UNDERLAY-IBGP-IPV4 peer group
-         #- neighbor UNDERLAY-IBGP-IPV4 remote-as {{LEAF_ASN}}
-         #- neighbor UNDERLAY-IBGP-IPV4 next-hop-self
-         #- neighbor 192.168.0.1 peer group UNDERLAY-IBGP-IPV4
+   - name: IBGP CONFIG LEAF-2
+     eos_config:
+       lines:
+         - neighbor UNDERLAY-IBGP-IPV4 peer group
+         - neighbor UNDERLAY-IBGP-IPV4 remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
+         - neighbor 192.168.0.1 peer group UNDERLAY-IBGP-IPV4
 
-         #- add ipv4 
-         #- neighbor {{SP1_LEAF2_IP}} act
-         #- neighbor {{SP2_LEAF2_IP}} act
-         #- neighbor 192.168.0.1 act
-
-         #- net {{LEAF2_LOOP_0}}/32
-         #- maximum-paths 4 ecmp 64
-
-       #parents:
-         #- router bgp {{LEAF_ASN}}
-     #when: ansible_leaf_type == 2
-
-
+         - add ipv4 
+         - neighbor 192.168.0.1 act
+       
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+     when: ansible_leaf_type == 2
 
 - hosts: SPINE
   gather_facts: false
