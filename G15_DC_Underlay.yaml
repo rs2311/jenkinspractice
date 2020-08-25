@@ -147,8 +147,8 @@
          - no bgp default ipv4-uni
          - distance bgp 20 200 200
        
-         - neighbor {{ vars[LEAF_PAIR+'1_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'ASN'] }}
-         - neighbor {{ vars[LEAF_PAIR+'2_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'ASN'] }}
+         - neighbor {{ vars[LEAF_PAIR+'1_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor {{ vars[LEAF_PAIR+'2_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
 
          - add ipv4 
          - neighbor {{ vars[LEAF_PAIR+'1_SP_IP'] }} act
