@@ -138,7 +138,7 @@
          - ip add {{ vars['SP_'+LEAF_PAIR+'2_IP'] }}/24
          - description TOWARDS LEAF2
        parents:
-         - interface eth{{ vars['SP_'+LEAF_PAIR+'2_INT'] }}}
+         - interface eth{{ vars['SP_'+LEAF_PAIR+'2_INT'] }}
 
    - name: BGP CONFIG
      eos_config:
