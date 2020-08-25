@@ -1,0 +1,161 @@
+---
+- hosts: "{{LEAF_PAIR}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines:
+         - ip routing
+
+   #- name: TEST LOOPBACK 5
+     #eos_config:
+       #lines:
+         #- ip add {{ vars[LEAF_PAIR+'_LEAF_LOOP_5'] }}/32
+         #- description TEST-LOOPBACK
+       #parents:
+         #- interface loopback 5
+
+   - name: LEAF EVPN LOOPBACK INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - ip add {{LOOP_0}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 0
+               
+   - name: ETHERNET INTERNFACE LEAF TO SPINE-1 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars[LEAF_PAIR+'_SP1_IP'] }}/24
+         - description TOWARDS SPINE-1
+       parents:
+         - interface eth{{ vars[LEAF_PAIR+'_SP1_INT'] }}
+     
+   - name: ETHERNET INTERNFACE LEAF TO SPINE-2 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars[LEAF_PAIR+'_SP2_IP'] }}/24
+         - description TOWARDS SPINE-2
+       parents:
+         - interface eth{{ vars[LEAF_PAIR+'_SP2_INT'] }}
+         
+   - name: EBGP CONFIG
+     eos_config:
+       lines:
+         - router-id {{LOOP_0}}
+         - no bgp default ipv4-uni
+         - distance bgp 20 200 200
+
+         - neighbor UNDERLAY-EBGP-IPV4 peer group
+         - neighbor UNDERLAY-EBGP-IPV4 remote-as 65000
+         - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
+         - neighbor {{ vars['SP2_'+LEAF_PAIR+'_IP'] }} peer group UNDERLAY-EBGP-IPV4
+
+         - add ipv4 
+         - neighbor {{ vars['SP1_'+LEAF_PAIR+'_IP'] }} act
+         - neighbor {{ vars['SP2_'+LEAF_PAIR+'_IP'] }} act
+         
+         - net {{LOOP_0}}/32
+         - maximum-paths 4 ecmp 64
+
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+
+   - name: IBGP CONFIG LEAF-1
+     eos_config:
+       lines:
+         - neighbor UNDERLAY-IBGP-IPV4 peer group
+         - neighbor UNDERLAY-IBGP-IPV4 remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
+         - neighbor 192.168.0.2 peer group UNDERLAY-IBGP-IPV4
+
+         - add ipv4 
+         - neighbor 192.168.0.2 act
+       
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+     when: LEAF == 1
+
+   - name: IBGP CONFIG LEAF-2
+     eos_config:
+       lines:
+         - neighbor UNDERLAY-IBGP-IPV4 peer group
+         - neighbor UNDERLAY-IBGP-IPV4 remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor UNDERLAY-IBGP-IPV4 next-hop-self
+         - neighbor 192.168.0.1 peer group UNDERLAY-IBGP-IPV4
+
+         - add ipv4 
+         - neighbor 192.168.0.1 act
+       
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+     when: LEAF == 2
+
+- hosts: SPINE
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: IP ROUTING ENABLEMENT
+     eos_config:
+       lines:
+         - ip routing
+                
+   - name: SPINE EVPN LOOPBACK 0 INTERNFACE CONFIGURATION
+     eos_config:
+       lines:
+         - ip add {{LOOP_0}}/32
+         - description EVPN-PEER-LOOPBACK
+       parents:
+         - interface loopback 0
+            
+   - name: ETHERNET INTERNFACE SPINE TO LEAF1 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars['SP_'+LEAF_PAIR+'1_IP'] }}/24
+         - description TOWARDS LEAF1
+       parents:
+         - interface eth{{ vars['SP_'+LEAF_PAIR+'1_INT'] }}
+    
+   - name: ETHERNET INTERNFACE SPINE TO LEAF2 CONFIGURATION
+     eos_config:
+       lines:
+         - no switchport
+         - ip add {{ vars['SP_'+LEAF_PAIR+'2_IP'] }}/24
+         - description TOWARDS LEAF2
+       parents:
+         - interface eth{{ vars['SP_'+LEAF_PAIR+'2_INT'] }}
+
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - router-id {{LOOP_0}}
+         - no bgp default ipv4-uni
+         - distance bgp 20 200 200
+       
+         - neighbor {{ vars[LEAF_PAIR+'1_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+         - neighbor {{ vars[LEAF_PAIR+'2_SP_IP'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+
+         - add ipv4 
+         - neighbor {{ vars[LEAF_PAIR+'1_SP_IP'] }} act
+         - neighbor {{ vars[LEAF_PAIR+'2_SP_IP'] }} act
+
+         - net {{LOOP_0}}/32
+         - maximum-paths 4 ecmp 64
+
+       parents:
+         - router bgp 65000
