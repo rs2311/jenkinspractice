@@ -83,7 +83,7 @@
        
        parents:
          - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
-     when: ansible_leaf_type == 1
+     when: LEAF == 1
 
    - name: IBGP CONFIG LEAF-2
      eos_config:
@@ -98,7 +98,7 @@
        
        parents:
          - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
-     when: ansible_leaf_type == 2
+     when: LEAF == 2
 
 - hosts: SPINE
   gather_facts: false
