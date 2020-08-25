@@ -46,7 +46,7 @@
          - ip add {{ vars[LEAF_PAIR+'_SP2_IP'] }}/24
          - description TOWARDS SPINE-2
        parents:
-         - interface {{ vars[LEAF_PAIR+'_SP2_INT'] }}
+         - interface eth{{ vars[LEAF_PAIR+'_SP2_INT'] }}
          
    - name: EBGP CONFIG
      eos_config:
