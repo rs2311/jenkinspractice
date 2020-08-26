@@ -4,16 +4,24 @@
   connection: network_cli
 
   tasks:
-   
+ 
    - name: to enable
      eos_command:
        commands: enable
-         
+
+   - name: VXLAN VTEP IP LOOPBACK 1 CREATION
+     eos_config:
+       lines:
+         - ip add {{ LOOP_1 }}
+         - description VXLAN VTEP IP 
+       parents:
+         - interface loopback 1
+      
    - name: VXLAN VTEP IP ADVERTISMENT OVER BGP
      eos_config:
        lines:
          - add ipv4 
-         - network {{ vars[LEAF_PAIR+'1_LOOP_1'] }}
+         - network {{ LOOP_1 }}
        parents:
          - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
 
