@@ -1,0 +1,26 @@
+---
+- hosts: "{{LEAF_PAIR}}"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+   
+   - name: to enable
+     eos_command:
+       commands: enable
+         
+   - name: VXLAN VTEP IP ADVERTISMENT OVER BGP
+     eos_config:
+       lines:
+         - add ipv4 
+         - network {{ vars[LEAF_PAIR+'1_LOOP_1'] }}
+       parents:
+         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+
+   - name: VXLAN VTEP TUNNEL SETUP 
+     eos_config:
+       lines:
+         - vxlan source-int lo 1 
+         - vxlan udp-port 4789
+       parents:
+         - interface vxlan 1
