@@ -45,7 +45,10 @@
          - neighbor BGP-EVPN send-community extended
 
          - neighbor {{ vars[LEAF_PAIR+'1_LOOP_0'] }} peer group BGP-EVPN
-         - neighbor {{ vars[LEAF_PAIR+'1_LOOP_0'] }} remote-as 61112
+         - neighbor {{ vars[LEAF_PAIR+'1_LOOP_0'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
+
+         - neighbor {{ vars[LEAF_PAIR+'2_LOOP_0'] }} peer group BGP-EVPN
+         - neighbor {{ vars[LEAF_PAIR+'2_LOOP_0'] }} remote-as {{ vars[LEAF_PAIR+'_ASN'] }}
 
          - add evpn 
          - neighbor BGP-EVPN act
