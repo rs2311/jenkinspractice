@@ -32,3 +32,10 @@
          - vxlan udp-port 4789
        parents:
          - interface vxlan 1
+         
+   - name: VIRTUAL ROUTER MAC ADDRESS 
+     eos_config:
+       lines:
+         - ip virtual-router mac-address {{ MAC }} 
+
+         
