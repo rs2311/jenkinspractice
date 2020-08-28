@@ -1,5 +1,5 @@
 ---
-- hosts: {{BL}}
+- hosts: BL
   gather_facts: false
   connection: network_cli
 
