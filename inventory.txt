@@ -12,3 +12,9 @@ CL2-SW16 ansible_host=192.168.181.16 ansible_user=admin ansible_ssh_pass=admin a
 [SPINE]
 SPINE1-SW13 ansible_host=192.168.181.13 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 SPINE2-SW14 ansible_host=192.168.181.14 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+[FW]
+MT-FW10 ansible_host=192.168.181.10 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+[SERVER]
+MT-SER17 ansible_host=192.168.181.17 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+
+
