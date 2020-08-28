@@ -33,7 +33,7 @@
      eos_config:
        lines:
          - vrf forwarding C{{C_ID}} 
-         - ip address {{C_ID}}.{{ vars[FW_N].[BL_N].[BL_N]/24}}
+         - ip address {{ {{C_ID}}.{{ vars[FW_N].[BL_N].[BL_N]/24}} }}
        parents:
          - interface vlan {{C_ID}}{{LEAF_N}}
 
