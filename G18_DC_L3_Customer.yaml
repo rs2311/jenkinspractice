@@ -1,5 +1,5 @@
 ---
-- hosts: "{{LEAF_PAIR}}"
+- hosts: {{BL}}
   gather_facts: false
   connection: network_cli
 
@@ -9,31 +9,52 @@
      eos_command:
        commands: enable
 
-   - name: VXLAN VTEP IP LOOPBACK 1 CREATION
+   - name: VRF DEFINITION
      eos_config:
        lines:
-         - ip add {{ LOOP_1 }}
-         - description VXLAN VTEP IP 
+         - rd {{RD}}:{{C_ID}}
        parents:
-         - interface loopback 1
+         - vrf definition C{{C_ID }}
+                  
+   #- name: VLAN CREATION
+     #eos_vlans:
+       #config:
+         #- vlan_id: "{{VLAN_ID}}"
+           #name: '{{C_NAME}}'
+           #state: active
       
-   - name: VXLAN VTEP IP ADVERTISMENT OVER BGP
+   - name: VLAN CREATION
      eos_config:
        lines:
-         - add ipv4 
-         - network {{ LOOP_1 }}
+         - vlan {{C_ID}}1, {{C_ID}}2  
+         - description Yet to be updated
+         
+   - name: L3 VLAN INTERFACE 
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address 101.10.11.11/24
        parents:
-         - router bgp {{ vars[LEAF_PAIR+'_ASN'] }}
+         - interface vlan {{C_ID}}1
 
    - name: VXLAN VTEP TUNNEL SETUP 
      eos_config:
        lines:
-         - vxlan source-int lo 1 
-         - vxlan udp-port 4789
+         - vxlan vrf C{{C_ID}} vni {{C_ID}}00 
        parents:
          - interface vxlan 1
          
-   - name: VIRTUAL ROUTER MAC ADDRESS 
+   - name: BGP CONFIG
      eos_config:
        lines:
-         - ip virtual-router mac-address {{ MAC }} 
+         - rd {{RD}}:{{C_ID}}
+         - neighbor {{SW2_IP}} remote-as 65002
+         - neighbor {{SW2_IP}} update-source Vlan{{VLAN_ID}}
+         - neighbor {{SW2_IP}} ebgp-multihop
+         - neighbor {{SW2_IP}} maximum-routes 12000
+         - address-family ipv4
+         - neighbor {{SW2_IP}} activate
+       parents:
+         - router bgp 65001
+         - vrf {{C_NAME}}
+
