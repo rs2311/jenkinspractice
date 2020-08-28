@@ -16,18 +16,18 @@
        parents:
          - vrf definition C{{C_ID }}
                   
-   #- name: VLAN CREATION
-     #eos_vlans:
-       #config:
-         #- vlan_id: "{{VLAN_ID}}"
-           #name: '{{C_NAME}}'
-           #state: active
-      
    - name: VLAN CREATION
-     eos_config:
-       lines:
-         - vlan "{{C_ID}}1"  
-         - name Yet to be updated
+     eos_vlans:
+       config:
+         - vlan_id: "{{C_ID}}1"
+           #name: '{{C_NAME}}'
+           state: active
+      
+   #- name: VLAN CREATION
+     #eos_config:
+       #lines:
+         #- vlan "{{C_ID}}1"  
+         #- name Yet to be updated
          
    - name: L3 VLAN INTERFACE 
      eos_config:
