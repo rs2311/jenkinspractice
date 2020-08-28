@@ -54,3 +54,63 @@
          - router bgp 61112
          - vrf C{{C_ID}}
 
+
+- hosts: FW
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+ 
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd {{BL_N}}:{{C_ID}}
+       parents:
+         - vrf definition C{{C_ID }}
+                  
+   - name: VLAN CREATION
+     eos_vlans:
+       config:
+         - vlan_id: "{{C_ID}}1"
+           name: "{{C_ID}}_VLAN"
+           state: active
+     
+         - vlan_id: "{{C_ID}}2"
+           name: "{{C_ID}}_VLAN"
+           state: active
+          
+   - name: L3 VLAN INTERFACE TOWARDS BL1 
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL_N}}/24
+       parents:
+         - interface vlan {{C_ID}}1
+
+   - name: L3 VLAN INTERFACE TOWARDS BL2
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL_N}}/24
+       parents:
+         - interface vlan {{C_ID}}2
+        
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - rd {{FW_N}}:{{C_ID}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{BL1_N}} remote-as {{BL_ASN}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}} remote-as {{BL_ASN}}
+         - redistribute connected
+         - address-family ipv4
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{BL1_N}} activate
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}} activate
+       parents:
+         - router bgp {{FW_ASN}}
+         - vrf C{{C_ID}}
+
+
