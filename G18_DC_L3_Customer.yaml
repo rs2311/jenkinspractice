@@ -33,7 +33,7 @@
      eos_config:
        lines:
          - vrf forwarding C{{C_ID}} 
-         - ip address 101.10.11.11/24
+         - ip address {{C_ID}}.10.11.11/24
        parents:
          - interface vlan {{C_ID}}1
 
@@ -48,13 +48,10 @@
      eos_config:
        lines:
          - rd {{RD}}:{{C_ID}}
-         - neighbor {{SW2_IP}} remote-as 65002
-         - neighbor {{SW2_IP}} update-source Vlan{{VLAN_ID}}
-         - neighbor {{SW2_IP}} ebgp-multihop
-         - neighbor {{SW2_IP}} maximum-routes 12000
+         - neighbor {{C_ID}}.10.11.10 remote-as 65002
          - address-family ipv4
-         - neighbor {{SW2_IP}} activate
+         - neighbor {{C_ID}}.10.11.10 activate
        parents:
-         - router bgp 65001
-         - vrf {{C_NAME}}
+         - router bgp 61112
+         - vrf C{{C_ID}}
 
