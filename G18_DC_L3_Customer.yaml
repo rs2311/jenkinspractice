@@ -19,16 +19,10 @@
    - name: VLAN CREATION
      eos_vlans:
        config:
-         - vlan_id: "{{C_ID}}1"
-           #name: '{{C_NAME}}'
+         - vlan_id: "{{C_ID}}1","{{C_ID}}2"
+           name: {{C_ID}}_VLAN
            state: active
-      
-   #- name: VLAN CREATION
-     #eos_config:
-       #lines:
-         #- vlan "{{C_ID}}1"  
-         #- name Yet to be updated
-         
+       
    - name: L3 VLAN INTERFACE 
      eos_config:
        lines:
@@ -48,9 +42,10 @@
      eos_config:
        lines:
          - rd {{BL_N}}:{{C_ID}}
-         - neighbor {{C_ID}}.10.11.10 remote-as 65002
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} remote-as {{FW_ASN}}
+         - redistribute connected
          - address-family ipv4
-         - neighbor {{C_ID}}.10.11.10 activate
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} activate
        parents:
          - router bgp 61112
          - vrf C{{C_ID}}
