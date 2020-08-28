@@ -27,7 +27,7 @@
      eos_config:
        lines:
          - vlan {{C_ID}}1, {{C_ID}}2  
-         - description Yet to be updated
+         - name Yet to be updated
          
    - name: L3 VLAN INTERFACE 
      eos_config:
