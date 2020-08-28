@@ -20,7 +20,7 @@
      eos_vlans:
        config:
          - vlan_id: "{{C_ID}}1"
-           name: {{C_ID_VLAN}}
+           #name: {{C_ID_VLAN}}
            state: active
        
    - name: L3 VLAN INTERFACE 
