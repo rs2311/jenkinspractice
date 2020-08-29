@@ -15,7 +15,7 @@
          - rd {{BL_N}}:{{C_ID}}
        parents:
          - vrf definition C{{C_ID }}
-                  
+          
    - name: VLAN CREATION
      eos_vlans:
        config:
@@ -77,7 +77,15 @@
          - rd {{FW_N}}:{{C_ID}}
        parents:
          - vrf definition C{{C_ID }}
-                  
+           
+   - name: CUST TEST LOOPBACK INTERFACE 
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address {{C_ID}}.{{FW_N}}.{{FW_N}}.{{FW_N}}/32
+       parents:
+         - interface loopback {{C_ID}}
+         
    - name: VLAN CREATION
      eos_vlans:
        config:
