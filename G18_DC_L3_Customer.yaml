@@ -54,6 +54,10 @@
          - router bgp 61112
          - vrf C{{C_ID}}
 
+   - name: IP ROUTING
+     eos_config:
+       lines:
+         - ip routing vrf C{{C_ID}}
 
 - hosts: FW
   gather_facts: false
@@ -112,5 +116,103 @@
        parents:
          - router bgp {{FW_ASN}}
          - vrf C{{C_ID}}
+
+   - name: IP ROUTING
+     eos_config:
+       lines:
+         - ip routing vrf C{{C_ID}}
+
+- hosts: CL
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+ 
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd {{CL_N}}:{{C_ID}}
+       parents:
+         - vrf definition C{{C_ID }}
+                  
+   - name: VLAN CREATION
+     eos_vlans:
+       config:
+         - vlan_id: "{{C_ID}}3"
+           name: "{{C_ID}}_VLAN"
+           state: active
+               
+   - name: L3 VLAN INTERFACE 
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address 192.168.{{C_ID}}.{{CL_N}}/24
+         - ip virtual-router address 192.168.{{C_ID}}.1
+       parents:
+         - interface vlan {{C_ID}}3
+
+   - name: VXLAN VTEP TUNNEL SETUP 
+     eos_config:
+       lines:
+         - vxlan vrf C{{C_ID}} vni {{C_ID}}00 
+       parents:
+         - interface vxlan 1
+         
+   - name: BGP CONFIG
+     eos_config:
+       lines:
+         - rd {{CL_N}}:{{C_ID}}
+         - redistribute connected
+         - address-family ipv4
+       parents:
+         - router bgp 61516
+         - vrf C{{C_ID}}
+
+   - name: IP ROUTING
+     eos_config:
+       lines:
+         - ip routing vrf C{{C_ID}}
+
+
+- hosts: SERVER
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+ 
+   - name: to enable
+     eos_command:
+       commands: enable
+
+   - name: VRF DEFINITION
+     eos_config:
+       lines:
+         - rd {{SER_N}}:{{C_ID}}
+       parents:
+         - vrf definition C{{C_ID }}
+                  
+   - name: VLAN CREATION
+     eos_vlans:
+       config:
+         - vlan_id: "{{C_ID}}3"
+           name: "{{C_ID}}_VLAN"
+           state: active
+               
+   - name: L3 VLAN INTERFACE 
+     eos_config:
+       lines:
+         - vrf forwarding C{{C_ID}} 
+         - ip address 192.168.{{C_ID}}.{{SER_N}}/24
+       parents:
+         - interface vlan {{C_ID}}3
+
+   - name: IP ROUTING
+     eos_config:
+       lines:
+         - ip routing vrf C{{C_ID}}
 
 
