@@ -47,6 +47,8 @@
        lines:
          - rd {{BL_N}}:{{C_ID}}
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} remote-as {{FW_ASN}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} update-source vlan{{C_ID}}{{LEAF_N}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}}  ebgp-multihop 2
          - redistribute connected
          - address-family ipv4
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} activate
@@ -91,7 +93,7 @@
      eos_config:
        lines:
          - vrf forwarding C{{C_ID}} 
-         - ip address {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{BL1_N}}/24
+         - ip address {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{FW_N}}/24
        parents:
          - interface vlan {{C_ID}}1
 
@@ -99,7 +101,7 @@
      eos_config:
        lines:
          - vrf forwarding C{{C_ID}} 
-         - ip address {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}}/24
+         - ip address {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{FW_N}}/24
        parents:
          - interface vlan {{C_ID}}2
         
@@ -108,7 +110,13 @@
        lines:
          - rd {{FW_N}}:{{C_ID}}
          - neighbor {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{BL1_N}} remote-as {{BL_ASN}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL1_N}} update-source vlan{{C_ID}}1
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL1_N}}  ebgp-multihop 2
+         
          - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}} remote-as {{BL_ASN}}
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL2_N}} update-source vlan{{C_ID}}2
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL2_N}}  ebgp-multihop 2
+         
          - redistribute connected
          - address-family ipv4
          - neighbor {{C_ID}}.{{FW_N}}.{{BL1_N}}.{{BL1_N}} activate
