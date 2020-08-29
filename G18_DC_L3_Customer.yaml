@@ -218,9 +218,11 @@
        parents:
          - interface vlan {{C_ID}}3
 
-   - name: IP ROUTING
+   - name: DEFAULT IP ROUTE
      eos_config:
        lines:
          - ip routing vrf C{{C_ID}}
+         - ip route vrf C{{C_ID}} 0.0.0.0/0 192.168.{{C_ID}}.1
+
 
 
