@@ -46,6 +46,8 @@
      eos_config:
        lines:
          - rd {{BL_N}}:{{C_ID}}
+         - route-target export evpn {{C_ID}}:{{C_ID}}
+         - route-target import evpn {{C_ID}}:{{C_ID}}         
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} remote-as {{FW_ASN}}
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}} update-source vlan{{C_ID}}{{LEAF_N}}
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{FW_N}}  ebgp-multihop 2
@@ -182,6 +184,8 @@
      eos_config:
        lines:
          - rd {{CL_N}}:{{C_ID}}
+         - route-target export evpn {{C_ID}}:{{C_ID}}
+         - route-target import evpn {{C_ID}}:{{C_ID}}
          - redistribute connected
          - address-family ipv4
        parents:
