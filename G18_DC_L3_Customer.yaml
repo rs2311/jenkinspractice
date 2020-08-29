@@ -68,7 +68,7 @@
    - name: VRF DEFINITION
      eos_config:
        lines:
-         - rd {{BL_N}}:{{C_ID}}
+         - rd {{FW_N}}:{{C_ID}}
        parents:
          - vrf definition C{{C_ID }}
                   
