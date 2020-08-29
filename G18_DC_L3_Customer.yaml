@@ -114,8 +114,8 @@
          - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL1_N}}  ebgp-multihop 2
          
          - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}} remote-as {{BL_ASN}}
-         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL2_N}} update-source vlan{{C_ID}}2
-         - neighbor {{C_ID}}.{{FW_N}}.{{BL_N}}.{{BL2_N}}  ebgp-multihop 2
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}} update-source vlan{{C_ID}}2
+         - neighbor {{C_ID}}.{{FW_N}}.{{BL2_N}}.{{BL2_N}}  ebgp-multihop 2
          
          - redistribute connected
          - address-family ipv4
