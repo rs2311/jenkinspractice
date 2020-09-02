@@ -73,6 +73,30 @@
      eos_command:
        commands: enable
 
+   - name:  INITIAL PORT-CHANNEL INTERFACE CONFIGURATION TOWARDS LEAF SWITCHES
+     eos_config:
+       lines:
+         - des Towards Edge
+         - switchport mode trunk
+       parents:
+         - interface port-channel 10
+
+   - name: ETHERNET 1 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Towards Edge
+         - channel-group 10 mode active
+       parents:
+         - interface eth 1
+
+   - name: ETHERNET 2 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Towards Edge
+         - channel-group 10 mode active
+       parents:
+         - interface eth 2
+
    - name: VRF DEFINITION
      eos_config:
        lines:
@@ -207,6 +231,32 @@
    - name: to enable
      eos_command:
        commands: enable
+
+
+   - name:  INITIAL PORT-CHANNEL INTERFACE CONFIGURATION TOWARDS LEAF SWITCHES
+     eos_config:
+       lines:
+         - des Towards Edge
+         - switchport mode trunk
+       parents:
+         - interface port-channel 10
+
+   - name: ETHERNET 1 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Towards Edge
+         - channel-group 10 mode active
+       parents:
+         - interface eth 1
+
+   - name: ETHERNET 2 INTERFACE CONFIGURATION
+     eos_config:
+       lines:
+         - des Towards Edge
+         - channel-group 10 mode active
+       parents:
+         - interface eth 2
+
 
    - name: VRF DEFINITION
      eos_config:
