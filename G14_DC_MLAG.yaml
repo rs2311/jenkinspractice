@@ -94,6 +94,7 @@
        lines:
          - des Towards Edge
          - switchport mode trunk
+         - mlag 10
        parents:
          - interface port-channel 10
 
