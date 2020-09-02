@@ -89,3 +89,18 @@
          - mlag configuration
      when: ansible_leaf_type == 2
 
+   - name: PORT-CHANNEL INTERFACE CONFIGURATION TOWARDS SERVER OR FW
+     eos_config:
+       lines:
+         - des Towards Edge
+         - switchport mode trunk
+       parents:
+         - interface port-channel 10
+
+   - name: ETHERNET 10 INTERFACE CONFIGURATION TOWARDS SERVER OR FW
+     eos_config:
+       lines:
+         - des Towards Edge
+         - channel-group 10 mode active
+       parents:
+         - interface eth 10
