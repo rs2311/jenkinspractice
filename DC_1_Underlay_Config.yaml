@@ -1,5 +1,5 @@
 ---
-- hosts: "{{LEAF_PAIR}}"
+- hosts: SWITCH
   gather_facts: false
   connection: network_cli
 
