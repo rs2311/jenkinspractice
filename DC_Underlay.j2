@@ -8,7 +8,7 @@ interface loopback 0
 {###### Looback 1 Configuration ######}
 
 
-{% set id = {{ Devices['hosts']['id'] %}
+{% set id = {{ Devices[hosts]['id'] %}
 
 interface loopback 1
   description base loopback
