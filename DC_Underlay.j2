@@ -2,11 +2,7 @@
 
 interface loopback 0
   description base loopback
-{% for device_id in Devices %}
-{% if device_id == 'Spine-1' %}
-  ip address 10.0.0.{{ device_id['id'] }}/32
+  ip address 10.0.0.{{ Devices['Spine-1']['id'] }}/32
   ip ospf area 0.0.0.0
-{% endif %}
-{% endfor %}
 
 
