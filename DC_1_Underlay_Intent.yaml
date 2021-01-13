@@ -1,6 +1,6 @@
 
 
-Datacenter: {
+{
     "Devices":  {
         "Spine1":  {
             "id": "1"
