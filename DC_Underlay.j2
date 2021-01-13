@@ -2,8 +2,8 @@
 {###### Looback 99 Configuration ######}
 
 {% set hostnames = [ SW1, SW2, SW3 ] %}
-{% for i in range(len(hostnames)) %}
-{% set id = Devices[hostnames.index(i)]['id'] %}
+{% for host in hostnames %}
+{% set id = Devices[host.strip(',')]['id'] %}
 
 interface loopback 77
   description test loopback
