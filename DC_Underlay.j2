@@ -2,7 +2,7 @@
 
 interface loopback 0
   description base loopback
-  ip address 10.0.0.{{ Devices[Spine1]['id'] }}/32
+  ip address 10.0.0.{{ Devices['Spine1']['id'] }}/32
   ip ospf area 0.0.0.0
 
 
