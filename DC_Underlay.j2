@@ -1,11 +1,16 @@
 
 {###### Looback 99 Configuration ######}
 
-{% set id = Devices[SW1]['id'] %}
-interface loopback 99
-  description base loopback
-  ip address 10.99.99.{{ id }}/32
-  ip ospf area 0.0.0.0
+hostnames = {SW1,SW2,SW3}
+{% for host in hostnames %}
+{% set id = Devices[host]['id'] %}
+
+interface loopback 77
+  description test loopback
+  ip address 10.77.77{{ id }}/32
+
+{% endfor %}
+
 
 
 
