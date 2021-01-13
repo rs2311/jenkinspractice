@@ -6,4 +6,7 @@ interface loopback 0
 {% if device_id == 'hosts' %}
   ip address 10.0.0.{{ device_id['id'] }}/32
   ip ospf area 0.0.0.0
+{% endif %}
+{% endfor %}
+
 
