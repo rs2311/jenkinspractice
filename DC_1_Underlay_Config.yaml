@@ -1,5 +1,5 @@
 ---
-- hosts: SWITCH
+- hosts: "{{SpineHost1}}"
   gather_facts: false
   connection: network_cli
 
