@@ -3,7 +3,7 @@
 
 {% set hostnames = [ {{SW1}}, {{SW2}}, {{SW3}} ] %}
 {% for host in hostnames %}
-{% set id = Devices['Spine1']['id'] %}
+{% set id = Devices[host]['id'] %}
 
 interface loopback 77
   description test loopback
