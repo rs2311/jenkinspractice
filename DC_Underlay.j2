@@ -1,7 +1,7 @@
 
 {###### Looback 99 Configuration ######}
 
-hostnames = {SW1,SW2,SW3}
+{% set hostnames = [SW1,SW2,SW3] %}
 {% for host in hostnames %}
 {% set id = Devices[host]['id'] %}
 
