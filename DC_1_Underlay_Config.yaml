@@ -1,5 +1,5 @@
 ---
-- hosts: "{{SW1}},{{SW2}},{{SW3}}"
+- hosts: "{{SW}}"
   gather_facts: false
   connection: network_cli
 
@@ -14,3 +14,4 @@
     - name: Underlay
       eos_config:
         src: DC_Underlay.j2
+    
