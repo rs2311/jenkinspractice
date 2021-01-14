@@ -9,7 +9,7 @@ interface eth {{ entry['int_num'] }}
 {% endfor %}
 
 {% for entry in Devices[SW]['loopback'] %}
-interface eth {{ entry['loop_num'] }}
+interface loop {{ entry['loop_num'] }}
    ip address {{ entry['ip_address'] }}
    des {{ entry['des'] }}
    ip ospf area 0.0.0.0
