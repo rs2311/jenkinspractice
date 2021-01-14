@@ -15,7 +15,7 @@ interface loopback {{ entry['loop_num'] }}
    ip ospf area 0.0.0.0
 !
 router ospf 10
-   router-id {{ entry['ip_address'] }}   
+   router-id {{ (entry['ip_address']).strip('/32') }}   
 {% endfor %}
 !
 
