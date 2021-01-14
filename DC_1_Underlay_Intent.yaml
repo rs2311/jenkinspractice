@@ -112,7 +112,7 @@
                 {
                     "nei": "10.0.250.36",
                     "des": "CL36-EVPN-PEER",
-                    "is_routereflector": false
+                    "is_routereflector": true
                 },
             ],
         },
