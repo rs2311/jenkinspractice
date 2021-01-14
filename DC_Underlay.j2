@@ -6,6 +6,7 @@ interface eth {{ entry['int_num'] }}
    ip address {{ entry['ip_address'] }}
    des {{ entry['des'] }}
    ip ospf area 0.0.0.0
+!
 {% endfor %}
 !
 {% for entry in Devices[SW]['loopback'] %}
@@ -16,7 +17,25 @@ interface loopback {{ entry['loop_num'] }}
 !
 router ospf 10
    router-id {{ (entry['ip_address']).strip('/32') }}   
+!
+router bgp 65000
+   router-id {{ (entry['ip_address']).strip('/32') }}   
+!
 {% endfor %}
 !
+   neighbor IBGP-EVPN peer group
+   neighbor IBGP-EVPN update-source lo 0
+   neighbor IBGP-EVPN send-community
+   neighbor IBGP-EVPN remote-as 65000
+   neighbor IBGP-EVPN route-reflector-client
+!
+{% for entry in Devices[SW]['loopback'] %}
+!
+   neighbor {{ entry['loop_num'] }} peer group IBGP-EVPN
+   neighbor {{ entry['loop_num'] }} description {{ entry['des'] }}
+!
+   add evpn
+      neighbor IBGP-EVPN activate
+!
+{% endfor %}
 
-   
