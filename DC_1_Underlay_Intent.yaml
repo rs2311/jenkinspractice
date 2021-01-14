@@ -15,7 +15,7 @@
            "Spine1_CL31_Interface_Spine1": "5",
            "Spine1_CL31_IP_Spine1": "10.0.31.0/31",
            "Spine1_CL32_Interface_Spine1": "6",
-           "Spine1_CL31_IP_Spine1": "10.0.32.0/31",
+           "Spine1_CL32_IP_Spine1": "10.0.32.0/31",
            "Spine1_CL33_Interface_Spine1": "7",
            "Spine1_CL33_IP_Spine1": "10.0.33.0/31",
            "Spine1_CL34_Interface_Spine1": "8",
