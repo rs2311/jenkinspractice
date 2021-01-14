@@ -5,54 +5,233 @@
         "Spine1":  [
             {
                 "int_num": "1",
-                "ip_address": "10.0.11.1/31",
+                "ip_address": "10.0.11.0/31",
                 "des": "Towards_BL11"
             },
             {
                 "int_num": "2",
-                "ip_address": "10.0.12.1/31",
+                "ip_address": "10.0.12.0/31",
                 "des": "Towards_BL12"
             },
             {
                 "int_num": "3",
-                "ip_address": "10.0.21.1/31",
+                "ip_address": "10.0.21.0/31",
                 "des": "Towards_SL21"
             },
             {
                 "int_num": "4",
-                "ip_address": "10.0.22.1/31",
+                "ip_address": "10.0.22.0/31",
                 "des": "Towards_SL22"
             },  
             {
                 "int_num": "5",
-                "ip_address": "10.0.31.1/31",
+                "ip_address": "10.0.31.0/31",
                 "des": "Towards_CL31"
             },
             {
                 "int_num": "6",
-                "ip_address": "10.0.32.1/31",
+                "ip_address": "10.0.32.0/31",
                 "des": "Towards_CL32"
             },
             {
                 "int_num": "7",
-                "ip_address": "10.0.33.1/31",
+                "ip_address": "10.0.33.0/31",
                 "des": "Towards_CL33"
             },
             {
                 "int_num": "8",
-                "ip_address": "10.0.34.1/31",
+                "ip_address": "10.0.34.0/31",
                 "des": "Towards_CL34"
             },
             {
                 "int_num": "9",
-                "ip_address": "10.0.35.1/31",
+                "ip_address": "10.0.35.0/31",
                 "des": "Towards_CL35"
             },
             {
                 "int_num": "10",
-                "ip_address": "10.0.36.1/31",
+                "ip_address": "10.0.36.0/31",
                 "des": "Towards_CL36"
             }, 
-        ]
+        ],
+        
+        "Spine2":  [
+            {
+                "int_num": "1",
+                "ip_address": "10.0.11.2/31",
+                "des": "Towards_BL11"
+            },
+            {
+                "int_num": "2",
+                "ip_address": "10.0.12.2/31",
+                "des": "Towards_BL12"
+            },
+            {
+                "int_num": "3",
+                "ip_address": "10.0.21.2/31",
+                "des": "Towards_SL21"
+            },
+            {
+                "int_num": "4",
+                "ip_address": "10.0.22.2/31",
+                "des": "Towards_SL22"
+            },  
+            {
+                "int_num": "5",
+                "ip_address": "10.0.31.2/31",
+                "des": "Towards_CL31"
+            },
+            {
+                "int_num": "6",
+                "ip_address": "10.0.32.2/31",
+                "des": "Towards_CL32"
+            },
+            {
+                "int_num": "7",
+                "ip_address": "10.0.33.2/31",
+                "des": "Towards_CL33"
+            },
+            {
+                "int_num": "8",
+                "ip_address": "10.0.34.2/31",
+                "des": "Towards_CL34"
+            },
+            {
+                "int_num": "9",
+                "ip_address": "10.0.35.2/31",
+                "des": "Towards_CL35"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.36.2/31",
+                "des": "Towards_CL36"
+            }, 
+        ],
+        
+        "BL11":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.11.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.11.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        "BL12":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.12.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.12.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+
+        "SL21":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.21.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.21.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        "SL22":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.22.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.22.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+
+        "CL31":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.31.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.31.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        "CL32":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.32.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.32.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        
+        "CL33":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.33.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.33.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        "CL34":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.34.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.34.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+
+        "CL35":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.35.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.35.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        "CL36":  [
+            {
+                "int_num": "9",
+                "ip_address": "10.0.36.1/31",
+                "des": "Towards_Spine1"
+            },
+            {
+                "int_num": "10",
+                "ip_address": "10.0.36.3/31",
+                "des": "Towards_Spine2"
+            }, 
+        ],
+        
     },
 }
