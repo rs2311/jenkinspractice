@@ -2,4 +2,12 @@
 Spine1 ansible_host=192.168.181.1 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 Spine2 ansible_host=192.168.181.2 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 BL11 ansible_host=192.168.181.11 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+BL12 ansible_host=192.168.181.12 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+SL21 ansible_host=192.168.181.21 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+SL22 ansible_host=192.168.181.22 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 CL31 ansible_host=192.168.181.31 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+CL32 ansible_host=192.168.181.32 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+CL33 ansible_host=192.168.181.33 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+CL34 ansible_host=192.168.181.34 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+CL35 ansible_host=192.168.181.35 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+CL36 ansible_host=192.168.181.36 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
