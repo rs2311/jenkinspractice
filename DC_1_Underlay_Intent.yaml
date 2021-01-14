@@ -93,8 +93,17 @@
                     "des": "CL33-EVPN-PEER"
                 },
                 {
-                    "CL34_nei": "10.0.250.34",
+                    "nei": "10.0.250.34",
                     "des": "CL34-EVPN-PEER"
+                },
+                
+                {
+                    "nei": "10.0.250.35",
+                    "des": "CL35-EVPN-PEER"
+                },
+                {
+                    "nei": "10.0.250.36",
+                    "des": "CL36-EVPN-PEER"
                 },
             ],
         },
