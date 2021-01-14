@@ -52,7 +52,14 @@
                 "int_num": "10",
                 "ip_address": "10.0.36.0/31",
                 "des": "Towards_CL36"
-            }, 
+            },
+            
+            {
+                "loop_num": "0",
+                "ip_address": "10.0.256.1/32",
+                "des": "Loopback_0"
+            },
+            
         ],
         
         "Spine2":  [
