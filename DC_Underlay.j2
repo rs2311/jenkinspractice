@@ -1,6 +1,6 @@
 
 
-{% for entry in Devices[SW] %}
+{% for entry in Devices[SW]['ethernet'] %}
 interface eth {{ entry['int_num'] }}
    no switchport
    ip address {{ entry['ip_address'] }}
@@ -8,8 +8,5 @@ interface eth {{ entry['int_num'] }}
    ip ospf area 0.0.0.0
 {% endfor %}
 
-{% for entry in Devices[SW] %}
-interface loopback {{ entry['loop_num'] }}
-   des Ravi
-{% endfor %}
+
    
