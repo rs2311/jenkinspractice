@@ -8,7 +8,6 @@ interface loopback 77
 
 
 
-
 {###### Looback 99 Configuration ######}
 {#
 {% set hostnames = [ SW1, SW2, SW3 ] %}
@@ -16,6 +15,7 @@ interface loopback 77
 {#
 {% if Devices[host.strip(',')] in ['Spine1', 'BL11', 'C31'] %}
 #}
+{#
 {% set id = Devices[host.strip(',')]['id'] %}
 
 interface loopback 77
@@ -24,6 +24,7 @@ interface loopback 77
 {# 
 {% endif %}
 #}
+{#
 {% endfor %}
 #}
 
