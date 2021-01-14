@@ -1,13 +1,8 @@
 
-{% for key in Devices[SW] %}
-{% set id = Devices[SW][key]['id'] %}
 
 interface loopback 77
   description test loopback
-  ip address 10.77.77.{{ id }}/32
-  
-  {% endfor %}
-
+  ip address 10.77.77.{{ Devices[SW]['id'] }}/32
 
 
 
