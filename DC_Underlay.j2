@@ -3,7 +3,7 @@
 
 {% set hostnames = [ SW1, SW2, SW3 ] %}
 {% for host in hostnames %}
-{% if Devices[host.strip(',')] in ['Spine1', 'BL11', 'C21'] %}
+{% if Devices[host.strip(',')] in ['Spine1', 'BL11', 'C31'] %}
 {% set id = Devices[host.strip(',')]['id'] %}
 
 interface loopback 77
