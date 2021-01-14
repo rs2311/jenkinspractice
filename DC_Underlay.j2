@@ -27,7 +27,7 @@ router bgp 65000
    neighbor IBGP-EVPN update-source lo 0
    neighbor IBGP-EVPN send-community
    neighbor IBGP-EVPN remote-as 65000
-   neighbor IBGP-EVPN route-reflector-client
+   
 !
 {% for entry in Devices[SW]['BGP'] %}
 !
