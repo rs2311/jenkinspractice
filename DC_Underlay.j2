@@ -1,35 +1,23 @@
 
 
-interface loopback 77
-  description test loopback
-  ip address 10.77.77.{{ Devices[SW]['id'] }}/32
-
-
-
-{###### Looback 99 Configuration ######}
-{#
-{% set hostnames = [ SW1, SW2, SW3 ] %}
-{% for host in hostnames %}
-{#
-{% if Devices[host.strip(',')] in ['Spine1', 'BL11', 'C31'] %}
-#}
-{#
-{% set id = Devices[host.strip(',')]['id'] %}
-
-interface loopback 77
-  description test loopback
-  ip address 10.77.77.{{ id }}/32
-{# 
-{% endif %}
-#}
-{#
-{% endfor %}
-#}
-
-
-
-
-
-
-
-
+interface loopback 0
+  description Underlay_BGP_EVPN loopback
+  ip address 10.0.250.{{ Devices[SW]['id'] }}/32
+  ip ospf area 0.0.0.0
+!
+ip routing
+!
+router ospf 10
+router-id 10.0.250.{{ Devices[SW]['id'] }}
+!
+int lo 0
+description Underlay_BGP_EVPN loopback
+ip add 10.0.250.{{ Devices[SW]['id'] }}/32
+ip ospf area 0.0.0.0
+!
+int eth 1
+no switchport
+des ### Towards BORDER LEAF1 ###
+ip add 10.0.{{ Devices['BL11']['id'] }}.0/31
+ip ospf area 0.0.0.0
+!
