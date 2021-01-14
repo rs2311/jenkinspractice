@@ -62,6 +62,41 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+            
+            "BGP":  [
+                {
+                    "BL11_nei": "10.0.250.11",
+                    "des": "BL11-EVPN-PEER"
+                },
+                {
+                    "BL12_nei": "10.0.250.12",
+                    "des": "BL12-EVPN-PEER"
+                },
+                {
+                    "SL21_nei": "10.0.250.21",
+                    "des": "SL21-EVPN-PEER"
+                },
+                {
+                    "SL22_nei": "10.0.250.22",
+                    "des": "SL22-EVPN-PEER"
+                },
+                {
+                    "CL31_nei": "10.0.250.31",
+                    "des": "CL31-EVPN-PEER"
+                },
+                {
+                    "CL32_nei": "10.0.250.32",
+                    "des": "CL32-EVPN-PEER"
+                },
+                {
+                    "CL33_nei": "10.0.250.33",
+                    "des": "CL33-EVPN-PEER"
+                },
+                {
+                    "CL34_nei": "10.0.250.34",
+                    "des": "CL34-EVPN-PEER"
+                },
+            ],
         },
         "Spine2":  {
             "ethernet":  [
