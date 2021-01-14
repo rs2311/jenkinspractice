@@ -66,44 +66,53 @@
             "BGP":  [
                 {
                     "nei": "10.0.250.11",
-                    "des": "BL11-EVPN-PEER"
+                    "des": "BL11-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.12",
-                    "des": "BL12-EVPN-PEER"
+                    "des": "BL12-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.21",
-                    "des": "SL21-EVPN-PEER"
+                    "des": "SL21-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.22",
-                    "des": "SL22-EVPN-PEER"
+                    "des": "SL22-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.31",
-                    "des": "CL31-EVPN-PEER"
+                    "des": "CL31-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.32",
-                    "des": "CL32-EVPN-PEER"
+                    "des": "CL32-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.33",
-                    "des": "CL33-EVPN-PEER"
+                    "des": "CL33-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.34",
-                    "des": "CL34-EVPN-PEER"
+                    "des": "CL34-EVPN-PEER",
+                    "is_routereflector": true
                 },
-                
                 {
                     "nei": "10.0.250.35",
-                    "des": "CL35-EVPN-PEER"
+                    "des": "CL35-EVPN-PEER",
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.36",
-                    "des": "CL36-EVPN-PEER"
+                    "des": "CL36-EVPN-PEER",
+                    "is_routereflector": true
                 },
             ],
         },
