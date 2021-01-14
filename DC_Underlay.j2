@@ -1,70 +1,7 @@
-interface eth {{ Devices['Spine1']['Spine1_BL11_Interface_Spine1'] }}
-   description ### Towards BORDER LEAF11 ###
+
+
+{% for entry in Devices[SW] %}
+interface eth {{ entry['interface'] }}
    no switchport
-   ip address {{ Devices['Spine1']['Spine1_BL11_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_BL12_Interface_Spine1'] }}
-   description ### Towards BORDER LEAF12 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_BL12_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_SL21_Interface_Spine1'] }}
-   description ### Towards SERVICE LEAF21 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_SL21_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_SL22_Interface_Spine1'] }}
-   description ### Towards SERVICE LEAF22 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_SL22_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL31_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF31 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL31_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL32_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF32 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL32_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL33_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF33 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL33_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL34_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF34 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL34_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL35_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF35 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL35_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface eth {{ Devices['Spine1']['Spine1_CL36_Interface_Spine1'] }}
-   description ### Towards COMPUTE LEAF36 ###
-   no switchport
-   ip address {{ Devices['Spine1']['Spine1_CL36_IP_Spine1'] }}
-   ip ospf area 0.0.0.0
-!
-interface Loopback0
-   description Underlay_BGP_EVPN loopback
-   ip address 10.0.250.{{ Devices[SW]['id'] }}/32
-   ip ospf area 0.0.0.0
-!
-ip routing
-!
-router ospf 10
-   router-id 10.0.250.{{ Devices[SW]['id'] }}
-!
+   des Ravi
+{% endfor %}
