@@ -1,7 +1,8 @@
 
 
 {% for entry in Devices[SW] %}
-interface eth {{ entry['interface'] }}
+interface eth {{ entry['int_num'] }}
    no switchport
-   des Ravi
+   ip address {{ entry['ip_address'] }}
+   des {{ entry['des'] }}
 {% endfor %}
