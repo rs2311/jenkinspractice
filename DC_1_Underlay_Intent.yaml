@@ -2,57 +2,27 @@
 
 {
     "Devices":  {
-       "Spine1":  {
-           "id": "1",
-           "Spine1_BL11_Interface_Spine1": "1",
-           "Spine1_BL11_IP_Spine1": "10.0.11.0/31",
-           "Spine1_BL12_Interface_Spine1": "2",
-           "Spine1_BL12_IP_Spine1": "10.0.12.0/31",
-           "Spine1_SL21_Interface_Spine1": "3",
-           "Spine1_SL21_IP_Spine1": "10.0.21.0/31",
-           "Spine1_SL22_Interface_Spine1": "4",
-           "Spine1_SL22_IP_Spine1": "10.0.22.0/31",
-           "Spine1_CL31_Interface_Spine1": "5",
-           "Spine1_CL31_IP_Spine1": "10.0.31.0/31",
-           "Spine1_CL32_Interface_Spine1": "6",
-           "Spine1_CL32_IP_Spine1": "10.0.32.0/31",
-           "Spine1_CL33_Interface_Spine1": "7",
-           "Spine1_CL33_IP_Spine1": "10.0.33.0/31",
-           "Spine1_CL34_Interface_Spine1": "8",
-           "Spine1_CL34_IP_Spine1": "10.0.34.0/31",
-           "Spine1_CL35_Interface_Spine1": "9",
-           "Spine1_CL35_IP_Spine1": "10.0.35.0/31",
-           "Spine1_CL36_Interface_Spine1": "10",
-           "Spine1_CL36_IP_Spine1": "10.0.36.0/31",          
-        },
-        "Spine2":  {
-           "id": "2",
-           "Spine2_BL11_Interface_Spine2": "1",
-           "Spine2_BL11_IP_Spine2": "10.0.11.2/31",
-           "Spine2_BL12_Interface_Spine2": "2",
-           "Spine2_BL12_IP_Spine2": "10.0.12.2/31",
-           "Spine2_SL21_Interface_Spine2": "3",
-           "Spine2_SL21_IP_Spine2": "10.0.21.2/31",
-           "Spine2_SL22_Interface_Spine2": "4",
-           "Spine2_SL22_IP_Spine2": "10.0.22.2/31",
-           "Spine2_CL31_Interface_Spine2": "5",
-           "Spine2_CL31_IP_Spine2": "10.0.31.2/31",
-           "Spine2_CL32_Interface_Spine2": "6",
-           "Spine2_CL32_IP_Spine2": "10.0.32.2/31",
-           "Spine2_CL33_Interface_Spine2": "7",
-           "Spine2_CL33_IP_Spine2": "10.0.33.2/31",
-           "Spine2_CL34_Interface_Spine2": "8",
-           "Spine2_CL34_IP_Spine2": "10.0.34.2/31",
-           "Spine2_CL35_Interface_Spine2": "9",
-           "Spine2_CL35_IP_Spine2": "10.0.35.2/31",
-           "Spine2_CL36_Interface_Spine2": "10",
-           "Spine2_CL36_IP_Spine2": "10.0.36.2/31",          
-        },
-        "BL11":  {
-            "id": "11"
-        },
-        "CL31":  {
-            "id": "31"
-        },
+        "Spine1":  [
+            {
+                "interface": "1",
+                "ip_address": "10.0.11.1/31",
+                "description": "Towards_BL11"
+            },
+            {
+                "interface": "2",
+                "ip_address": "10.0.12.1/31",
+                "description": "Towards_BL12"
+            },
+            {
+                "interface": "3",
+                "ip_address": "10.0.21.1/31",
+                "description": "Towards_CL21"
+            },
+            {
+                "interface": "4",
+                "ip_address": "10.0.22.1/31",
+                "description": "Towards_CL22"
+            },         
+        ]
     },
 }
