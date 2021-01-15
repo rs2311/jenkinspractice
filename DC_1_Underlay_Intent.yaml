@@ -176,6 +176,60 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+                        
+            "BGP":  [
+                {
+                    "nei": "10.0.250.11",
+                    "des": "BL11-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.12",
+                    "des": "BL12-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.21",
+                    "des": "SL21-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.22",
+                    "des": "SL22-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.31",
+                    "des": "CL31-EVPN-PEER",
+                    "is_routereflector": ture
+                },
+                {
+                    "nei": "10.0.250.32",
+                    "des": "CL32-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.33",
+                    "des": "CL33-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.34",
+                    "des": "CL34-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.35",
+                    "des": "CL35-EVPN-PEER",
+                    "is_routereflector": true
+                },
+                {
+                    "nei": "10.0.250.36",
+                    "des": "CL36-EVPN-PEER",
+                    "is_routereflector": true
+                },
+            ],
+           
         },
 
         "BL11":  {
@@ -197,6 +251,18 @@
                     "ip_address": "10.0.250.11/32",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
+            ],       
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
             ],
         },
 
@@ -220,6 +286,19 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
+            ],            
         },
         
 
@@ -244,6 +323,19 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
+            ],
         },
         "SL22":  {
             "ethernet":  [
@@ -264,6 +356,19 @@
                     "ip_address": "10.0.250.22/32",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
+            ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
             ],
         },
 
@@ -286,6 +391,19 @@
                     "ip_address": "10.0.250.31/32",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
+            ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
             ],
         },        
         
@@ -310,6 +428,19 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
+            ],
         },
         
 
@@ -332,6 +463,19 @@
                     "ip_address": "10.0.250.33/32",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
+            ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
             ],
         },
   
@@ -356,6 +500,19 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
+            ],
         },
         "CL35":  {
             "ethernet":  [
@@ -377,6 +534,19 @@
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
+            ],
         },
         "CL36":  {
             "ethernet":  [
@@ -397,6 +567,19 @@
                     "ip_address": "10.0.250.36/32",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
+            ],
+            
+            "BGP":  [
+                {
+                    "nei": "10.0.250.1",
+                    "des": "Spine-1-Peer",
+                    "is_routereflector": false
+                },
+                {
+                    "nei": "10.0.250.2",
+                    "des": "Spine-2-Peer",
+                    "is_routereflector": false
+                },    
             ],
         },
     },
