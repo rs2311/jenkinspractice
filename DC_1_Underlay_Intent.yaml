@@ -58,7 +58,7 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.1/32",
+                    "ip_address": "10.0.250.1",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
@@ -172,7 +172,7 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.2/32",
+                    "ip_address": "10.0.250.2",
                     "des": "Underlay Loopback for BGP EVPN"
                 },
             ],
@@ -248,8 +248,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.11/32",
+                    "ip_address": "10.0.250.11",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.11",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],       
             "BGP":  [
@@ -282,8 +287,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.12/32",
+                    "ip_address": "10.0.250.12",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.12",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
 
@@ -319,8 +329,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.21/32",
+                    "ip_address": "10.0.250.21",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.21",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -353,8 +368,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.22/32",
+                    "ip_address": "10.0.250.22",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.22",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -388,8 +408,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.31/32",
+                    "ip_address": "10.0.250.31",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.31",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -465,8 +490,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.33/32",
+                    "ip_address": "10.0.250.33",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.33",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -501,8 +531,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.34/32",
+                    "ip_address": "10.0.250.34",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.34",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -535,8 +570,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.35/32",
+                    "ip_address": "10.0.250.35",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.35",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
@@ -569,8 +609,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.36/32",
+                    "ip_address": "10.0.250.36",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.36",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
