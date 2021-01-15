@@ -424,8 +424,13 @@
             "loopback":  [
                 {
                     "loop_num": "0",
-                    "ip_address": "10.0.250.32/32",
+                    "ip_address": "10.0.250.32",
                     "des": "Underlay Loopback for BGP EVPN"
+                },
+                {
+                    "loop_num": "1",
+                    "ip_address": "10.0.251.32",
+                    "des": "Underlay Loopback for VXLAN"
                 },
             ],
             
