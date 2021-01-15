@@ -15,8 +15,6 @@ interface loopback {{ entry['loop_num'] }}
    des {{ entry['des'] }}
    ip ospf area 0.0.0.0
 !
-{% endfor %}
-
 {% if entry['loop_num'] == '0' %}
 router ospf 10
    router-id {{ entry['ip_address'] }}   
