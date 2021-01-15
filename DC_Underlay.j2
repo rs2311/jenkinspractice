@@ -23,6 +23,7 @@ router ospf 10
 router bgp 65000
    router-id {{ entry['ip_address'] }}   
 {% endif %}
+{% endfor %}
 !
 {% for entry in Devices[SW]['BGP'] %}
 router bgp 65000
