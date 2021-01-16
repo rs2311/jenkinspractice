@@ -57,7 +57,7 @@ interface loopback101
    ip address 101.0.0.11/32
 !
 interface Vxlan1
-   vxlan vrf {{ entry['cust_name'] }} {{ entry['vni'] }}
+   vxlan vrf {{ entry['cust_name'] }} vni {{ entry['vni'] }}
 !
 router bgp 65000
 !
