@@ -232,7 +232,7 @@
                     "is_routereflector": true
                 },
             ],
-           
+	    "customers": []           
         },
 
         "BL11":  {
@@ -283,7 +283,7 @@
                         {
                             "vlan": "1011",
 			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.1.0/24",
+                            "subnet": "10.101.11.0/24",
                         },
                     ],
                     "type2_routes": [
@@ -298,6 +298,33 @@
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
                             "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
+                },
+		{
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.11/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.11.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10211013",
+                            "subnet": "10.102.3.0/24",
                         },
                     ],                                      
                 },
@@ -343,20 +370,65 @@
                     "is_routereflector": false
                 },    
             ],   
-            "customers":  [
+	    "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.12/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.11.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
                 },
+		
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.12/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.11.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },
             ],
         },
         
-
-
         "SL21":  {
             "device_id":  "21",
             "ethernet":  [
@@ -396,16 +468,63 @@
                     "is_routereflector": false
                 },    
             ],
-            "customers":  [
+	    "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.21/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.21.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
                 },
+		
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
-            ],
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.21/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.21.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },
+	    ],  
         },
         "SL22":  {
             "device_id":  "22",
@@ -446,16 +565,63 @@
                     "is_routereflector": false
                 },    
             ],
-            "customers":  [
+
+	    "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.22/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.21.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
                 },
+		
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
-            ],
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.22/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.21.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },
         },
 
         "CL31":  {
@@ -497,17 +663,64 @@
                     "is_routereflector": false
                 },    
             ],
-            "customers":  [
+
+	    "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.31/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.31.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
                 },
+		
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.32/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.31.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },
             ],
-            
         },        
         
 
@@ -550,15 +763,63 @@
                     "is_routereflector": false
                 },    
             ],
-            "customers":  [
+
+	    "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.32/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.31.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
                 },
+		
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.32/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.31.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },  
             ],
 
         },
