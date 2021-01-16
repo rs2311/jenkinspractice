@@ -80,7 +80,7 @@ vlan {{ vlan_entry['vlan'] }}
 !
 interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ vlan_entry['l3_loopback_ip'] | ipaddr(1) }}
+   ip address {{ vlan_entry['subnet'] | ipaddr(1) }}
 !
 router bgp 65000
 !
