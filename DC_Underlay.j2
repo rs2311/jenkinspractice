@@ -47,7 +47,7 @@ int vxlan 1
 ip virtual-router mac-address 0c:fd:01:01:01:01
 !
 {% for entry in Devices[SW]['customers'] %}
-vrf definition {{ entry['cust_name'] }}
+vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
