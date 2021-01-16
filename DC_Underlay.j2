@@ -86,8 +86,8 @@ router bgp 65000
 !
    vlan {{ vlan_entry['vlan'] }}
    rd {{ vlan_entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
-   route-target import evpn {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
-   route-target export evpn {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
+   route-target import {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
+   route-target export {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
    redistribute connected
       address-family ipv4
       exit
