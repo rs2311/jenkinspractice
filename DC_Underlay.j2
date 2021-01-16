@@ -100,7 +100,7 @@ vlan {{ vlan_entry['vlan'] }}
 !
 interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ vlan_entry['subnet'] | ipaddr(1) }}
+   ip address virtual {{ vlan_entry['subnet'] | ipaddr(1) }}
 !
 router bgp 65000
 !
