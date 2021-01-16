@@ -56,11 +56,6 @@ interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ entry['l3_loopback_ip'] }}
 !
-{% for vlan_entry in entry['type5_routes'] %}
-vlan {{ vlan_entry ['vlan'] }}
-   name {{ vlan_entry ['name'] }}
-{% endfor %}
-!
 interface Vxlan1
    vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
 !
@@ -74,3 +69,19 @@ router bgp 65000
    address-family ipv4
 !
 {% endfor %}
+!
+!
+{% for entry in Devices[SW]['customers'] %}
+{% for vlan_entry in entry['type5_routes'] %}
+!
+vlan {{ vlan_entry ['vlan'] }}
+   name {{ vlan_entry ['name'] }}
+!
+interface vlan {{ vlan_entry ['vlan'] }}
+!
+{% endfor %}
+!
+
+
+
+
