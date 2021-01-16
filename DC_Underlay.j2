@@ -46,3 +46,26 @@ int vxlan 1
 !
 ip virtual-router mac-address 0c:fd:01:01:01:01
 !
+{% for entry in Devices[SW]['customers'] %}
+vrf definition {{ entry['name'] }}
+   rd {{ entry['name'] }}:Devices[SW]['device_id']
+!
+ip routing vrf {{ entry['cust_name'] }}
+!
+interface loopback101
+   vrf forwarding {{ entry['cust_name'] }}
+   ip address 101.0.0.11/32
+!
+interface Vxlan1
+   vxlan vrf {{ entry['name'] }} {{ entry['vni'] }}
+!
+router bgp 65000
+!
+   vrf {{ entry['name'] }}
+   rd {{ entry['name'] }}:Devices[SW]['device_id']
+   route-target import evpn {{ entry['name'] }}:{{ entry['name'] }}
+   route-target export evpn {{ entry['name'] }}:{{ entry['name'] }}
+   redistribute connected
+   address-family ipv4
+!
+{% endfor %}
