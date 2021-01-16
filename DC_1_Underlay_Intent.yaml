@@ -3,6 +3,7 @@
 {
     "Devices":  {
         "Spine1":  {
+            "device_id":  "1",
             "ethernet":  [
                 {
                     "int_num": "1",
@@ -117,6 +118,7 @@
             ],
         },
         "Spine2":  {
+            "device_id":  "2",
             "ethernet":  [
                 {
                     "int_num": "1",
@@ -233,6 +235,7 @@
         },
 
         "BL11":  {
+            "device_id":  "11",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -282,6 +285,7 @@
         },
 
         "BL12":  {
+            "device_id":  "12",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -334,6 +338,7 @@
 
 
         "SL21":  {
+            "device_id":  "21",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -383,6 +388,7 @@
             ],
         },
         "SL22":  {
+            "device_id":  "22",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -433,6 +439,7 @@
         },
 
         "CL31":  {
+            "device_id":  "31",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -485,6 +492,7 @@
         
 
         "CL32":  {
+            "device_id":  "32",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -537,6 +545,7 @@
         
 
         "CL33":  {
+            "device_id":  "33",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -589,6 +598,7 @@
   
 
         "CL34":  {
+            "device_id":  "34",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -628,6 +638,7 @@
             ],
         },
         "CL35":  {
+            "device_id":  "35",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -667,6 +678,7 @@
             ],
         },
         "CL36":  {
+            "device_id":  "36",
             "ethernet":  [
                 {
                     "int_num": "9",
