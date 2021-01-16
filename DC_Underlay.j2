@@ -108,9 +108,13 @@ router bgp 65000
    rd {{ vlan_entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
    route-target import {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
    route-target export {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
-   redistribute connected
-      address-family ipv4
-      exit
+   redistribute learned
+   exit
+exit
+!
+interface Vxlan1
+   vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
+!
 {% endfor %}
 {% endfor %}
 !
