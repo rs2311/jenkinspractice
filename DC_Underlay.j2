@@ -75,11 +75,22 @@ exit
 {% for entry in Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type5_routes'] %}
 !
-vlan {{ vlan_entry ['vlan'] }}
-   name {{ vlan_entry ['name'] }}
+vlan {{ vlan_entry['vlan'] }}
+   name {{ vlan_entry['name'] }}
 !
-interface vlan {{ vlan_entry ['vlan'] }}
+interface vlan {{ vlan_entry['vlan'] }}
+   vrf forwarding {{ entry['cust_name'] }}
+   ip address {{ vlan_entry['l3_loopback_ip'] | ipaddr(1) }}
 !
+router bgp 65000
+!
+   vlan {{ vlan_entry['vlan'] }}
+   rd {{ vlan_entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
+   route-target import evpn {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
+   route-target export evpn {{ vlan_entry['vlan'] }}:{{ vlan_entry['vlan'] }}
+   redistribute connected
+      address-family ipv4
+      exit
 {% endfor %}
 {% endfor %}
 !
