@@ -274,13 +274,17 @@
             ],
             "customers":  [
                 {
-                    "id": "101",
-                    "name": "C101",
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "cust_vlan: "1010",
+                    "vni": "10001010
                 },
                 {
-                    "id": "102",
-                    "name": "C102",
-                },   
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "cust_vlan: "1020",
+                    "vni": "10001020
+                }, 
             ],
         },
 
