@@ -116,6 +116,7 @@
                     "is_routereflector": true
                 },
             ],
+	    "customers": []
         },
         "Spine2":  {
             "device_id":  "2",
