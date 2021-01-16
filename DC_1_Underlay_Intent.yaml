@@ -269,6 +269,16 @@
                     "is_routereflector": false
                 },    
             ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
         },
 
         "BL12":  {
@@ -308,7 +318,17 @@
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
                 },    
-            ],            
+            ],   
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
         },
         
 
@@ -351,6 +371,16 @@
                     "is_routereflector": false
                 },    
             ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
         },
         "SL22":  {
             "ethernet":  [
@@ -389,6 +419,16 @@
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
                 },    
+            ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
             ],
         },
 
@@ -430,6 +470,17 @@
                     "is_routereflector": false
                 },    
             ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
+            
         },        
         
 
@@ -471,6 +522,17 @@
                     "is_routereflector": false
                 },    
             ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
+
         },
         
 
@@ -512,6 +574,17 @@
                     "is_routereflector": false
                 },    
             ],
+            "customers":  [
+                {
+                    "id": "101",
+                    "name": "C101",
+                },
+                {
+                    "id": "102",
+                    "name": "C102",
+                },   
+            ],
+
         },
   
 
