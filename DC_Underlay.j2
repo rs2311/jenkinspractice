@@ -47,7 +47,7 @@ int vxlan 1
 ip virtual-router mac-address 0c:fd:01:01:01:01
 !
 {% for entry in Devices[SW]['customers'] %}
-vrf definition {{ entry['name'] }}
+vrf definition {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:Devices[SW]['device_id']
 !
 ip routing vrf {{ entry['cust_name'] }}
@@ -57,7 +57,7 @@ interface loopback101
    ip address 101.0.0.11/32
 !
 interface Vxlan1
-   vxlan vrf {{ entry['name'] }} {{ entry['vni'] }}
+   vxlan vrf {{ entry['cust_name'] }} {{ entry['vni'] }}
 !
 router bgp 65000
 !
