@@ -59,7 +59,7 @@ vrf instance {{ entry['cust_name'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
-{% elseif %}
+{% elif %}
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ entry['l3_loopback_ip'] }}
