@@ -1227,6 +1227,7 @@
         },    	
         "HOST41":  {
             "device_id":  "41",
+	    "device_role": "host"
             "ethernet":  [],	    	    	    
 	    "host_ethernet":  [
                 {
@@ -1238,7 +1239,6 @@
             "BGP":  [],
 	    "customers":  [
                 {
-                    "is_host": true,
 		    "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
