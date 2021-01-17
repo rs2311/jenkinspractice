@@ -4,6 +4,7 @@
     "Devices":  {
         "Spine1":  {
             "device_id":  "1",
+	    "device_role":  "spine",
             "ethernet":  [
                 {
                     "int_num": "1",
@@ -121,6 +122,7 @@
         },
         "Spine2":  {
             "device_id":  "2",
+	    "device_role":  "spine",
             "ethernet":  [
                 {
                     "int_num": "1",
@@ -241,6 +243,7 @@
 
         "BL11":  {
             "device_id":  "11",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -340,6 +343,7 @@
 
         "BL12":  {
             "device_id":  "12",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -441,6 +445,7 @@
         
         "SL21":  {
             "device_id":  "21",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -541,6 +546,7 @@
         },
         "SL22":  {
             "device_id":  "22",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -643,6 +649,7 @@
 
         "CL31":  {
             "device_id":  "31",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -751,6 +758,7 @@
 
         "CL32":  {
             "device_id":  "32",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -860,6 +868,7 @@
 
         "CL33":  {
             "device_id":  "33",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -968,6 +977,7 @@
 
         "CL34":  {
             "device_id":  "34",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -1016,6 +1026,7 @@
         },
         "CL35":  {
             "device_id":  "35",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
@@ -1122,6 +1133,7 @@
         },
         "CL36":  {
             "device_id":  "36",
+	    "device_role":  "leaf",
             "ethernet":  [
                 {
                     "int_num": "9",
