@@ -1167,7 +1167,7 @@
                     "is_routereflector": false
                 },    
             ],
-	    	    "customers":  [
+	    "customers":  [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
@@ -1235,7 +1235,8 @@
                 },    
             ],
             "loopback":  [],            
-            "BGP":  [],            
+            "BGP":  [],
+	    "customers":  [],
         },	
         "HOST42":  {
             "device_id":  "42",
@@ -1247,7 +1248,8 @@
                 },    
             ],	    
             "loopback":  [],            
-            "BGP":  [],            
+            "BGP":  [],
+	    "customers":  [],
         },		
     },
 }
