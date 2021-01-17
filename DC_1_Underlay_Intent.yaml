@@ -1384,19 +1384,29 @@
         },
         "HOST41":  {
             "device_id":  "41",
-            "ethernet":  [],
-	    	    	    
+            "ethernet":  [],	    	    	    
 	    "host_ethernet":  [
                 {
                     "int_num": "1",
                     "des": "Towards_Leaf"
                 },    
             ],
-	    
-            "loopback":  [],
-            
-            "BGP":  [],
-            
+            "loopback":  [],            
+            "BGP":  [],            
         },
+	
+        "HOST42":  {
+            "device_id":  "42",
+            "ethernet":  [],	    	    	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Leaf"
+                },    
+            ],	    
+            "loopback":  [],            
+            "BGP":  [],            
+        },	
+	
     },
 }
