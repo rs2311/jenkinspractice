@@ -56,6 +56,8 @@
                     "des": "Towards_CL36"
                 },
             ],
+	    "host_ethernet": [],
+
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -172,7 +174,10 @@
                     "des": "Towards_CL36"
                 }, 
             ],
-            "loopback":  [
+	    
+	    "host_ethernet": [],
+            
+	    "loopback":  [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.2",
@@ -249,7 +254,10 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
-            "loopback":  [
+	    
+	    "host_ethernet":  [],
+            
+	    "loopback":  [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.11",
@@ -345,6 +353,9 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+   	    "host_ethernet":  [],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -443,6 +454,9 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+	    "host_ethernet":  [],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -540,6 +554,9 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+	    "host_ethernet":  [],
+
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -639,6 +656,14 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_41"
+                },    
+            ],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -739,6 +764,14 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_41"
+                },    
+            ],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -840,7 +873,15 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
-            "loopback":  [
+	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_42"
+                },    
+            ],
+            
+	    "loopback":  [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.33",
@@ -940,6 +981,14 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_42"
+                },    
+            ],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -980,6 +1029,14 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_42"
+                },    
+            ],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -1078,6 +1135,14 @@
                     "des": "Towards_Spine2"
                 }, 
             ],
+	    	    	    
+	    "host_ethernet":  [
+                {
+                    "int_num": "1",
+                    "des": "Towards_Host_43"
+                },    
+            ],
+	    
             "loopback":  [
                 {
                     "loop_num": "0",
