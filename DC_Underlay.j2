@@ -39,9 +39,9 @@ router bgp 65000
    neighbor {{ entry['nei'] }} description {{ entry['des'] }}   
 {% if entry['is_routereflector'] %}
    neighbor IBGP-EVPN route-reflector-client
-{% endif %}
    add evpn
       neighbor IBGP-EVPN activate
+{% endif %}
 {% endfor %}
 !
 int vxlan 1
