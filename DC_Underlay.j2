@@ -51,12 +51,15 @@ int vxlan 1
 ip virtual-router mac-address 0c:fd:01:01:01:01
 !
 {# Type5 Routes Classic L3 #}
+{############## ################}
 {% for entry in Devices[SW]['customers'] %}
+{% if entry[is_host] %}
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
+{% elseif %}
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ entry['l3_loopback_ip'] }}
@@ -75,6 +78,8 @@ router bgp 65000
       exit
    exit
 exit
+
+{% endif %}
 {% endfor %}
 !
 {# Type5 Routes Classic L3 #}
