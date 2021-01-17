@@ -3,7 +3,7 @@ ip routing
 {##### Task 1 #####}
 {##### Uplink and Downlink Ethernet Configuration #####}
 {##### Applicable for Spine and Leaf #####}
-{% if Device[SW]['device_role'] == 'spine' or 'leaf' %}
+{% if Devices[SW]['device_role'] == 'spine' or 'leaf' %}
 {% for entry in Devices[SW]['ethernet'] %}
 interface eth {{ entry['int_num'] }}
    no switchport
@@ -57,7 +57,7 @@ router bgp 65000
 {##### Task 4 #####}
 {# VXLAN Configuration #}
 {##### Applicable for Leaf #####}
-{% if Device[SW]['device_role'] == 'leaf' %}
+{% if Devices[SW]['device_role'] == 'leaf' %}
 int vxlan 1
    vxlan source-int lo 1
    vxlan udp-port 4789
