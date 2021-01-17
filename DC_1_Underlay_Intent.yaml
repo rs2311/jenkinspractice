@@ -1227,7 +1227,7 @@
         },    	
         "HOST41":  {
             "device_id":  "41",
-	    "device_role": "host"
+	    "device_role": "host",
             "ethernet":  [],	    	    	    
 	    "host_ethernet":  [
                 {
