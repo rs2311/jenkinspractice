@@ -1236,7 +1236,36 @@
             ],
             "loopback":  [],            
             "BGP":  [],
-	    "customers":  [],
+	    "customers":  [
+                {
+                    "is_host": true,
+		    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.35/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.35.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
+                },
+	    ],	
         },	
         "HOST42":  {
             "device_id":  "42",
