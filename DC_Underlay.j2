@@ -53,7 +53,7 @@ ip virtual-router mac-address 0c:fd:01:01:01:01
 {# Type5 Routes Classic L3 #}
 {############## ################}
 {% for entry in Devices[SW]['customers'] %}
-{% if entry['is_host'] %}
+{% if Devices[SW]['device_role'] == 'host' %}
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
