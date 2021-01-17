@@ -59,7 +59,7 @@ vrf instance {{ entry['cust_name'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
-{% elif %}
+{% endif %}
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
@@ -83,8 +83,6 @@ router bgp 65000
       exit
    exit
 exit
-
-{% endif %}
 {% endfor %}
 !
 {# Type5 Routes Classic L3 #}
