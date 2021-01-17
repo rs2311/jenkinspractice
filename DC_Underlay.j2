@@ -39,9 +39,9 @@ router bgp 65000
    neighbor {{ entry['nei'] }} description {{ entry['des'] }}   
 {% if entry['is_routereflector'] %}
    neighbor IBGP-EVPN route-reflector-client
+{% endif %}
    add evpn
       neighbor IBGP-EVPN activate
-{% endif %}
 {% endfor %}
 !
 int vxlan 1
@@ -53,13 +53,18 @@ ip virtual-router mac-address 0c:fd:01:01:01:01
 {# Type5 Routes Classic L3 #}
 {############## ################}
 {% for entry in Devices[SW]['customers'] %}
-{% if entry[is_host] %}
+{% if entry['is_host'] %}
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
 {% elif %}
+vrf instance {{ entry['cust_name'] }}
+   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+!
+ip routing vrf {{ entry['cust_name'] }}
+!
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ entry['l3_loopback_ip'] }}
