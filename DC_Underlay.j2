@@ -117,6 +117,20 @@ interface Vxlan1
 {% endfor %}
 {% endfor %}
 !
+{########################################################################}
+{########################################################################}
+{############## Ethernet Configuration towards Host Network #############}
+
+{% for entry in Devices[SW]['host_ethernet'] %}
+interface eth {{ entry['int_num'] }}
+   switchport
+   switchport mode trunk
+   des {{ entry['des'] }}
+{% endfor %}
+!
+
+
+
 
 
 
