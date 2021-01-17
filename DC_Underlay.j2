@@ -1,6 +1,9 @@
 ip routing
 !
-{# Ethernet Configuration #}
+{##### Task 1 #####}
+{##### Uplink and Downlink Ethernet Configuration #####}
+{##### Applicable for Spine and Leaf #####}
+{% if Device[SW]['device_role'] == 'spine' or 'leaf' %}
 {% for entry in Devices[SW]['ethernet'] %}
 interface eth {{ entry['int_num'] }}
    no switchport
@@ -9,7 +12,9 @@ interface eth {{ entry['int_num'] }}
    ip ospf area 0.0.0.0
 {% endfor %}
 !
+{##### Task 2 #####}
 {# Loopback Configuration #}
+{##### Applicable for Spine and Leaf #####}
 {% for entry in Devices[SW]['loopback'] %}
 interface loopback {{ entry['loop_num'] }}
    ip address {{ entry['ip_address'] }}/32
@@ -17,7 +22,9 @@ interface loopback {{ entry['loop_num'] }}
    ip ospf area 0.0.0.0
 {% endfor %}
 !
+{##### Task 3 #####}
 {# OSPF and BGP enablement and Router ID configuration #}
+{##### Applicable for Spine and Leaf #####}
 {% for entry in Devices[SW]['loopback'] %}
 {% if entry['loop_num'] == '0' %}
 router ospf 10
@@ -28,7 +35,9 @@ router bgp 65000
 {% endif %}
 {% endfor %}
 !
+{##### Task 3 #####}
 {# BGP EVPN Configuration #}
+{##### Applicable for Spine and Leaf #####}
 {% for entry in Devices[SW]['BGP'] %}
 router bgp 65000
    neighbor IBGP-EVPN peer group
@@ -43,23 +52,41 @@ router bgp 65000
    add evpn
       neighbor IBGP-EVPN activate
 {% endfor %}
+{% endif %}
 !
+{##### Task 4 #####}
+{# VXLAN Configuration #}
+{##### Applicable for Leaf #####}
+{% if Device[SW]['device_role'] == 'leaf' %}
 int vxlan 1
    vxlan source-int lo 1
    vxlan udp-port 4789
 !
 ip virtual-router mac-address 0c:fd:01:01:01:01
 !
-{# Type5 Routes Classic L3 #}
-{############## ################}
-{% for entry in Devices[SW]['customers'] %}
+{% endif %}
+
+{##### Task 5 #####}
+{########## Type5 Routes Classic L3 ########}
+{############## Applicable for host ################}
+
 {% if Devices[SW]['device_role'] == 'host' %}
+{% for entry in Devices[SW]['customers'] %}
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
+{% endfor %}
 {% endif %}
+
+{##### Task 6 #####}
+{########## Type5 Routes Classic L3 ########}
+{############## Applicable for Leaf ################}
+
+{% if Devices[SW]['device_role'] == 'leaf' %}
+{% for entry in Devices[SW]['customers'] %}
+
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
 !
@@ -84,8 +111,12 @@ router bgp 65000
    exit
 exit
 {% endfor %}
+{% endif %}
 !
+{###### Task X ##############}
 {# Type5 Routes Classic L3 #}
+{# Type5 Routes Classic L3 #}
+{% if Devices[SW]['device_role'] == 'leaf' %}
 {% for entry in Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type5_routes'] %}
 !
@@ -98,8 +129,10 @@ interface vlan {{ vlan_entry['vlan'] }}
 !
 {% endfor %}
 {% endfor %}
+{% endif %}
 !
 {# Type2 Routes DataCenter Wide Rack Specfic #}
+{% if Devices[SW]['device_role'] == 'leaf' %}
 {% for entry in Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type2_routes'] %}
 !
@@ -124,11 +157,14 @@ interface Vxlan1
 !
 {% endfor %}
 {% endfor %}
+{% endif %}
 !
 {########################################################################}
 {########################################################################}
 {############## Ethernet Configuration towards Host Network #############}
 
+
+{% if Devices[SW]['device_role'] == 'leaf' or 'host' %}
 {% for entry in Devices[SW]['host_ethernet'] %}
 interface eth {{ entry['int_num'] }}
    switchport
