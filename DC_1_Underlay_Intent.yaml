@@ -57,7 +57,6 @@
                 },
             ],
 	    "host_ethernet": [],
-
             "loopback":  [
                 {
                     "loop_num": "0",
@@ -1406,5 +1405,5 @@
             "loopback":  [],            
             "BGP":  [],            
         },		
-    }
+    },
 }
