@@ -24,4 +24,6 @@ interface loopback{{ entry['cust_id'] }}
 !
 interface Vxlan1
    vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
-!
+
+{% endfor %}
+
