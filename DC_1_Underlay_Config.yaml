@@ -12,9 +12,13 @@
         commands: enable
 
     - name: DC1_Underlay_Vxlan_CustomerAddition
-      eos_config:
-        src: DC1_Underlay_Vxlan_CustomerAddition.j2        
+      template:
+        src: DC1_Underlay_Vxlan_CustomerAddition.j2 
+        dest: DC1_Underlay_Vxlan_CustomerAddition_Render.txt
 
+    - name: DC1_Underlay_Vxlan_CustomerAddition
+      eos_config:
+        src: DC1_Underlay_Vxlan_CustomerAddition_Render.txt 
     
     
     
