@@ -11,8 +11,9 @@
       eos_command:
         commands: enable
 
-    - name: Underlay
+    - name: HostConfiguration
       eos_config:
-        src: DC_Underlay.j2
+        src: DC_1_HostConfig.j2
+      when: (device_role == 'host')
 
     
