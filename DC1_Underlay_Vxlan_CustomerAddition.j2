@@ -33,7 +33,4 @@ router bgp 65000
       route-target export evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
       redistribute connected
          address-family ipv4
-         exit
-      exit
-   exit
 {% endfor %}
