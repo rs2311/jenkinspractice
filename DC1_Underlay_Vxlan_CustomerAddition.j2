@@ -13,14 +13,18 @@ ip virtual-router mac-address 0c:fd:01:01:01:01
 {############## Applicable for Leaf ################}
 
 {% for entry in Devices[SW]['customers'] %}
+!
 vrf instance {{ entry['cust_name'] }}
    rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
-!
-ip routing vrf {{ entry['cust_name'] }}
 !
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ entry['l3_loopback_ip'] }}
+!
+interface Vxlan1
+   vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
+!
+ip routing vrf {{ entry['cust_name'] }}
 !
 router bgp 65000
 !
@@ -30,9 +34,5 @@ router bgp 65000
    route-target export evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
    redistribute connected
       address-family ipv4
-!
-interface Vxlan1
-   vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
-!
 {% endfor %}
 !
