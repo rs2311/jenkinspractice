@@ -25,4 +25,15 @@ interface loopback{{ entry['cust_id'] }}
 interface Vxlan1
    vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
 !
+router bgp 65000
+
+   vrf {{ entry['cust_name'] }}
+      rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+      route-target import evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
+      route-target export evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
+      redistribute connected
+         address-family ipv4
+         exit
+      exit
+   exit
 {% endfor %}
