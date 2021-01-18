@@ -21,6 +21,10 @@
         src: DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
       when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
 
+    - name: DC1_Underlay_Vxlan_CustomerAddition
+      eos_config:
+        src: DC1_Underlay_Vxlan_CustomerAddition.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
     
     
     
