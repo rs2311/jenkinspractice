@@ -14,7 +14,7 @@ ip virtual-router mac-address 0c:fd:01:01:01:01
 
 {% for entry in Devices[SW]['customers'] %}
 vrf instance {{ entry['cust_name'] }}
-{#   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }} #}
+   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }} #}
 
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
@@ -26,12 +26,11 @@ interface Vxlan1
 ip routing vrf {{ entry['cust_name'] }}
 
 router bgp 65000
-
    vrf {{ entry['cust_name'] }}
-   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
-   route-target import evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
-   route-target export evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
-   redistribute connected
+      rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+      route-target import evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
+      route-target export evpn {{ entry['cust_id'] }}:{{ entry['cust_id'] }}
+      redistribute connected
       address-family ipv4
       exit
    exit
