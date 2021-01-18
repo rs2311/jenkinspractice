@@ -14,7 +14,7 @@ ip virtual-router mac-address 0c:fd:01:01:01:01
 
 {% for entry in Devices[SW]['customers'] %}
 vrf instance {{ entry['cust_name'] }}
-   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+{#   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }} #}
 
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
