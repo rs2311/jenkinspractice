@@ -11,13 +11,13 @@
       eos_command:
         commands: enable
 
-    - name: DC1_Underlay_Vxlan_CustomerAddition
-      eos_config:
-        src: DC1_Underlay_Vxlan_CustomerAddition.j2 
- 
-#    - name: DC1_1_BGP
+#    - name: DC1_Underlay_Vxlan_CustomerAddition
 #      eos_config:
-#        src: DC_1_BGP_Config.j2
+#        src: DC1_Underlay_Vxlan_CustomerAddition.j2 
+ 
+    - name: DC1_1_BGP
+      eos_config:
+        src: DC_1_BGP_Config.j2
         
 
     
