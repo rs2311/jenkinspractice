@@ -1,0 +1,58 @@
+ip routing
+!
+{##### Uplink and Downlink Ethernet Configuration #####}
+{##### Applicable for spine #####}
+{##### Applicable for leaf #####}
+!
+{% for entry in Devices[SW]['ethernet'] %}
+interface eth {{ entry['int_num'] }}
+   no switchport
+   ip address {{ entry['ip_address'] }}
+   des {{ entry['des'] }}
+   ip ospf area 0.0.0.0
+{% endfor %}
+!
+{##### Loopback Configuration #####}
+{##### Applicable for spine #####}
+{##### Applicable for leaf #####}
+
+{% for entry in Devices[SW]['loopback'] %}
+interface loopback {{ entry['loop_num'] }}
+   ip address {{ entry['ip_address'] }}/32
+   des {{ entry['des'] }}
+   ip ospf area 0.0.0.0
+{% endfor %}
+!
+{##### OSPF and BGP Enablement #####}
+{##### Applicable for spine #####}
+{##### Applicable for leaf #####}
+{% for entry in Devices[SW]['loopback'] %}
+{% if entry['loop_num'] == '0' %}
+router ospf 10
+   router-id {{ entry['ip_address'] }}   
+!
+router bgp 65000
+   router-id {{ entry['ip_address'] }}   
+{% endif %}
+{% endfor %}
+!
+
+{##### BGP EVPN Configuration #####}
+{##### Applicable for spine #####}
+{##### Applicable for leaf #####}
+{% for entry in Devices[SW]['BGP'] %}
+router bgp 65000
+   neighbor IBGP-EVPN peer group
+   neighbor IBGP-EVPN update-source lo 0
+   neighbor IBGP-EVPN send-community
+   neighbor IBGP-EVPN remote-as 65000
+   neighbor {{ entry['nei'] }} peer group IBGP-EVPN
+   neighbor {{ entry['nei'] }} description {{ entry['des'] }}   
+{% if entry['is_routereflector'] %}
+   neighbor IBGP-EVPN route-reflector-client
+{% endif %}
+   add evpn
+      neighbor IBGP-EVPN activate
+{% endfor %}
+{% endif %}
+!
