@@ -82,6 +82,7 @@ router bgp 65000
    route-target export {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
    redistribute learned
    exit
+   exit
 !
 interface Vxlan1
    vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
