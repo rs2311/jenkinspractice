@@ -1023,6 +1023,63 @@
                     "is_routereflector": false
                 },    
             ],
+	    "customers":  [
+                {
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_vni": "10001010",
+                    "l3_loopback_ip": "10.101.0.34/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1011",
+			    "name": "C101_T5_vlan",
+                            "subnet": "10.101.33.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1012",
+                            "name": "C101_T2_DC_wide_vlan",
+                            "l2_vni": "10001012",
+                            "subnet": "10.101.2.0/24",
+                        },
+                        {
+                            "vlan": "1013",
+                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111013",
+                            "subnet": "10.101.3.0/24",
+                        },
+                    ],                                      
+                },
+		
+                {
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_vni": "10001020",
+                    "l3_loopback_ip": "10.102.0.34/32",        
+                    "type5_routes": [
+                        {
+                            "vlan": "1021",
+			    "name": "C102_T5_vlan",
+                            "subnet": "10.102.33.0/24",
+                        },
+                    ],
+                    "type2_routes": [
+                        {
+                            "vlan": "1022",
+                            "name": "C102_T2_DC_wide_vlan",
+                            "l2_vni": "10001022",
+                            "subnet": "10.102.2.0/24",
+                        },
+                        {
+                            "vlan": "1023",
+                            "name": "C102_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10111023",
+                            "subnet": "10.102.3.0/24",
+                        },
+                    ],                                      
+                },  
+            ],
         },
         "CL35":  {
             "device_id":  "35",
