@@ -34,6 +34,10 @@
     - name: DC1_Host_and_Leaf_Interconnection_Config
       eos_config:
         src: DC_1_HostConfig.j2
-      when: (Devices[SW]['device_role'] == 'host' or 'leaf')     
+      when: (Devices[SW]['device_role'] == 'leaf')     
     
-    
+    - name: DC1_Host_Config_All
+      eos_config:
+        src: DC1_Host_Config_All.j2
+      when: (Devices[SW]['device_role'] == 'host')     
+
