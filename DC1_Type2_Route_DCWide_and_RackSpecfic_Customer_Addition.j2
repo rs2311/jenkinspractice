@@ -12,6 +12,18 @@ interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address virtual {{ vlan_entry['subnet'] | ipaddr(1) }}
 !
+interface Vxlan1
+   vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
+!
+{% endfor %}
+{% endfor %}
+{% endif %}
+!
+
+{% if Devices[SW]['device_role'] == 'leaf' %}
+{% for entry in Devices[SW]['customers'] %}
+{% for vlan_entry in entry['type2_routes'] %}
+!
 router bgp 65000
 !
    vlan {{ vlan_entry['vlan'] }}
@@ -20,9 +32,6 @@ router bgp 65000
    route-target export {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
    redistribute learned
    exit
-!
-interface Vxlan1
-   vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
 !
 {% endfor %}
 {% endfor %}
