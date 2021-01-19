@@ -23,11 +23,11 @@
         src: DC1_Underlay_Vxlan_CustomerAddition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
  
-#    - name: DC1_1_BGP
-#      eos_config:
-#        src: DC_1_BGP_Config.j2
-#      when: (Devices[SW]['device_role'] == 'leaf')  
-
+    - name: DC1_Type5_Route_Customer_Addition
+      eos_config:
+        src: DC1_Type5_Route_Customer_Addition.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+  
     - name: DC_1_HostConfig
       eos_config:
         src: DC_1_HostConfig.j2
