@@ -33,7 +33,7 @@ vlan {{ vlan_entry['vlan'] }}
 !
 interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ vlan_entry['subnet'] | ipaddr('N') }}
+   ip address {{ vlan_entry['subnet'] | ipaddr(N|string) }}
 !
 {% endfor %}
 {% endfor %}
