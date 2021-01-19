@@ -31,9 +31,9 @@
         src: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
   
-    - name: DC_1_HostConfig
+    - name: DC1_Host_and_Leaf_Interconnection_Config
       eos_config:
         src: DC_1_HostConfig.j2
-      when: (Devices[SW]['device_role'] == 'host')     
+      when: (Devices[SW]['device_role'] == 'host' or 'leaf')     
     
     
