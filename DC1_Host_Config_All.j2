@@ -23,7 +23,6 @@ ip routing vrf {{ entry['cust_name'] }}
 {###### Type5 Routes Classic L3 ############}
 {###### Applicable for host ############}
 
-{% set 'num' = Devices[SW]['id'] %}
 
 {% for entry in Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type5_routes'] %}
@@ -34,7 +33,7 @@ vlan {{ vlan_entry['vlan'] }}
 !
 interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ vlan_entry['subnet'] | ipaddr(num) }}
+   ip address {{ vlan_entry['ip'] }}
 !
 {% endfor %}
 {% endfor %}
