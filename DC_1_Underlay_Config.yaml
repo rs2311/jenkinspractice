@@ -28,9 +28,9 @@
 #        src: DC_1_BGP_Config.j2
 #      when: (Devices[SW]['device_role'] == 'leaf')  
 
-    - name: Update DC_1_HostConfig
+    - name: DC_1_HostConfig
       eos_config:
-        src: Update DC_1_HostConfig.j2
+        src: DC_1_HostConfig.j2
       when: (Devices[SW]['device_role'] == 'host')     
     
     
