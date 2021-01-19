@@ -8,15 +8,6 @@ interface eth {{ entry['int_num'] }}
    des {{ entry['des'] }}
 {% endfor %}
 
-{########## Type5 Routes Classic L3 ########}
-{########## Applicable for host ############}
 
-{% for entry in Devices[SW]['customers'] %}
-vrf instance {{ entry['cust_name'] }}
-   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
-!
-ip routing vrf {{ entry['cust_name'] }}
-!
-{% endfor %}
 
 
