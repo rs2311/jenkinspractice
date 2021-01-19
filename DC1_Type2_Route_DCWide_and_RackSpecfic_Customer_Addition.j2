@@ -8,12 +8,12 @@
 vlan {{ vlan_entry['vlan'] }}
    name {{ vlan_entry['name'] }}
 !
+interface Vxlan1
+   vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
+!
 interface vlan {{ vlan_entry['vlan'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address virtual {{ vlan_entry['subnet'] | ipaddr(1) }}
-!
-interface Vxlan1
-   vxlan vlan {{ vlan_entry['vlan'] }} vni {{ vlan_entry['l2_vni'] }}
 !
 {% endfor %}
 {% endfor %}
