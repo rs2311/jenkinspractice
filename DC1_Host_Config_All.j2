@@ -1,0 +1,39 @@
+{########## Ethernet Configuration towards Host Network #############}
+{########## Applicable for host ############}
+
+{% for entry in Devices[SW]['host_ethernet'] %}
+interface eth {{ entry['int_num'] }}
+   switchport
+   switchport mode trunk
+   des {{ entry['des'] }}
+{% endfor %}
+
+{########## Type5 Routes Classic L3 ########}
+{########## Applicable for host ############}
+
+{% for entry in Devices[SW]['customers'] %}
+vrf instance {{ entry['cust_name'] }}
+   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+!
+ip routing vrf {{ entry['cust_name'] }}
+!
+{% endfor %}
+
+{###### Task 5 Route Addition ##############}
+{###### Type5 Routes Classic L3 ############}
+{###### Applicable for host ############}
+
+{% if Devices[SW]['device_role'] == 'leaf' %}
+{% for entry in Devices[SW]['customers'] %}
+{% for vlan_entry in entry['type5_routes'] %}
+!
+vlan {{ vlan_entry['vlan'] }}
+   name {{ vlan_entry['name'] }}
+!
+interface vlan {{ vlan_entry['vlan'] }}
+   vrf forwarding {{ entry['cust_name'] }}
+   ip address {{ vlan_entry['subnet'] | ipaddr(1) }}
+!
+{% endfor %}
+{% endfor %}
+{% endif %}
