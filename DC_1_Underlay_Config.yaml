@@ -10,8 +10,6 @@
     - name: Enable
       eos_command:
         commands: enable
-  
-      
       
     - name:  DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
       eos_config:
@@ -26,6 +24,11 @@
     - name: DC1_Type5_Route_Customer_Addition
       eos_config:
         src: DC1_Type5_Route_Customer_Addition.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      
+    - name: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition
+      eos_config:
+        src: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
   
     - name: DC_1_HostConfig
