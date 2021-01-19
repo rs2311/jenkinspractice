@@ -42,7 +42,7 @@ interface vlan {{ vlan_entry['vlan'] }}
 {##### Type2 Routes DataCenter Wide Rack Specfic #####}
 {##### Applicable for host #####}
 
-{% if Devices[SW]['device_role'] == 'leaf' %}
+
 {% for entry in Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type2_routes'] %}
 !
@@ -55,5 +55,4 @@ interface vlan {{ vlan_entry['vlan'] }}
 !
 {% endfor %}
 {% endfor %}
-{% endif %}
 !
