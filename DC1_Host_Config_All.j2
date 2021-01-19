@@ -37,3 +37,23 @@ interface vlan {{ vlan_entry['vlan'] }}
 !
 {% endfor %}
 {% endfor %}
+
+
+{##### Type2 Routes DataCenter Wide Rack Specfic #####}
+{##### Applicable for host #####}
+
+{% if Devices[SW]['device_role'] == 'leaf' %}
+{% for entry in Devices[SW]['customers'] %}
+{% for vlan_entry in entry['type2_routes'] %}
+!
+vlan {{ vlan_entry['vlan'] }}
+   name {{ vlan_entry['name'] }}
+!
+interface vlan {{ vlan_entry['vlan'] }}
+   vrf forwarding {{ entry['cust_name'] }}
+   ip address virtual {{ vlan_entry['ip'] }}
+!
+{% endfor %}
+{% endfor %}
+{% endif %}
+!
