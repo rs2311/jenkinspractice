@@ -446,12 +446,7 @@
         "SL21":  {
             "device_id":  "21",
 	    "device_role":  "leaf",
-            "ethernet":  [
-                {
-                    "int_num": "1",
-                    "ip_address": "10.0.23.1/31",
-                    "des": "Towards_FW1"
-                },		
+            "ethernet":  [	
                 {
                     "int_num": "9",
                     "ip_address": "10.0.21.1/31",
