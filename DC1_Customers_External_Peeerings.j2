@@ -7,21 +7,10 @@
 interface eth {{ ethernet_entry['int_num'] }}
    no switchport
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ ethernet_entry['ip_address'] }}
+   ip address {{ ethernet_entry['subnet'] | ipaddr(1) }}
    des {{ ethernet_entry['des'] }}
    
 {% endfor %}
 {% endfor %}
 !   
-{% for entry in Devices[SW]['customers'] %}
-{% for ethernet_entry in entry['ethernet'] %}
 
-!
-router bgp 65000
-   vrf {{ entry['cust_name'] }}
-      neighbor {{ ethernet_entry['remote_ip'] }} remote-as {{ entry['fw_asn'] }}
-      neighbor {{ ethernet_entry['remote_ip'] }} local-as {{ entry['local_asn'] }} no-prepend replace-as
-
-{% endfor %}
-{% endfor %}
-!
