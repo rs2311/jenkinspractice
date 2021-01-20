@@ -288,7 +288,7 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.11/32",        
+                    "l3_loopback_ip": "10.101.0.11/32",		        		    		    
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -448,6 +448,11 @@
 	    "device_role":  "leaf",
             "ethernet":  [
                 {
+                    "int_num": "1",
+                    "ip_address": "10.0.23.1/31",
+                    "des": "Towards_FW1"
+                },		
+                {
                     "int_num": "9",
                     "ip_address": "10.0.21.1/31",
                     "des": "Towards_Spine1"
@@ -491,7 +496,14 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.21/32",        
+                    "l3_loopback_ip": "10.101.0.21/32",
+		    "ethernet":  [
+		    	{
+			    "int_num": "1",
+                            "ip_address": "10.0.11.2/31",
+                            "des": "Towards_BL11"			
+			},		    
+		    ],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -548,6 +560,11 @@
             "device_id":  "22",
 	    "device_role":  "leaf",
             "ethernet":  [
+                {
+                    "int_num": "1",
+                    "ip_address": "10.0.23.2/31",
+                    "des": "Towards_FW1"
+                },	    	       
                 {
                     "int_num": "9",
                     "ip_address": "10.0.22.1/31",
