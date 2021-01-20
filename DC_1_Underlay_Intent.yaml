@@ -492,10 +492,14 @@
                     "cust_name": "C101",
                     "l3_vni": "10001010",
                     "l3_loopback_ip": "10.101.0.21/32",
+		    "local_asn": "65101",
+		    "fw_asn": "65231",
+		    "lb_asn": "65232",
 		    "ethernet":  [
 		    	{
 			    "int_num": "1",
-                            "ip_address": "10.0.11.2/31",
+                            "ip_address": "10.0.23.0/31",
+			    "remote_ip": "10.0.23.1/31",
                             "des": "Towards_BL11"			
 			},		    
 		    ],
