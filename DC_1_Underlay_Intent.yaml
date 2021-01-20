@@ -526,7 +526,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.21/32",        
+                    "l3_loopback_ip": "10.102.0.21/32",
+		    "ethernet":  [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
