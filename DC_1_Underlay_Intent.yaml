@@ -498,9 +498,8 @@
 		    "ethernet":  [
 		    	{
 			    "int_num": "1",
-                            "ip_address": "10.0.23.0/31",
-			    "remote_ip": "10.0.23.1/31",
-                            "des": "Towards_BL11"			
+                            "subnet": "10.0.23.0/31",
+			    "des": "Towards_BL11"			
 			},		    
 		    ],
                     "type5_routes": [
