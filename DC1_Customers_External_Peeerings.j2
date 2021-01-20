@@ -9,6 +9,13 @@ interface eth {{ ethernet_entry['int_num'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ ethernet_entry['ip_address'] }}
    des {{ ethernet_entry['des'] }}
+   
+{% endfor %}
+{% endfor %}
+!   
+{% for entry in Devices[SW]['customers'] %}
+{% for ethernet_entry in entry['ethernet'] %}
+
 !
 router bgp 65000
    vrf {{ entry['cust_name'] }}
