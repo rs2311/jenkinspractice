@@ -2,10 +2,11 @@
 
 {##### Applicable for Service leaf #####}
 !
-{% for entry in Devices[SW]['customers']['ethernet'] %}
-interface eth {{ entry['int_num'] }}
+{% for entry in Devices[SW]['customers'] %}
+{% for ethernet_entry in entry['ethernet'] %}
+interface eth {{ ethernet_entry['int_num'] }}
    no switchport
-   ip address {{ entry['ip_address'] }}
-   des {{ entry['des'] }}
+   ip address {{ ethernet_entry['ip_address'] }}
+   des {{ ethernet_entry['des'] }}
 {% endfor %}
 !
