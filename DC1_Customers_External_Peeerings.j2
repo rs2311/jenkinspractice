@@ -6,6 +6,7 @@
 {% for ethernet_entry in entry['ethernet'] %}
 interface eth {{ ethernet_entry['int_num'] }}
    no switchport
+   vrf forwarding {{ entry['cust_name'] }}
    ip address {{ ethernet_entry['ip_address'] }}
    des {{ ethernet_entry['des'] }}
 {% endfor %}
