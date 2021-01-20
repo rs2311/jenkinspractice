@@ -9,6 +9,12 @@ interface eth {{ ethernet_entry['int_num'] }}
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ ethernet_entry['ip_address'] }}
    des {{ ethernet_entry['des'] }}
+!
+router bgp 65000
+   vrf {{ entry['cust_name'] }}
+      neighbor {{ ethernet_entry['remote_ip'] }} remote-as {{ ethernet_entry['fw_asn'] }}
+      neighbor {{ ethernet_entry['remote_ip'] }} local-as {{ ethernet_entry['local_asn'] }} no-prepend replace-as
+
 {% endfor %}
 {% endfor %}
 !
