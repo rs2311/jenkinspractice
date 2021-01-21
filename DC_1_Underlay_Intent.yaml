@@ -475,8 +475,8 @@
             ],
 	    "portchannel": [
 	    	{
-		    "portchannel_num": "100"
-		    "des": "Portchannel towards Firewall"
+		    "portchannel_num": "100",
+		    "des": "Portchannel towards Firewall",
 		    "ethernet_interfaces": ["1", "2"],
 		},
 	    ],
