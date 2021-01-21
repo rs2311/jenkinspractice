@@ -1,3 +1,25 @@
+
+
+
+vlan 1013
+
+vrf instance VLAN1013
+   rd 1013:42
+!
+interface Vlan1013
+   vrf forwarding VLAN1013
+   ip address 10.101.3.42/24
+!
+ip route vrf VLAN1013 0.0.0.0/0 10.101.3.1
+!
+ip routing vrf VLAN1013
+!
+
+
+
+
+
+
 {########## Ethernet Configuration towards Host Network #############}
 {########## Applicable for host ############}
 
