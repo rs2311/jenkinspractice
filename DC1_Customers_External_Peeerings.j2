@@ -20,8 +20,8 @@ interface eth {{ ethernet_entry['int_num'] }}
 !
 router bgp 65000
    vrf {{ entry['cust_name'] }}
-      neighbor {{ ethernet_entry['remote_ip'] | string }} remote-as {{ entry['fw_asn'] }}
-      neighbor {{ ethernet_entry['remote_ip'] | string }} local-as {{ entry['local_asn'] }} no-prepend replace-as
+      neighbor {{ ethernet_entry['remote_ip'] }} remote-as {{ entry['fw_asn'] }}
+      neighbor {{ ethernet_entry['remote_ip'] }} local-as {{ entry['local_asn'] }} no-prepend replace-as
 
 {% endfor %}
 {% endfor %}
