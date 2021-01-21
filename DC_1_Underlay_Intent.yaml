@@ -499,8 +499,8 @@
 		    	{
 			    "int_num": "1",
                             "subnet": "10.0.23.0/31",
-			    "remote_ip": "10.0.23.1"
-			    "des": "Towards_BL11"			
+			    "remote_ip": "10.0.23.1",
+			    "des": "Towards_BL11",			
 			},		    
 		    ],
                     "type5_routes": [
