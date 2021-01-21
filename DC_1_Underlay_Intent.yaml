@@ -475,8 +475,8 @@
             ],
 	    "portchannel": [
 	    	{
-		    "portchannel_num": "100",
-		    "des": "Portchannel towards Firewall",
+		    "portchannel_num": "2123",
+		    "des": "Portchannel Towards Firewall",
 		    "ethernet_interfaces": ["1", "2"],
 		},
 	    ],
@@ -502,19 +502,18 @@
 		    "local_asn": "65101",
 		    "fw_asn": "65231",
 		    "lb_asn": "65232",
-		    "ethernet":  [
+		    "portchannel":  [
 		    	{
-			    "int_num": "1",
-                            "subnet": "10.101.23.0/31",
-			    "remote_ip": "10.101.23.1",
-			    "des": "Towards_FW23",			
-			},
-			{
-			    "int_num": "2",
-                            "subnet": "10.101.24.0/31",
-			    "remote_ip": "10.101.24.1",
-			    "des": "Towards_LB24",			
-			},			
+			    "portchannel_num": "2123",
+			    "portchannel_subint":  [
+			        {
+				    "subint_num": "101",
+				    "subnet": "10.101.23.0/31",
+			    	    "remote_ip": "10.101.23.1",
+			            "des": "Towards_FW23",
+				},	
+			    ],
+			},		
 		    ],
                     "type5_routes": [
                         {
@@ -548,19 +547,18 @@
 		    "local_asn": "65102",
 		    "fw_asn": "65231",
 		    "lb_asn": "65232",
-		    "ethernet":  [
+		    "portchannel":  [
 		    	{
-			    "int_num": "1",
-                            "subnet": "10.0.23.2/31",
-			    "remote_ip": "10.0.23.3",
-			    "des": "Towards_FW23",			
-			},
-			{
-			    "int_num": "2",
-                            "subnet": "10.0.24.2/31",
-			    "remote_ip": "10.0.24.1",
-			    "des": "Towards_LB24",			
-			},			
+			    "portchannel_num": "2123",
+			    "portchannel_subint":  [
+			        {
+				    "subint_num": "102",
+				    "subnet": "10.102.23.0/31",
+			    	    "remote_ip": "10.102.23.1",
+			            "des": "Towards_FW23",
+				},	
+			    ],
+			},		
 		    ],
                     "type5_routes": [
                         {
