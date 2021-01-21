@@ -1,0 +1,11 @@
+
+{##### Port Channel Config #####}
+!
+{% for entry in Devices[SW]['portchannel'] %}
+
+interface portchannel {{ entry['portchannel_num'] }}
+   no switchport
+   des {{ ethernet_entry['des'] }}
+
+{% endfor %}
+!  
