@@ -6,6 +6,10 @@
 interface Port-Channel {{ entry['portchannel_num'] }}
    no switchport
    des {{ entry['des'] }}
-
+   
+{% for ethernet_entry in entry['ethernet_interfaces'] %}
+interface ethernet {{ ethernet_entry }}
+   channel-group {{ entry['portchannel_num'] }} mode active
+{% endfor %}
 {% endfor %}
 !  
