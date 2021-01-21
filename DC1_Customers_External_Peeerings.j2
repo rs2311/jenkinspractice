@@ -4,12 +4,15 @@
 !
 {% for entry in Devices[SW]['customers'] %}
 {% for portchannel_entry in entry['portchannel'] %}
-interface eth {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_entry['portchannel_subint']['subint_num'] }}
+{% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
+!
+interface eth {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_subint_entry['subint_num'] }}
    no switchport
    vrf forwarding {{ entry['cust_name'] }}
-{#   ip address {{ portchannel_entry['portchannel_subint']['subnet'] | ipaddr(0) }} #}
-   des {{ portchannel_entry['portchannel_subint']['des'] }}
+   ip address {{ portchannel_subint_entry['subnet'] | ipaddr(0) }}
+   des {{ portchannel_subint_entry['des'] }}
    
+{% endfor %}
 {% endfor %}
 {% endfor %}
 !   
