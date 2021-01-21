@@ -473,6 +473,13 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    "portchannel": [
+	    	{
+		    "portchannel_num": "100"
+		    "des": "Portchannel towards Firewall"
+		    "ethernet_interfaces": ["1", "2"],
+		},
+	    ],
             
             "BGP":  [
                 {
@@ -498,10 +505,16 @@
 		    "ethernet":  [
 		    	{
 			    "int_num": "1",
-                            "subnet": "10.0.23.0/31",
-			    "remote_ip": "10.0.23.1",
-			    "des": "Towards_BL11",			
-			},		    
+                            "subnet": "10.101.23.0/31",
+			    "remote_ip": "10.101.23.1",
+			    "des": "Towards_FW23",			
+			},
+			{
+			    "int_num": "2",
+                            "subnet": "10.101.24.0/31",
+			    "remote_ip": "10.101.24.1",
+			    "des": "Towards_LB24",			
+			},			
 		    ],
                     "type5_routes": [
                         {
@@ -531,7 +544,24 @@
                     "cust_name": "C102",
                     "l3_vni": "10001020",
                     "l3_loopback_ip": "10.102.0.21/32",
-		    "ethernet":  [],
+		    
+		    "local_asn": "65102",
+		    "fw_asn": "65231",
+		    "lb_asn": "65232",
+		    "ethernet":  [
+		    	{
+			    "int_num": "1",
+                            "subnet": "10.0.23.2/31",
+			    "remote_ip": "10.0.23.3",
+			    "des": "Towards_FW23",			
+			},
+			{
+			    "int_num": "2",
+                            "subnet": "10.0.24.2/31",
+			    "remote_ip": "10.0.24.1",
+			    "des": "Towards_LB24",			
+			},			
+		    ],
                     "type5_routes": [
                         {
                             "vlan": "1021",
