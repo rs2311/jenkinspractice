@@ -271,7 +271,10 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],       
-            "BGP":  [
+	    
+	    "portchannel": [],
+            
+	    "BGP":  [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -288,7 +291,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.11/32",		        		    		    
+                    "l3_loopback_ip": "10.101.0.11/32",	
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -315,7 +319,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.11/32",        
+                    "l3_loopback_ip": "10.102.0.11/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -371,6 +376,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
 
             "BGP":  [
                 {
@@ -389,7 +396,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.12/32",        
+                    "l3_loopback_ip": "10.101.0.12/32",    
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -417,7 +425,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.12/32",        
+                    "l3_loopback_ip": "10.102.0.12/32", 
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -646,6 +655,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
             
             "BGP":  [
                 {
@@ -665,7 +676,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.22/32",        
+                    "l3_loopback_ip": "10.101.0.22/32",    
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -693,7 +705,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.22/32",        
+                    "l3_loopback_ip": "10.102.0.22/32",
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -754,6 +767,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
             
             "BGP":  [
                 {
@@ -773,7 +788,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.31/32",        
+                    "l3_loopback_ip": "10.101.0.31/32", 
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -801,7 +817,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.32/32",        
+                    "l3_loopback_ip": "10.102.0.32/32",    
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -863,6 +880,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
             
             "BGP":  [
                 {
@@ -882,7 +901,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.32/32",        
+                    "l3_loopback_ip": "10.101.0.32/32", 
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -910,7 +930,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.32/32",        
+                    "l3_loopback_ip": "10.102.0.32/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -1085,6 +1106,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
             
             "BGP":  [
                 {
@@ -1103,7 +1126,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.34/32",        
+                    "l3_loopback_ip": "10.101.0.34/32",   
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -1131,7 +1155,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.34/32",        
+                    "l3_loopback_ip": "10.102.0.34/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -1191,6 +1216,8 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    
+	    "portchannel": [],
             
             "BGP":  [
                 {
@@ -1209,7 +1236,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.35/32",        
+                    "l3_loopback_ip": "10.101.0.35/32",   
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -1237,7 +1265,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.36/32",        
+                    "l3_loopback_ip": "10.102.0.36/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
@@ -1299,6 +1328,8 @@
                 },
             ],
             
+	    "portchannel": [],
+	    
             "BGP":  [
                 {
                     "nei": "10.0.250.1",
@@ -1316,7 +1347,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.35/32",        
+                    "l3_loopback_ip": "10.101.0.35/32",   
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -1344,7 +1376,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.36/32",        
+                    "l3_loopback_ip": "10.102.0.36/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
