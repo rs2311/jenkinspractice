@@ -3,19 +3,20 @@
 {##### Applicable for Service leaf #####}
 !
 {% for entry in Devices[SW]['customers'] %}
-{% for ethernet_entry in entry['ethernet'] %}
-interface eth {{ ethernet_entry['int_num'] }}
+{% for portchannel_entry in entry['portchannel'] %}
+interface eth {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_entry['portchannel_subint']['subint_num'] }}
    no switchport
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ ethernet_entry['subnet'] | ipaddr(0) }}
-   des {{ ethernet_entry['des'] }}
+   ip address {{ portchannel_entry['portchannel_subint']['subnet'] | ipaddr(0) }}
+   des {{ portchannel_entry['portchannel_subint']['des'] }}
    
 {% endfor %}
 {% endfor %}
 !   
+{#
 
 {% for entry in Devices[SW]['customers'] %}
-{% for ethernet_entry in entry['ethernet'] %}
+{% for ethernet_entry in entry['portchannel'] %}
 
 !
 router bgp 65000
@@ -26,3 +27,4 @@ router bgp 65000
 {% endfor %}
 {% endfor %}
 !
+#}
