@@ -11,9 +11,9 @@
       eos_command:
         commands: enable
         
-    - name:  DC1_Portchannel.je
+    - name:  DC1_Portchannel
       eos_config:
-        src:  DC1_UndDC1_Portchannel.j2
+        src:  DC1_Portchannel.j2
       when: (Devices[SW]['device_role'] == 'leaf')
 
       
