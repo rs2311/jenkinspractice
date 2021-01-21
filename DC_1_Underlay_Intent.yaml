@@ -992,7 +992,8 @@
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.33/32",        
+                    "l3_loopback_ip": "10.101.0.33/32",
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
@@ -1020,7 +1021,8 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.33/32",        
+                    "l3_loopback_ip": "10.102.0.33/32",  
+		    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
