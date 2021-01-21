@@ -1439,94 +1439,163 @@
 		    "host_vrf_name":  "VRF1013",
 		    "ip":  "10.101.3.41/24",
 		    "gw":  "10.101.3.1"
-		},			    
+		},
+		
+		{
+		    "vlan":  "1021",
+		    "vlan_name": "Type5_Cust102_VLAN1021",
+		    "host_vrf_name":  "VRF1021",
+		    "ip":  "10.102.31.41/24",
+		    "gw":  "10.102.31.1"
+		},
+		{
+		    "vlan":  "1022",
+		    "vlan_name": "Type2_Cust102_VLAN1022",
+		    "host_vrf_name":  "VRF1022",
+		    "ip":  "10.102.2.41/24",
+		    "gw":  "10.102.2.1"
+		},
+		{
+		    "vlan":  "1023",
+		    "vlan_name": "Type2_Cust102_VLAN1023",
+		    "host_vrf_name":  "VRF1023",
+		    "ip":  "10.102.3.41/24",
+		    "gw":  "10.102.3.1"
+		},
 	    ],	    
 	    "customers":  [],	
-        },	
-        "HOST42":  {
+        },
+	"HOST42":  {
             "device_id":  "42",
 	    "device_role": "host",
             "ethernet":  [],	    	    	    
 	    "host_ethernet":  [
                 {
                     "int_num": "1",
-                    "des": "Towards_Leaf"
-                },    
-            ],	    
-            "loopback":  [],            
-            "BGP":  [],
-	    "customers":  [
-                {
-		    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.42/32",        
-                    "type5_routes": [
-                        {
-                            "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "ip": "10.101.33.42/24",
-                        },
-                    ],
-                    "type2_routes": [
-                        {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "ip": "10.101.2.42/24",
-                        },
-                        {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "ip": "10.101.3.42/24",
-                        },
-                    ],                                      
+                    "des": "Towards_Leaf1"
                 },
-	    ],	
+		{
+                    "int_num": "2",
+                    "des": "Towards_Leaf2"
+                },				
+            ],
+            "loopback":  [],            
+            "BGP":  [],	    
+	    "host_vrf":  [
+	    	{
+		    "vlan":  "1011",
+		    "vlan_name": "Type5_Cust101_VLAN101",
+		    "host_vrf_name":  "VRF1011",
+		    "ip":  "10.101.33.42/24",
+		    "gw":  "10.101.33.1"
+		},
+		{
+		    "vlan":  "1012",
+		    "vlan_name": "Type2_Cust101_VLAN1012",
+		    "host_vrf_name":  "VRF1012",
+		    "ip":  "10.101.2.42/24",
+		    "gw":  "10.101.2.1"
+		},
+		{
+		    "vlan":  "1013",
+		    "vlan_name": "Type2_Cust101_VLAN1013",
+		    "host_vrf_name":  "VRF1013",
+		    "ip":  "10.101.3.42/24",
+		    "gw":  "10.101.3.1"
+		},
+		
+		
+		{
+		    "vlan":  "1021",
+		    "vlan_name": "Type5_Cust102_VLAN1021",
+		    "host_vrf_name":  "VRF1021",
+		    "ip":  "10.102.33.42/24",
+		    "gw":  "10.102.33.1"
+		},
+		{
+		    "vlan":  "1022",
+		    "vlan_name": "Type2_Cust102_VLAN1022",
+		    "host_vrf_name":  "VRF1022",
+		    "ip":  "10.102.2.42/24",
+		    "gw":  "10.102.2.1"
+		},
+		{
+		    "vlan":  "1023",
+		    "vlan_name": "Type2_Cust102_VLAN1023",
+		    "host_vrf_name":  "VRF1023",
+		    "ip":  "10.102.3.42/24",
+		    "gw":  "10.102.3.1"
+		},
+		
+	    ],	    
+	    "customers":  [],	
+	    
+	    
         },
-	
-        "HOST43":  {
+	"HOST43":  {
             "device_id":  "43",
 	    "device_role": "host",
             "ethernet":  [],	    	    	    
 	    "host_ethernet":  [
                 {
                     "int_num": "1",
-                    "des": "Towards_Leaf"
-                },    
-            ],	    
-            "loopback":  [],            
-            "BGP":  [],
-	    "customers":  [
-                {
-		    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.43/32",        
-                    "type5_routes": [
-                        {
-                            "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "ip": "10.101.35.43/24",
-                        },
-                    ],
-                    "type2_routes": [
-                        {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "ip": "10.101.2.43/24",
-                        },
-                        {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "ip": "10.101.3.43/24",
-                        },
-                    ],                                      
+                    "des": "Towards_Leaf1"
                 },
-	    ],	
+		{
+                    "int_num": "2",
+                    "des": "Towards_Leaf2"
+                },				
+            ],
+            "loopback":  [],            
+            "BGP":  [],	    
+	    "host_vrf":  [
+	    	{
+		    "vlan":  "1011",
+		    "vlan_name": "Type5_Cust101_VLAN101",
+		    "host_vrf_name":  "VRF1011",
+		    "ip":  "10.101.35.43/24",
+		    "gw":  "10.101.35.1"
+		},
+		{
+		    "vlan":  "1012",
+		    "vlan_name": "Type2_Cust101_VLAN1012",
+		    "host_vrf_name":  "VRF1012",
+		    "ip":  "10.101.2.43/24",
+		    "gw":  "10.101.2.1"
+		},
+		{
+		    "vlan":  "1013",
+		    "vlan_name": "Type2_Cust101_VLAN1013",
+		    "host_vrf_name":  "VRF1013",
+		    "ip":  "10.101.3.43/24",
+		    "gw":  "10.101.3.1"
+		},
+		
+		
+		{
+		    "vlan":  "1021",
+		    "vlan_name": "Type5_Cust102_VLAN1021",
+		    "host_vrf_name":  "VRF1021",
+		    "ip":  "10.102.35.43/24",
+		    "gw":  "10.102.35.1"
+		},
+		{
+		    "vlan":  "1022",
+		    "vlan_name": "Type2_Cust102_VLAN1022",
+		    "host_vrf_name":  "VRF1022",
+		    "ip":  "10.102.2.43/24",
+		    "gw":  "10.102.2.1"
+		},
+		{
+		    "vlan":  "1023",
+		    "vlan_name": "Type2_Cust102_VLAN1023",
+		    "host_vrf_name":  "VRF1023",
+		    "ip":  "10.102.3.43/24",
+		    "gw":  "10.102.3.1"
+		},
+		
+	    ],	    
+	    "customers":  [],	 	    
         },
     },
 }
