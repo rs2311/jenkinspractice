@@ -3,7 +3,7 @@
 !
 {% for entry in Devices[SW]['portchannel'] %}
 
-interface portchannel {{ entry['portchannel_num'] }}
+interface Port-Channel {{ entry['portchannel_num'] }}
    no switchport
    des {{ entry['des'] }}
 
