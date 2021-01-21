@@ -973,6 +973,7 @@
                     "des": "Underlay Loopback for VXLAN"
                 },
             ],
+	    "portchannel": [],
             
             "BGP":  [
                 {
