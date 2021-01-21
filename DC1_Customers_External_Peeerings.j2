@@ -7,7 +7,6 @@
 {% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
 !
 interface Port-Channel {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_subint_entry['subint_num'] }}
-   no switchport
    vrf forwarding {{ entry['cust_name'] }}
    enc dot1q vlan {{ portchannel_subint_entry['subint_num'] }}
    ip address {{ portchannel_subint_entry['subnet'] | ipaddr(0) }}
