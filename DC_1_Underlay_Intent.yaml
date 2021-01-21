@@ -475,7 +475,7 @@
             ],
 	    "portchannel": [
 	    	{
-		    "portchannel_num": "2123",
+		    "portchannel_num": "23",
 		    "des": "Portchannel Towards Firewall",
 		    "ethernet_interfaces": ["1", "2"],
 		},
@@ -504,7 +504,7 @@
 		    "lb_asn": "65232",
 		    "portchannel":  [
 		    	{
-			    "portchannel_num": "2123",
+			    "portchannel_num": "23",
 			    "portchannel_subint":  [
 			        {
 				    "subint_num": "101",
@@ -549,7 +549,7 @@
 		    "lb_asn": "65232",
 		    "portchannel":  [
 		    	{
-			    "portchannel_num": "2123",
+			    "portchannel_num": "23",
 			    "portchannel_subint":  [
 			        {
 				    "subint_num": "102",
