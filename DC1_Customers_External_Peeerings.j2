@@ -7,7 +7,7 @@
 interface eth {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_entry['portchannel_subint']['subint_num'] }}
    no switchport
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ portchannel_entry['portchannel_subint']['subnet'] | ipaddr(0) }}
+{#   ip address {{ portchannel_entry['portchannel_subint']['subnet'] | ipaddr(0) }} #}
    des {{ portchannel_entry['portchannel_subint']['des'] }}
    
 {% endfor %}
