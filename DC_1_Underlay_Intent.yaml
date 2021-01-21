@@ -477,8 +477,13 @@
 	    	{
 		    "portchannel_num": "23",
 		    "des": "Portchannel Towards Firewall",
-		    "ethernet_interfaces": ["1", "2"],
+		    "ethernet_interfaces": ["1",],
 		},
+		{
+		    "portchannel_num": "24",
+		    "des": "Portchannel Towards LB",
+		    "ethernet_interfaces": ["2",],
+		},				
 	    ],
             
             "BGP":  [
@@ -511,6 +516,17 @@
 				    "subnet": "10.101.23.0/31",
 			    	    "remote_ip": "10.101.23.1",
 			            "des": "Towards_FW23",
+				},	
+			    ],
+			},
+		    	{
+			    "portchannel_num": "24",
+			    "portchannel_subint":  [
+			        {
+				    "subint_num": "101",
+				    "subnet": "10.101.24.0/31",
+			    	    "remote_ip": "10.101.24.1",
+			            "des": "Towards_LB24",
 				},	
 			    ],
 			},		
@@ -558,7 +574,18 @@
 			            "des": "Towards_FW23",
 				},	
 			    ],
-			},		
+			},
+			{		    	{
+			    "portchannel_num": "24",
+			    "portchannel_subint":  [
+			        {
+				    "subint_num": "102",
+				    "subnet": "10.102.24.0/31",
+			    	    "remote_ip": "10.102.24.1",
+			            "des": "Towards_LB24",
+				},	
+			    ],
+			},
 		    ],
                     "type5_routes": [
                         {
