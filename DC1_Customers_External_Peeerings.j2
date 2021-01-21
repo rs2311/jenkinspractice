@@ -6,7 +6,7 @@
 {% for portchannel_entry in entry['portchannel'] %}
 {% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
 !
-interface eth {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_subint_entry['subint_num'] }}
+interface Port-Channel {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_subint_entry['subint_num'] }}
    no switchport
    vrf forwarding {{ entry['cust_name'] }}
    ip address {{ portchannel_subint_entry['subnet'] | ipaddr(0) }}
