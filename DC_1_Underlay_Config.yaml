@@ -28,51 +28,61 @@
       eos_config:
         src: DC1_Customers_External_Peeerings.j2
       when: (Devices[SW]['device_role'] == 'leaf')  
+      ignore_errors: yes
 
     - name:  DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
       eos_config:
         src:  DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
       when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
-
+      ignore_errors: yes
+      
     - name: DC1_Underlay_Vxlan_CustomerAddition
       eos_config:
         src: DC1_Underlay_Vxlan_CustomerAddition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
       
     - name: DC1_Type5_Route_Customer_Addition_Txtfile
       template:
         src: DC1_Type5_Route_Customer_Addition.j2
         dest: DC1_Type5_Route_Customer_Addition.txt
       when: (Devices[SW]['device_role'] == 'leaf')
- 
+      ignore_errors: yes
+      
     - name: DC1_Type5_Route_Customer_Addition
       eos_config:
         src: DC1_Type5_Route_Customer_Addition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
 
     - name:  DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition_Txtfile
       template:
         src:  DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition.j2
         dest: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition.txt
       when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
 
     - name: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition
       eos_config:
         src: DC1_Type2_Route_DCWide_and_RackSpecfic_Customer_Addition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
   
     - name: DC1_Host_and_Leaf_Interconnection_Config
       eos_config:
         src: DC_1_HostConfig.j2
-      when: (Devices[SW]['device_role'] == 'leaf')     
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
 
     - name: DC1_Host_Config_All_TXT
       template:
         src: DC1_Host_Config_All.j2
         dest: DC1_Host_Config_All.txt
-      when: (Devices[SW]['device_role'] == 'host')   
+      when: (Devices[SW]['device_role'] == 'host')
+      ignore_errors: yes
 
     - name: DC1_Host_Config_All
       eos_config:
         src: DC1_Host_Config_All.j2
-      when: (Devices[SW]['device_role'] == 'host')     
+      when: (Devices[SW]['device_role'] == 'host')
+      ignore_errors: yes
