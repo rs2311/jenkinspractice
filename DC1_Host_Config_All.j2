@@ -29,6 +29,6 @@ vlan {{ entry['vlan'] }}
 !
 interface vlan {{ entry['vlan'] }}
    vrf forwarding {{ entry['host_vrf_name'] }}
-   ip address {{ entry['ip'] }}
+   ip address {{ entry['subnet'] | ipaddr(Devices[SW]['device_id']) }}
 {% endfor %}
 
