@@ -10,11 +10,19 @@
     - name: Enable
       eos_command:
         commands: enable
-        
+
+
+    - name:  DC1_Portchannel
+      eos_config:
+        src:  wrong_temp.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
     - name:  DC1_Portchannel
       eos_config:
         src:  DC1_Portchannel.j2
       when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
 
     - name: DC1_Customers_External_Peeerings
       eos_config:
