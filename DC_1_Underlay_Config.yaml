@@ -30,6 +30,12 @@
       eos_config:
         src: DC1_Underlay_Vxlan_CustomerAddition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
+      
+    - name: DC1_Type5_Route_Customer_Addition
+      template:
+        src: DC1_Type5_Route_Customer_Addition.j2
+        dest: DC1_Type5_Route_Customer_Addition.txt
+      when: (Devices[SW]['device_role'] == 'leaf')
  
     - name: DC1_Type5_Route_Customer_Addition
       eos_config:
