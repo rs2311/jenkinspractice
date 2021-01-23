@@ -1,0 +1,28 @@
+
+
+{########## Type5 Routes Classic L3 ########}
+{############## Applicable for Leaf ################}
+
+vrf instance {{cust_name}} 
+   rd {{cust_id}}:{{device_id}}
+!
+ip routing vrf {{cust_name}}
+!
+interface loopback {{cust_id}}
+   vrf forwarding {{cust_name}}
+   ip address {{l3_loopback_ip}}
+!
+interface Vxlan1
+   vxlan vrf {{cust_name}} vni {{l3_vni}}
+
+{########## Type5 Routes Classic L3 BGP Configuration ########}
+{############## Applicable for Leaf ################}
+
+router bgp 65000
+
+   vrf {{cust_name}}
+      rd {{cust_id}}:{{device_id}}
+      route-target import evpn {{cust_id}}:{{cust_id}}
+      route-target export evpn {{cust_id}}:{{cust_id}}
+      redistribute connected
+
