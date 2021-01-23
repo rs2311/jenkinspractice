@@ -16,7 +16,7 @@ vrf instance {{ entry['host_vrf_name'] }}
    rd {{ entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['host_vrf_name'] }}
-ip route vrf {{ entry['host_vrf_name'] }} 0.0.0.0/0 {{ entry['subnet'] | ipaddr('address'(1)) }}
+ip route vrf {{ entry['host_vrf_name'] }} 0.0.0.0/0 {{ entry['subnet'] | ipaddr('first_usable') }}
 {% endfor %}
 
 {########## Host L2 VLAN and L3 SVI Configuration #############}
