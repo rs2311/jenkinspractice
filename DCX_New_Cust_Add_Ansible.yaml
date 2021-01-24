@@ -12,7 +12,7 @@
         commands: enable
         
     - name:  Test
-      shell: python test.py "vrf instance {{cust_name}}"
+      shell: python test.py {{cust_name}} {{cust_id}} {{device_id}} {{l3_loopback_ip}} {{l3_vni}}
       ignore_errors: yes
 
     - name:  DCX_New_Customer_VRF_Addition_Txt
