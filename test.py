@@ -7,4 +7,5 @@ with open('pythoncreated.yaml', 'a') as the_file:
      the_file.write('        "cust_name": "%s", \n'%sys.argv[1])
      the_file.write('        "l3_vni": "%s", \n'%sys.argv[3])
      the_file.write('        "l3_loopback_ip": "%s", \n'%sys.argv[4])
+     the_file.write('    } \n')
      
