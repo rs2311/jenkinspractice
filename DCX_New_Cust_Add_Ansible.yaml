@@ -11,9 +11,9 @@
       eos_command:
         commands: enable
         
-    - name:  Test
-      command: ./test.py
-      ignore_errors: yes
+ #   - name:  Test
+ #     command: ./test.py
+ #     ignore_errors: yes
 
     - name:  DCX_New_Customer_VRF_Addition_Txt
       template:
