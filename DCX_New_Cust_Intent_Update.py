@@ -3,7 +3,7 @@ import json
 fname = "./DCX_Intent.json"
 
 with open(fname) as f:
-    newdct = json.load(f)
+    newdct = json.loads(f)
 
 print newdct['Devices']['CL31']['customers']
 
