@@ -11,9 +11,9 @@
       eos_command:
         commands: enable
         
-    - name:  DCX_New_Cust_Intent_Update.py
-      shell: python DCX_New_Cust_Intent_Update.py {{cust_name}} {{cust_id}} {{device_id}} {{l3_loopback_ip}} {{l3_vni}}
-      ignore_errors: yes
+#    - name:  DCX_New_Cust_Intent_Update.py
+#      shell: python DCX_New_Cust_Intent_Update.py {{cust_name}} {{cust_id}} {{device_id}} {{l3_loopback_ip}} {{l3_vni}}
+#      ignore_errors: yes
 
     - name:  DCX_New_Customer_VRF_Addition_Txt
       template:
