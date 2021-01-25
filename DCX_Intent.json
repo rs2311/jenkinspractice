@@ -15,14 +15,14 @@
                     "int_num": "10",
                     "ip_address": "10.0.31.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                } 
             ],
 	    
 	    "host_ethernet":  [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_41"
-                },    
+                }    
             ],
 	    
             "loopback":  [
@@ -35,7 +35,7 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.31",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
 	    
 	    "portchannel": [],
@@ -50,7 +50,7 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }    
             ],
 
 	    "customers":  [
@@ -65,7 +65,7 @@
                             "vlan": "1011",
 			    "name": "C101_T5_vlan",
                             "subnet": "10.101.31.0/24",
-                        },
+                        }
                     ],
                     "type2_routes": [
                         {
@@ -79,8 +79,8 @@
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
                             "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                        }
+                    ]                                      
                 },
 		
                 {
@@ -94,24 +94,24 @@
                             "vlan": "1021",
 			    "name": "C102_T5_vlan",
                             "subnet": "10.102.31.0/24",
-                        },
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-            ],
-        },        
-    },
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]                                      
+                }
+            ]
+        }        
+    }
 }
