@@ -14,3 +14,9 @@ print newdct['Devices']['CL31']['customers']
 
 with open(fname, "w") as f:
      json.dump(newdct, f)
+
+print newdct['Devices']['CL31']['customers']
+        
+        
+        
+        
