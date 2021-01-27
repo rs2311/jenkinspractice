@@ -1,1 +1,48 @@
-{"Devices": {"CL31": {"customers": [{"cust_name": "C101", "cust_id": "101", "l3_loopback_ip": "10.101.0.31/32", "l3_vni": "10001010"}, {"cust_name": "C102", "cust_id": "102", "l3_loopback_ip": "10.102.0.32/32", "l3_vni": "10001020"}], "device_role": "leaf", "device_id": "31"}, "CL33": {"customers": [{"cust_name": "C101", "cust_id": "101", "l3_loopback_ip": "10.101.0.33/32", "l3_vni": "10001010"}, {"cust_name": "C102", "cust_id": "102", "l3_loopback_ip": "10.102.0.33/32", "l3_vni": "10001020"}, {"cust_name": "CL33", "cust_id": "C103"}, {"cust_id": "C104", "cust_name": "104"}], "device_role": "leaf", "device_id": "33"}}}
+{
+    "Devices": {
+        "CL31": {
+            "customers": [
+                {
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_loopback_ip": "10.101.0.31/32",
+                    "l3_vni": "10001010"
+                },
+                {
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_loopback_ip": "10.102.0.32/32",
+                    "l3_vni": "10001020"
+                }
+            ],
+            "device_id": "31",
+            "device_role": "leaf"
+        },
+        "CL33": {
+            "customers": [
+                {
+                    "cust_id": "101",
+                    "cust_name": "C101",
+                    "l3_loopback_ip": "10.101.0.33/32",
+                    "l3_vni": "10001010"
+                },
+                {
+                    "cust_id": "102",
+                    "cust_name": "C102",
+                    "l3_loopback_ip": "10.102.0.33/32",
+                    "l3_vni": "10001020"
+                },
+                {
+                    "cust_id": "C103",
+                    "cust_name": "CL33"
+                },
+                {
+                    "cust_id": "C104",
+                    "cust_name": "104"
+                }
+            ],
+            "device_id": "33",
+            "device_role": "leaf"
+        }
+    }
+}
