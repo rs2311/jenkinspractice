@@ -6,7 +6,7 @@ fname = "DCX_Intent.json"
 with open(fname) as f:
     newdct = json.load(f)
 
-print newdct['Devices']['%s'%sys.argv[1]]['customers']
+print newdct['Devices'][sys.argv[1]]['customers']
 
 #newdct['Devices']['%s'%sys.argv[1]]['customers'].append({'cust_name': '%s'%sys.argv[3], 'cust_id': '%s'%sys.argv[2], })
 
