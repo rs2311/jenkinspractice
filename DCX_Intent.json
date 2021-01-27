@@ -13,6 +13,12 @@
                     "cust_name": "C102",
                     "l3_loopback_ip": "10.102.0.32/32",
                     "l3_vni": "10001020"
+                },
+                {
+                    "cust_id": "C103",
+                    "cust_name": "103",
+                    "l3_loopback_ip": "10.103.31.31/32",
+                    "l3_vni": "10001030"
                 }
             ],
             "device_id": "31",
