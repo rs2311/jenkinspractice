@@ -8,7 +8,7 @@ with open(fname) as f:
 
 print newdct['Devices'][sys.argv[1]]['customers']
 
-newdct['Devices'][sys.argv[1]]['customers'].append({'cust_name': '%s'%sys.argv[3], 'cust_id': '%s'%sys.argv[2], 'l3_loopback_ip': '%s'%sys.argv[5], 'l3_vni': '%s'%sys.argv[6]})
+newdct['Devices'][sys.argv[1]]['customers'].append({'cust_name': '%s'%sys.argv[3], 'cust_id': '%s'%sys.argv[2], 'l3_loopback_ip': '%s'%sys.argv[5], 'l3_vni': '%s'%sys.argv[6], })
 
 print newdct['Devices'][sys.argv[1]]['customers']
 
