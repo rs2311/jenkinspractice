@@ -36,6 +36,13 @@
       when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
       ignore_errors: yes
       
+    - name: DC1_Underlay_Vxlan_CustomerAddition_TXT
+      template:
+        src: DC1_Underlay_Vxlan_CustomerAddition.j2
+        dest: DC1_Underlay_Vxlan_CustomerAddition.txt
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+      
     - name: DC1_Underlay_Vxlan_CustomerAddition
       eos_config:
         src: DC1_Underlay_Vxlan_CustomerAddition.j2
