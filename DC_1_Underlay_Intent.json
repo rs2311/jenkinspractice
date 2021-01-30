@@ -1,5 +1,9 @@
 
 
+
+
+
+
 {
     "Devices": {
         "Spine1": {
@@ -282,7 +286,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.11/32",
+                    "l3_loopback_subnet": "10.201.0.11/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -310,7 +314,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.11/32",
+                    "l3_loopback_subnet": "10.202.0.11/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -382,7 +386,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.12/32",
+                    "l3_loopback_subnet": "10.201.0.12/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -410,7 +414,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.12/32",
+                    "l3_loopback_subnet": "10.202.0.12/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -497,7 +501,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.21/32",
+                    "l3_loopback_subnet": "10.201.0.21/32",
                     "local_asn": "65101",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
@@ -551,7 +555,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.21/32",
+                    "l3_loopback_subnet": "10.202.0.21/32",
                     "local_asn": "65102",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
@@ -654,7 +658,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.22/32",
+                    "l3_loopback_subnet": "10.201.0.22/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -682,7 +686,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.22/32",
+                    "l3_loopback_subnet": "10.202.0.22/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -864,7 +868,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.32/32",
+                    "l3_loopback_subnet": "10.201.0.32/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -892,7 +896,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.32/32",
+                    "l3_loopback_subnet": "10.202.0.32/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1074,7 +1078,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.34/32",
+                    "l3_loopback_subnet": "10.201.0.34/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1102,7 +1106,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.34/32",
+                    "l3_loopback_subnet": "10.202.0.34/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1179,7 +1183,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.35/32",
+                    "l3_loopback_subnet": "10.201.0.35/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1207,7 +1211,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.36/32",
+                    "l3_loopback_subnet": "10.202.0.36/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1284,7 +1288,7 @@
                     "cust_id": "201",
                     "cust_name": "C201",
                     "l3_vni": "10002010",
-                    "l3_loopback_ip": "10.201.0.35/32",
+                    "l3_loopback_subnet": "10.201.0.35/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
@@ -1312,7 +1316,7 @@
                     "cust_id": "202",
                     "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.202.0.36/32",
+                    "l3_loopback_subnet": "10.202.0.36/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
