@@ -11,25 +11,6 @@
       eos_command:
         commands: enable
 
-
-    - name:  DC1_Portchannel
-      eos_config:
-        src:  wrong_temp.j2
-      when: (Devices[SW]['device_role'] == 'leaf')
-      ignore_errors: yes
-
-    - name:  DC1_Portchannel
-      eos_config:
-        src:  DC1_Portchannel.j2
-      when: (Devices[SW]['device_role'] == 'leaf')
-      ignore_errors: yes
-
-    - name: DC1_Customers_External_Peeerings
-      eos_config:
-        src: DC1_Customers_External_Peeerings.j2
-      when: (Devices[SW]['device_role'] == 'leaf')  
-      ignore_errors: yes
-
     - name:  DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
       eos_config:
         src:  DC1_Underlay_P2P_OSPF_BGP_EVPN_Config.j2
@@ -92,4 +73,16 @@
       eos_config:
         src: DC1_Host_Config_All.j2
       when: (Devices[SW]['device_role'] == 'host')
+      ignore_errors: yes
+
+    - name:  DC1_Portchannel
+      eos_config:
+        src:  DC1_Portchannel.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name: DC1_Customers_External_Peeerings
+      eos_config:
+        src: DC1_Customers_External_Peeerings.j2
+      when: (Devices[SW]['device_role'] == 'leaf')  
       ignore_errors: yes
