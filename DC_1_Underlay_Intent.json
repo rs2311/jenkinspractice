@@ -1,5 +1,10 @@
 
 
+
+
+
+
+
 {
     "Devices": {
         "Spine1": {
@@ -279,58 +284,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.11/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.11/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.11.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.11.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.11/32",
+                    "l3_loopback_ip": "10.202.0.11/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.11.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.11.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10211013",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10212013",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -379,58 +384,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.12/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.12/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.11.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.11.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.12/32",
+                    "l3_loopback_ip": "10.202.0.12/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.11.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.11.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -494,10 +499,10 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.21/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.21/32",
                     "local_asn": "65101",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
@@ -506,9 +511,9 @@
                             "portchannel_num": "23",
                             "portchannel_subint": [
                                 {
-                                    "subint_num": "101",
-                                    "subnet": "10.101.23.0/31",
-                                    "remote_ip": "10.101.23.1",
+                                    "subint_num": "201",
+                                    "subnet": "10.201.23.0/31",
+                                    "remote_ip": "10.201.23.1",
                                     "des": "Towards_FW23"
                                 }
                             ]
@@ -517,9 +522,9 @@
                             "portchannel_num": "24",
                             "portchannel_subint": [
                                 {
-                                    "subint_num": "101",
-                                    "subnet": "10.101.24.0/31",
-                                    "remote_ip": "10.101.24.1",
+                                    "subint_num": "201",
+                                    "subnet": "10.201.24.0/31",
+                                    "remote_ip": "10.201.24.1",
                                     "des": "Towards_LB24"
                                 }
                             ]
@@ -527,31 +532,31 @@
                     ],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.21.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.21.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.21/32",
+                    "l3_loopback_ip": "10.202.0.21/32",
                     "local_asn": "65102",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
@@ -560,9 +565,9 @@
                             "portchannel_num": "23",
                             "portchannel_subint": [
                                 {
-                                    "subint_num": "102",
-                                    "subnet": "10.102.23.0/31",
-                                    "remote_ip": "10.102.23.1",
+                                    "subint_num": "202",
+                                    "subnet": "10.202.23.0/31",
+                                    "remote_ip": "10.202.23.1",
                                     "des": "Towards_FW23"
                                 }
                             ]
@@ -571,9 +576,9 @@
                             "portchannel_num": "24",
                             "portchannel_subint": [
                                 {
-                                    "subint_num": "102",
-                                    "subnet": "10.102.24.0/31",
-                                    "remote_ip": "10.102.24.1",
+                                    "subint_num": "202",
+                                    "subnet": "10.202.24.0/31",
+                                    "remote_ip": "10.202.24.1",
                                     "des": "Towards_LB24"
                                 }
                             ]
@@ -581,23 +586,23 @@
                     ],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.21.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.21.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -651,58 +656,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.22/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.22/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.21.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.21.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.22/32",
+                    "l3_loopback_ip": "10.202.0.22/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.21.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.21.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -756,58 +761,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_subnet": "10.101.0.0/24",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_subnet": "10.201.0.0/24",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.31.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.31.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
-                    "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.0/24",
+                    "cust_id": "202",
+                    "cust_name": "C202",
+                    "l3_vni": "10002020",
+                    "l3_loopback_subnet": "10.202.0.0/24",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.31.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.31.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -861,58 +866,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.32/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.32/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.31.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.31.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.32/32",
+                    "l3_loopback_ip": "10.202.0.32/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.31.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.31.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -966,58 +971,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_subnet": "10.101.0.0/24",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_subnet": "10.201.0.0/24",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.33.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.33.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.0/24",
+                    "l3_loopback_subnet": "10.202.0.0/24",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.33.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.33.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -1071,58 +1076,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.34/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.34/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.33.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.33.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.34/32",
+                    "l3_loopback_ip": "10.202.0.34/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.33.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.33.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -1176,58 +1181,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_subnet": "10.101.0.0/24",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.35/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.35.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.35.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.36/32",
+                    "l3_loopback_ip": "10.202.0.36/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.35.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.35.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -1281,58 +1286,58 @@
             ],
             "customers": [
                 {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.35/32",
+                    "cust_id": "201",
+                    "cust_name": "C201",
+                    "l3_vni": "10002010",
+                    "l3_loopback_ip": "10.201.0.35/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1011",
-                            "name": "C101_T5_vlan",
-                            "subnet": "10.101.35.0/24"
+                            "vlan": "2011",
+                            "name": "C201_T5_vlan",
+                            "subnet": "10.201.35.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1012",
-                            "name": "C101_T2_DC_wide_vlan",
-                            "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24"
+                            "vlan": "2012",
+                            "name": "C201_T2_DC_wide_vlan",
+                            "l2_vni": "10002012",
+                            "subnet": "10.201.2.0/24"
                         },
                         {
-                            "vlan": "1013",
-                            "name": "C101_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24"
+                            "vlan": "2013",
+                            "name": "C201_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112013",
+                            "subnet": "10.201.3.0/24"
                         }
                     ]
                 },
                 {
-                    "cust_id": "102",
-                    "cust_name": "C102",
+                    "cust_id": "202",
+                    "cust_name": "C202",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.36/32",
+                    "l3_loopback_ip": "10.202.0.36/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
-                            "vlan": "1021",
-                            "name": "C102_T5_vlan",
-                            "subnet": "10.102.35.0/24"
+                            "vlan": "2021",
+                            "name": "C202_T5_vlan",
+                            "subnet": "10.202.35.0/24"
                         }
                     ],
                     "type2_routes": [
                         {
-                            "vlan": "1022",
-                            "name": "C102_T2_DC_wide_vlan",
-                            "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24"
+                            "vlan": "2022",
+                            "name": "C202_T2_DC_wide_vlan",
+                            "l2_vni": "10002022",
+                            "subnet": "10.202.2.0/24"
                         },
                         {
-                            "vlan": "1023",
-                            "name": "C102_T2_Specfic_Racks_vlan",
-                            "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24"
+                            "vlan": "2023",
+                            "name": "C202_T2_Specfic_Racks_vlan",
+                            "l2_vni": "10112023",
+                            "subnet": "10.202.3.0/24"
                         }
                     ]
                 }
@@ -1356,52 +1361,52 @@
             "BGP": [],
             "host_vrf": [
                 {
-                    "vlan": "1011",
-                    "vlan_name": "Type5_Cust101_VLAN1011",
-                    "host_vrf_name": "VRF1011",
-                    "ip": "10.101.31.41/24",
-                    "gw": "10.101.31.1",
-                    "subnet": "10.101.31.0/24"
+                    "vlan": "2011",
+                    "vlan_name": "Type5_Cust201_VLAN1011",
+                    "host_vrf_name": "VRF2011",
+                    "ip": "10.201.31.41/24",
+                    "gw": "10.201.31.1",
+                    "subnet": "10.201.31.0/24"
                 },
                 {
-                    "vlan": "1012",
-                    "vlan_name": "Type2_Cust101_VLAN1012",
-                    "host_vrf_name": "VRF1012",
-                    "ip": "10.101.2.41/24",
-                    "gw": "10.101.2.1",
-                    "subnet": "10.101.2.0/24"
+                    "vlan": "2012",
+                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "host_vrf_name": "VRF2012",
+                    "ip": "10.201.2.41/24",
+                    "gw": "10.201.2.1",
+                    "subnet": "10.201.2.0/24"
                 },
                 {
-                    "vlan": "1013",
-                    "vlan_name": "Type2_Cust101_VLAN1013",
-                    "host_vrf_name": "VRF1013",
-                    "ip": "10.101.3.41/24",
-                    "gw": "10.101.3.1",
-                    "subnet": "10.101.3.0/24"
+                    "vlan": "2013",
+                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "host_vrf_name": "VRF2013",
+                    "ip": "10.201.3.41/24",
+                    "gw": "10.201.3.1",
+                    "subnet": "10.201.3.0/24"
                 },
                 {
-                    "vlan": "1021",
-                    "vlan_name": "Type5_Cust102_VLAN1021",
-                    "host_vrf_name": "VRF1021",
-                    "ip": "10.102.31.41/24",
-                    "gw": "10.102.31.1",
-                    "subnet": "10.102.31.0/24"
+                    "vlan": "2021",
+                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "host_vrf_name": "VRF2021",
+                    "ip": "10.202.31.41/24",
+                    "gw": "10.202.31.1",
+                    "subnet": "10.202.31.0/24"
                 },
                 {
-                    "vlan": "1022",
-                    "vlan_name": "Type2_Cust102_VLAN1022",
-                    "host_vrf_name": "VRF1022",
-                    "ip": "10.102.2.41/24",
-                    "gw": "10.102.2.1",
-                    "subnet": "10.102.2.0/24"
+                    "vlan": "2022",
+                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "host_vrf_name": "VRF2022",
+                    "ip": "10.202.2.41/24",
+                    "gw": "10.202.2.1",
+                    "subnet": "10.202.2.0/24"
                 },
                 {
-                    "vlan": "1023",
-                    "vlan_name": "Type2_Cust102_VLAN1023",
-                    "host_vrf_name": "VRF1023",
-                    "ip": "10.102.3.41/24",
-                    "gw": "10.102.3.1",
-                    "subnet": "10.102.3.0/24"
+                    "vlan": "2023",
+                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "host_vrf_name": "VRF2023",
+                    "ip": "10.202.3.41/24",
+                    "gw": "10.202.3.1",
+                    "subnet": "10.202.3.0/24"
                 }
             ],
             "customers": []
@@ -1424,52 +1429,52 @@
             "BGP": [],
             "host_vrf": [
                 {
-                    "vlan": "1011",
-                    "vlan_name": "Type5_Cust101_VLAN101",
-                    "host_vrf_name": "VRF1011",
-                    "ip": "10.101.33.42/24",
-                    "gw": "10.101.33.1",
-                    "subnet": "10.101.33.0/24"
+                    "vlan": "2011",
+                    "vlan_name": "Type5_Cust201_VLAN101",
+                    "host_vrf_name": "VRF2011",
+                    "ip": "10.201.33.42/24",
+                    "gw": "10.201.33.1",
+                    "subnet": "10.201.33.0/24"
                 },
                 {
-                    "vlan": "1012",
-                    "vlan_name": "Type2_Cust101_VLAN1012",
-                    "host_vrf_name": "VRF1012",
-                    "ip": "10.101.2.42/24",
-                    "gw": "10.101.2.1",
-                    "subnet": "10.101.2.0/24"
+                    "vlan": "2012",
+                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "host_vrf_name": "VRF2012",
+                    "ip": "10.201.2.42/24",
+                    "gw": "10.201.2.1",
+                    "subnet": "10.201.2.0/24"
                 },
                 {
-                    "vlan": "1013",
-                    "vlan_name": "Type2_Cust101_VLAN1013",
-                    "host_vrf_name": "VRF1013",
-                    "ip": "10.101.3.42/24",
-                    "gw": "10.101.3.1",
-                    "subnet": "10.101.3.0/24"
+                    "vlan": "2013",
+                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "host_vrf_name": "VRF2013",
+                    "ip": "10.201.3.42/24",
+                    "gw": "10.201.3.1",
+                    "subnet": "10.201.3.0/24"
                 },
                 {
-                    "vlan": "1021",
-                    "vlan_name": "Type5_Cust102_VLAN1021",
-                    "host_vrf_name": "VRF1021",
-                    "ip": "10.102.33.42/24",
-                    "gw": "10.102.33.1",
-                    "subnet": "10.101.33.0/24"
+                    "vlan": "2021",
+                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "host_vrf_name": "VRF2021",
+                    "ip": "10.202.33.42/24",
+                    "gw": "10.202.33.1",
+                    "subnet": "10.201.33.0/24"
                 },
                 {
-                    "vlan": "1022",
-                    "vlan_name": "Type2_Cust102_VLAN1022",
-                    "host_vrf_name": "VRF1022",
-                    "ip": "10.102.2.42/24",
-                    "gw": "10.102.2.1",
-                    "subnet": "10.101.2.0/24"
+                    "vlan": "2022",
+                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "host_vrf_name": "VRF2022",
+                    "ip": "10.202.2.42/24",
+                    "gw": "10.202.2.1",
+                    "subnet": "10.201.2.0/24"
                 },
                 {
-                    "vlan": "1023",
-                    "vlan_name": "Type2_Cust102_VLAN1023",
-                    "host_vrf_name": "VRF1023",
-                    "ip": "10.102.3.42/24",
-                    "gw": "10.102.3.1",
-                    "subnet": "10.101.3.0/24"
+                    "vlan": "2023",
+                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "host_vrf_name": "VRF2023",
+                    "ip": "10.202.3.42/24",
+                    "gw": "10.202.3.1",
+                    "subnet": "10.201.3.0/24"
                 }
             ],
             "customers": []
@@ -1492,52 +1497,52 @@
             "BGP": [],
             "host_vrf": [
                 {
-                    "vlan": "1011",
-                    "vlan_name": "Type5_Cust101_VLAN101",
-                    "host_vrf_name": "VRF1011",
-                    "ip": "10.101.35.43/24",
-                    "gw": "10.101.35.1",
-                    "subnet": "10.101.35.0/24"
+                    "vlan": "2011",
+                    "vlan_name": "Type5_Cust201_VLAN101",
+                    "host_vrf_name": "VRF2011",
+                    "ip": "10.201.35.43/24",
+                    "gw": "10.201.35.1",
+                    "subnet": "10.201.35.0/24"
                 },
                 {
-                    "vlan": "1012",
-                    "vlan_name": "Type2_Cust101_VLAN1012",
-                    "host_vrf_name": "VRF1012",
-                    "ip": "10.101.2.43/24",
-                    "gw": "10.101.2.1",
-                    "subnet": "10.101.2.0/24"
+                    "vlan": "2012",
+                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "host_vrf_name": "VRF2012",
+                    "ip": "10.201.2.43/24",
+                    "gw": "10.201.2.1",
+                    "subnet": "10.201.2.0/24"
                 },
                 {
-                    "vlan": "1013",
-                    "vlan_name": "Type2_Cust101_VLAN1013",
-                    "host_vrf_name": "VRF1013",
-                    "ip": "10.101.3.43/24",
-                    "gw": "10.101.3.1",
-                    "subnet": "10.101.3.0/24"
+                    "vlan": "2013",
+                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "host_vrf_name": "VRF2013",
+                    "ip": "10.201.3.43/24",
+                    "gw": "10.201.3.1",
+                    "subnet": "10.201.3.0/24"
                 },
                 {
-                    "vlan": "1021",
-                    "vlan_name": "Type5_Cust102_VLAN1021",
-                    "host_vrf_name": "VRF1021",
-                    "ip": "10.102.35.43/24",
-                    "gw": "10.102.35.1",
-                    "subnet": "10.102.35.0/24"
+                    "vlan": "2021",
+                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "host_vrf_name": "VRF2021",
+                    "ip": "10.202.35.43/24",
+                    "gw": "10.202.35.1",
+                    "subnet": "10.202.35.0/24"
                 },
                 {
-                    "vlan": "1022",
-                    "vlan_name": "Type2_Cust102_VLAN1022",
-                    "host_vrf_name": "VRF1022",
-                    "ip": "10.102.2.43/24",
-                    "gw": "10.102.2.1",
-                    "subnet": "10.102.2.0/24"
+                    "vlan": "2022",
+                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "host_vrf_name": "VRF2022",
+                    "ip": "10.202.2.43/24",
+                    "gw": "10.202.2.1",
+                    "subnet": "10.202.2.0/24"
                 },
                 {
-                    "vlan": "1023",
-                    "vlan_name": "Type2_Cust102_VLAN1023",
-                    "host_vrf_name": "VRF1023",
-                    "ip": "10.102.3.43/24",
-                    "gw": "10.102.3.1",
-                    "subnet": "10.102.3.0/24"
+                    "vlan": "2023",
+                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "host_vrf_name": "VRF2023",
+                    "ip": "10.202.3.43/24",
+                    "gw": "10.202.3.1",
+                    "subnet": "10.202.3.0/24"
                 }
             ],
             "customers": []
