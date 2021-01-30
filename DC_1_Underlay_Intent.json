@@ -1543,7 +1543,7 @@
         },        
         "FW23": {
             "device_id": "23",
-            "device_role": "FW",
+            "device_role": "fw",
             "ethernet": [],
             "host_ethernet": [],
             "loopback_0_ip": "10.0.250.23/32",
