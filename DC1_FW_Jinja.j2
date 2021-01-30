@@ -1,4 +1,4 @@
-{% for entry in Devices['FW23']['portchannel'] %}
+{% for entry in Devices[SW]['portchannel'] %}
 interface Port-Channel {{ entry['portchannel_num'] }}
    no switchport
    des {{ entry['des'] }}
@@ -19,10 +19,10 @@ interface ethernet {{ ethernet_entry }}
 
 ip routing
 !
-router bgp {{ Devices['FW23']['BGP_ASN'] }}
-   router-id {{ Devices['FW23']['loopback_0_ip'] }}
+router bgp {{ Devices[SW]['BGP_ASN'] }}
+   router-id {{ Devices[SW]['loopback_0_ip'] }}
 !
-{% for entry in Devices['FW23']['BGP'] %}
+{% for entry in Devices[SW]['BGP'] %}
    neighbor {{ entry['nei'] }} remote-as {{ entry['remote-as'] }}
    neighbor {{ entry['nei'] }} description {{ entry['des'] }}
 !
