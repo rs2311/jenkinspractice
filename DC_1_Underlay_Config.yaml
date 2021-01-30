@@ -87,6 +87,13 @@
       when: (Devices[SW]['device_role'] == 'leaf')  
       ignore_errors: yes
 
+    - name: DC1_FW_Jinja_TXT
+      template:
+        src: DC1_FW_Jinja.j2
+        dest: DC1_FW_Jinja.txt
+      when: (Devices[SW]['device_role'] == 'fw')
+      ignore_errors: yes
+      
     - name: DC1_FW_Jinja
       eos_config:
         src: DC1_FW_Jinja.j2
