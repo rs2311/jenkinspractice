@@ -13,7 +13,7 @@ interface Port-Channel {{ entry['portchannel_num'] }}.{{ port_entry['subint_num'
 !
 {% for ethernet_entry in entry['ethernet_interfaces'] %}
 interface ethernet {{ ethernet_entry }}
-   channel-group {{ entry['des'] }} mode active
+   channel-group {{ entry['portchannel_num'] }} mode active
 {% endfor %}
 {% endfor %}
 
