@@ -497,7 +497,7 @@
                     "cust_name": "C201",
                     "l3_vni": "10002010",
                     "l3_loopback_subnet": "10.201.0.21/32",
-                    "local_asn": "65101",
+                    "local_asn": "65201",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
                     "portchannel": [
@@ -551,7 +551,7 @@
                     "cust_name": "C202",
                     "l3_vni": "10001020",
                     "l3_loopback_subnet": "10.202.0.21/32",
-                    "local_asn": "65102",
+                    "local_asn": "65202",
                     "fw_asn": "65231",
                     "lb_asn": "65232",
                     "portchannel": [
