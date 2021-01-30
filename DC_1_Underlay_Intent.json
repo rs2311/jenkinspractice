@@ -1545,10 +1545,48 @@
                 }
             ],
             "customers": []
-        }
-    }
+        },        
+        "FW23": {
+            "device_id": "23",
+            "device_role": "FW",
+            "ethernet": [],
+            "host_ethernet": [],
+            "loopback_0_ip": 10.0.250.23/32,
+            "portchannel": [
+                {
+                    "portchannel_num": "23",
+                    "des": "Portchannel Towards Service Leaf",
+                    "ethernet_interfaces": [ "1" ]
+                    "portchannel_subint": [
+                        {
+                            "subint_num": "201",
+                            "subnet": "10.201.23.0/31",
+                            "des": "Towards_FW23"
+                        },
+                        {
+                            "subint_num": "202",
+                            "subnet": "10.202.23.0/31",
+                            "des": "Towards_FW24"
+                        }
+                    ]
+                }
+            ],
+	        "BGP_ASN": "65231",
+            "BGP": [
+                {
+                    "nei": "10.201.23.0",
+		            "remote-as": "65201"
+                    "des": "Towards-SL1-Customer201"
+                },
+                {
+                    "nei": "10.202.23.0",
+		            "remote-as": "65202"
+                    "des": "Towards-SL1-Customer202"
+                }
+            ]
+        }            
+    }                  
 }
-
 
 
 
