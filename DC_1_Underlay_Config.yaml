@@ -86,3 +86,9 @@
         src: DC1_Customers_External_Peeerings.j2
       when: (Devices[SW]['device_role'] == 'leaf')  
       ignore_errors: yes
+
+    - name: DC1_FW_Jinja
+      eos_config:
+        src: DC1_FW_Jinja.j2
+      when: (Devices[SW]['device_role'] == 'fw')  
+      ignore_errors: yes
