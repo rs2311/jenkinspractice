@@ -1,11 +1,11 @@
 
 
 {
-    "Devices":  {
-        "Spine1":  {
-            "device_id":  "1",
-	    "device_role":  "spine",
-            "ethernet":  [
+    "Devices": {
+        "Spine1": {
+            "device_id": "1",
+            "device_role": "spine",
+            "ethernet": [
                 {
                     "int_num": "1",
                     "ip_address": "10.0.11.0/31",
@@ -25,7 +25,7 @@
                     "int_num": "4",
                     "ip_address": "10.0.22.0/31",
                     "des": "Towards_SL22"
-                },  
+                },
                 {
                     "int_num": "5",
                     "ip_address": "10.0.31.0/31",
@@ -55,18 +55,17 @@
                     "int_num": "10",
                     "ip_address": "10.0.36.0/31",
                     "des": "Towards_CL36"
-                },
+                }
             ],
-	    "host_ethernet": [],
-            "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.1",
                     "des": "Underlay Loopback for BGP EVPN"
-                },
+                }
             ],
-            
-            "BGP":  [
+            "BGP": [
                 {
                     "nei": "10.0.250.11",
                     "des": "BL11-EVPN-PEER",
@@ -116,14 +115,14 @@
                     "nei": "10.0.250.36",
                     "des": "CL36-EVPN-PEER",
                     "is_routereflector": true
-                },
+                }
             ],
-	    "customers": []
+            "customers": []
         },
-        "Spine2":  {
-            "device_id":  "2",
-	    "device_role":  "spine",
-            "ethernet":  [
+        "Spine2": {
+            "device_id": "2",
+            "device_role": "spine",
+            "ethernet": [
                 {
                     "int_num": "1",
                     "ip_address": "10.0.11.2/31",
@@ -143,7 +142,7 @@
                     "int_num": "4",
                     "ip_address": "10.0.22.2/31",
                     "des": "Towards_SL22"
-                },  
+                },
                 {
                     "int_num": "5",
                     "ip_address": "10.0.31.2/31",
@@ -173,20 +172,17 @@
                     "int_num": "10",
                     "ip_address": "10.0.36.2/31",
                     "des": "Towards_CL36"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet": [],
-            
-	    "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.2",
                     "des": "Underlay Loopback for BGP EVPN"
-                },
+                }
             ],
-                        
-            "BGP":  [
+            "BGP": [
                 {
                     "nei": "10.0.250.11",
                     "des": "BL11-EVPN-PEER",
@@ -210,7 +206,7 @@
                 {
                     "nei": "10.0.250.31",
                     "des": "CL31-EVPN-PEER",
-                    "is_routereflector": ture
+                    "is_routereflector": true
                 },
                 {
                     "nei": "10.0.250.32",
@@ -236,15 +232,14 @@
                     "nei": "10.0.250.36",
                     "des": "CL36-EVPN-PEER",
                     "is_routereflector": true
-                },
+                }
             ],
-	    "customers": []           
+            "customers": []
         },
-
-        "BL11":  {
-            "device_id":  "11",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "BL11": {
+            "device_id": "11",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.11.1/31",
@@ -254,12 +249,10 @@
                     "int_num": "10",
                     "ip_address": "10.0.11.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [],
-            
-	    "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.11",
@@ -269,12 +262,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.11",
                     "des": "Underlay Loopback for VXLAN"
-                },
-            ],       
-	    
-	    "portchannel": [],
-            
-	    "BGP":  [
+                }
+            ],
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -284,72 +275,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-            "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.11/32",	
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.11/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.11.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.11.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		{
+                {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.11/32",  
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.11/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.11.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.11.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10211013",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-            ],
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-
-        "BL12":  {
-            "device_id":  "12",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "BL12": {
+            "device_id": "12",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.12.1/31",
@@ -359,12 +349,10 @@
                     "int_num": "10",
                     "ip_address": "10.0.12.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-   	    "host_ethernet":  [],
-	    
-            "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.12",
@@ -374,12 +362,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.12",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -389,73 +375,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
-            ],   
-	    "customers":  [
+                }
+            ],
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.12/32",    
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.12/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.11.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.11.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.12/32", 
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.12/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.11.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.11.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-            ],
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-        
-        "SL21":  {
-            "device_id":  "21",
-	    "device_role":  "leaf",
-            "ethernet":  [	
+        "SL21": {
+            "device_id": "21",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.21.1/31",
@@ -465,12 +449,10 @@
                     "int_num": "10",
                     "ip_address": "10.0.21.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [],
-	    
-            "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.21",
@@ -480,22 +462,25 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.21",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    "portchannel": [
-	    	{
-		    "portchannel_num": "23",
-		    "des": "Portchannel Towards Firewall",
-		    "ethernet_interfaces": ["1",],
-		},
-		{
-		    "portchannel_num": "24",
-		    "des": "Portchannel Towards LB",
-		    "ethernet_interfaces": ["2",],
-		},				
-	    ],
-            
-            "BGP":  [
+            "portchannel": [
+                {
+                    "portchannel_num": "23",
+                    "des": "Portchannel Towards Firewall",
+                    "ethernet_interfaces": [
+                        "1"
+                    ]
+                },
+                {
+                    "portchannel_num": "24",
+                    "des": "Portchannel Towards LB",
+                    "ethernet_interfaces": [
+                        "2"
+                    ]
+                }
+            ],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -505,130 +490,128 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
                     "l3_loopback_ip": "10.101.0.21/32",
-		    "local_asn": "65101",
-		    "fw_asn": "65231",
-		    "lb_asn": "65232",
-		    "portchannel":  [
-		    	{
-			    "portchannel_num": "23",
-			    "portchannel_subint":  [
-			        {
-				    "subint_num": "101",
-				    "subnet": "10.101.23.0/31",
-			    	    "remote_ip": "10.101.23.1",
-			            "des": "Towards_FW23",
-				},	
-			    ],
-			},
-		    	{
-			    "portchannel_num": "24",
-			    "portchannel_subint":  [
-			        {
-				    "subint_num": "101",
-				    "subnet": "10.101.24.0/31",
-			    	    "remote_ip": "10.101.24.1",
-			            "des": "Towards_LB24",
-				},	
-			    ],
-			},		
-		    ],
+                    "local_asn": "65101",
+                    "fw_asn": "65231",
+                    "lb_asn": "65232",
+                    "portchannel": [
+                        {
+                            "portchannel_num": "23",
+                            "portchannel_subint": [
+                                {
+                                    "subint_num": "101",
+                                    "subnet": "10.101.23.0/31",
+                                    "remote_ip": "10.101.23.1",
+                                    "des": "Towards_FW23"
+                                }
+                            ]
+                        },
+                        {
+                            "portchannel_num": "24",
+                            "portchannel_subint": [
+                                {
+                                    "subint_num": "101",
+                                    "subnet": "10.101.24.0/31",
+                                    "remote_ip": "10.101.24.1",
+                                    "des": "Towards_LB24"
+                                }
+                            ]
+                        }
+                    ],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.21.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.21.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
                     "l3_loopback_ip": "10.102.0.21/32",
-		    
-		    "local_asn": "65102",
-		    "fw_asn": "65231",
-		    "lb_asn": "65232",
-		    "portchannel":  [
-		    	{
-			    "portchannel_num": "23",
-			    "portchannel_subint":  [
-			        {
-				    "subint_num": "102",
-				    "subnet": "10.102.23.0/31",
-			    	    "remote_ip": "10.102.23.1",
-			            "des": "Towards_FW23",
-				},	
-			    ],
-			},
-			{		    	
-			    "portchannel_num": "24",
-			    "portchannel_subint":  [
-			        {
-				    "subint_num": "102",
-				    "subnet": "10.102.24.0/31",
-			    	    "remote_ip": "10.102.24.1",
-			            "des": "Towards_LB24",
-				},	
-			    ],
-			},
-		    ],
+                    "local_asn": "65102",
+                    "fw_asn": "65231",
+                    "lb_asn": "65232",
+                    "portchannel": [
+                        {
+                            "portchannel_num": "23",
+                            "portchannel_subint": [
+                                {
+                                    "subint_num": "102",
+                                    "subnet": "10.102.23.0/31",
+                                    "remote_ip": "10.102.23.1",
+                                    "des": "Towards_FW23"
+                                }
+                            ]
+                        },
+                        {
+                            "portchannel_num": "24",
+                            "portchannel_subint": [
+                                {
+                                    "subint_num": "102",
+                                    "subnet": "10.102.24.0/31",
+                                    "remote_ip": "10.102.24.1",
+                                    "des": "Towards_LB24"
+                                }
+                            ]
+                        }
+                    ],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.21.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.21.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-	    ],  
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-        "SL22":  {
-            "device_id":  "22",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "SL22": {
+            "device_id": "22",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "1",
                     "ip_address": "10.0.23.2/31",
                     "des": "Towards_FW1"
-                },	    	       
+                },
                 {
                     "int_num": "9",
                     "ip_address": "10.0.22.1/31",
@@ -638,12 +621,10 @@
                     "int_num": "10",
                     "ip_address": "10.0.22.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [],
-
-            "loopback":  [
+            "host_ethernet": [],
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.22",
@@ -653,12 +634,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.22",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -668,74 +647,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.22/32",    
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.22/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.21.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.21.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
                     "l3_loopback_ip": "10.102.0.22/32",
-		    "portchannel": [],
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.21.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.21.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-	    ],
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-
-        "CL31":  {
-            "device_id":  "31",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "CL31": {
+            "device_id": "31",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.31.1/31",
@@ -745,17 +721,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.31.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_41"
-                },    
+                }
             ],
-	    
-            "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.31",
@@ -765,12 +739,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.31",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -780,75 +752,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_subnet": "10.101.0.0/24", 
-		    "portchannel": [],
+                    "l3_loopback_subnet": "10.101.0.0/24",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.31.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.31.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.0/24",  
-		    "portchannel": [],
+                    "l3_loopback_subnet": "10.102.0.0/24",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.31.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.31.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },
-            ],
-        },        
-        
-
-        "CL32":  {
-            "device_id":  "32",
-	    "device_role":  "leaf",
-            "ethernet":  [
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
+        },
+        "CL32": {
+            "device_id": "32",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.32.1/31",
@@ -858,17 +826,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.32.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_41"
-                },    
+                }
             ],
-	    
-            "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.32",
@@ -878,12 +844,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.32",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -893,76 +857,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.32/32", 
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.32/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.31.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.31.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.32/32",  
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.32/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.31.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.31.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },  
-            ],
-
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-        
-
-        "CL33":  {
-            "device_id":  "33",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "CL33": {
+            "device_id": "33",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.33.1/31",
@@ -972,17 +931,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.33.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_42"
-                },    
+                }
             ],
-            
-	    "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.33",
@@ -992,11 +949,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.33",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -1006,75 +962,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
                     "l3_loopback_subnet": "10.101.0.0/24",
-		    "portchannel": [],
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.33.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.33.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_subnet": "10.102.0.0/24",  
-		    "portchannel": [],
+                    "l3_loopback_subnet": "10.102.0.0/24",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.33.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.33.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },  
-            ],
-
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-  
-
-        "CL34":  {
-            "device_id":  "34",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "CL34": {
+            "device_id": "34",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.34.1/31",
@@ -1084,17 +1036,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.34.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_42"
-                },    
+                }
             ],
-	    
-            "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.34",
@@ -1104,12 +1054,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.34",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -1119,72 +1067,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.34/32",   
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.34/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.33.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.33.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.34/32",  
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.34/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.33.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.33.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },  
-            ],
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-        "CL35":  {
-            "device_id":  "35",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "CL35": {
+            "device_id": "35",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.35.1/31",
@@ -1194,17 +1141,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.35.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_42"
-                },    
+                }
             ],
-	    
-            "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.35",
@@ -1214,12 +1159,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.35",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-	    
-	    "portchannel": [],
-            
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -1229,73 +1172,71 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.35/32",   
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.35/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.35.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.35.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.36/32",  
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.36/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.35.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.35.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },  
-            ],
-	    
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
         },
-        "CL36":  {
-            "device_id":  "36",
-	    "device_role":  "leaf",
-            "ethernet":  [
+        "CL36": {
+            "device_id": "36",
+            "device_role": "leaf",
+            "ethernet": [
                 {
                     "int_num": "9",
                     "ip_address": "10.0.36.1/31",
@@ -1305,17 +1246,15 @@
                     "int_num": "10",
                     "ip_address": "10.0.36.3/31",
                     "des": "Towards_Spine2"
-                }, 
+                }
             ],
-	    	    	    
-	    "host_ethernet":  [
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Host_43"
-                },    
+                }
             ],
-	    
-            "loopback":  [
+            "loopback": [
                 {
                     "loop_num": "0",
                     "ip_address": "10.0.250.36",
@@ -1325,12 +1264,10 @@
                     "loop_num": "1",
                     "ip_address": "10.0.251.36",
                     "des": "Underlay Loopback for VXLAN"
-                },
+                }
             ],
-            
-	    "portchannel": [],
-	    
-            "BGP":  [
+            "portchannel": [],
+            "BGP": [
                 {
                     "nei": "10.0.250.1",
                     "des": "Spine-1-Peer",
@@ -1340,280 +1277,275 @@
                     "nei": "10.0.250.2",
                     "des": "Spine-2-Peer",
                     "is_routereflector": false
-                },    
+                }
             ],
-	    "customers":  [
+            "customers": [
                 {
                     "cust_id": "101",
                     "cust_name": "C101",
                     "l3_vni": "10001010",
-                    "l3_loopback_ip": "10.101.0.35/32",   
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.101.0.35/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1011",
-			    "name": "C101_T5_vlan",
-                            "subnet": "10.101.35.0/24",
-                        },
+                            "name": "C101_T5_vlan",
+                            "subnet": "10.101.35.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1012",
                             "name": "C101_T2_DC_wide_vlan",
                             "l2_vni": "10001012",
-                            "subnet": "10.101.2.0/24",
+                            "subnet": "10.101.2.0/24"
                         },
                         {
                             "vlan": "1013",
                             "name": "C101_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111013",
-                            "subnet": "10.101.3.0/24",
-                        },
-                    ],                                      
+                            "subnet": "10.101.3.0/24"
+                        }
+                    ]
                 },
-		
                 {
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.36/32",  
-		    "portchannel": [],
+                    "l3_loopback_ip": "10.102.0.36/32",
+                    "portchannel": [],
                     "type5_routes": [
                         {
                             "vlan": "1021",
-			    "name": "C102_T5_vlan",
-                            "subnet": "10.102.35.0/24",
-                        },
+                            "name": "C102_T5_vlan",
+                            "subnet": "10.102.35.0/24"
+                        }
                     ],
                     "type2_routes": [
                         {
                             "vlan": "1022",
                             "name": "C102_T2_DC_wide_vlan",
                             "l2_vni": "10001022",
-                            "subnet": "10.102.2.0/24",
+                            "subnet": "10.102.2.0/24"
                         },
                         {
                             "vlan": "1023",
                             "name": "C102_T2_Specfic_Racks_vlan",
                             "l2_vni": "10111023",
-                            "subnet": "10.102.3.0/24",
-                        },
-                    ],                                      
-                },  
-            ],
-        },    	
-        "HOST41":  {
-            "device_id":  "41",
-	    "device_role": "host",
-            "ethernet":  [],	    	    	    
-	    "host_ethernet":  [
+                            "subnet": "10.102.3.0/24"
+                        }
+                    ]
+                }
+            ]
+        },
+        "HOST41": {
+            "device_id": "41",
+            "device_role": "host",
+            "ethernet": [],
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Leaf1"
                 },
-		{
+                {
                     "int_num": "2",
                     "des": "Towards_Leaf2"
-                },				
+                }
             ],
-            "loopback":  [],            
-            "BGP":  [],	    
-	    "host_vrf":  [
-	    	{
-		    "vlan":  "1011",
-		    "vlan_name": "Type5_Cust101_VLAN1011",
-		    "host_vrf_name":  "VRF1011",
-		    "ip":  "10.101.31.41/24",
-		    "gw":  "10.101.31.1",
-		    "subnet": "10.101.31.0/24"
-		},
-		{
-		    "vlan":  "1012",
-		    "vlan_name": "Type2_Cust101_VLAN1012",
-		    "host_vrf_name":  "VRF1012",
-		    "ip":  "10.101.2.41/24",
-		    "gw":  "10.101.2.1",
-		    "subnet": "10.101.2.0/24"
-		},
-		{
-		    "vlan":  "1013",
-		    "vlan_name": "Type2_Cust101_VLAN1013",
-		    "host_vrf_name":  "VRF1013",
-		    "ip":  "10.101.3.41/24",
-		    "gw":  "10.101.3.1",
-		    "subnet": "10.101.3.0/24"
-		},
-		
-		{
-		    "vlan":  "1021",
-		    "vlan_name": "Type5_Cust102_VLAN1021",
-		    "host_vrf_name":  "VRF1021",
-		    "ip":  "10.102.31.41/24",
-		    "gw":  "10.102.31.1",
-		    "subnet": "10.102.31.0/24"
-		},
-		{
-		    "vlan":  "1022",
-		    "vlan_name": "Type2_Cust102_VLAN1022",
-		    "host_vrf_name":  "VRF1022",
-		    "ip":  "10.102.2.41/24",
-		    "gw":  "10.102.2.1",
-		    "subnet": "10.102.2.0/24"
-		},
-		{
-		    "vlan":  "1023",
-		    "vlan_name": "Type2_Cust102_VLAN1023",
-		    "host_vrf_name":  "VRF1023",
-		    "ip":  "10.102.3.41/24",
-		    "gw":  "10.102.3.1",
-		    "subnet": "10.102.3.0/24"
-		},
-	    ],	    
-	    "customers":  [],	
+            "loopback": [],
+            "BGP": [],
+            "host_vrf": [
+                {
+                    "vlan": "1011",
+                    "vlan_name": "Type5_Cust101_VLAN1011",
+                    "host_vrf_name": "VRF1011",
+                    "ip": "10.101.31.41/24",
+                    "gw": "10.101.31.1",
+                    "subnet": "10.101.31.0/24"
+                },
+                {
+                    "vlan": "1012",
+                    "vlan_name": "Type2_Cust101_VLAN1012",
+                    "host_vrf_name": "VRF1012",
+                    "ip": "10.101.2.41/24",
+                    "gw": "10.101.2.1",
+                    "subnet": "10.101.2.0/24"
+                },
+                {
+                    "vlan": "1013",
+                    "vlan_name": "Type2_Cust101_VLAN1013",
+                    "host_vrf_name": "VRF1013",
+                    "ip": "10.101.3.41/24",
+                    "gw": "10.101.3.1",
+                    "subnet": "10.101.3.0/24"
+                },
+                {
+                    "vlan": "1021",
+                    "vlan_name": "Type5_Cust102_VLAN1021",
+                    "host_vrf_name": "VRF1021",
+                    "ip": "10.102.31.41/24",
+                    "gw": "10.102.31.1",
+                    "subnet": "10.102.31.0/24"
+                },
+                {
+                    "vlan": "1022",
+                    "vlan_name": "Type2_Cust102_VLAN1022",
+                    "host_vrf_name": "VRF1022",
+                    "ip": "10.102.2.41/24",
+                    "gw": "10.102.2.1",
+                    "subnet": "10.102.2.0/24"
+                },
+                {
+                    "vlan": "1023",
+                    "vlan_name": "Type2_Cust102_VLAN1023",
+                    "host_vrf_name": "VRF1023",
+                    "ip": "10.102.3.41/24",
+                    "gw": "10.102.3.1",
+                    "subnet": "10.102.3.0/24"
+                }
+            ],
+            "customers": []
         },
-	"HOST42":  {
-            "device_id":  "42",
-	    "device_role": "host",
-            "ethernet":  [],	    	    	    
-	    "host_ethernet":  [
+        "HOST42": {
+            "device_id": "42",
+            "device_role": "host",
+            "ethernet": [],
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Leaf1"
                 },
-		{
+                {
                     "int_num": "2",
                     "des": "Towards_Leaf2"
-                },				
+                }
             ],
-            "loopback":  [],            
-            "BGP":  [],	    
-	    "host_vrf":  [
-	    	{
-		    "vlan":  "1011",
-		    "vlan_name": "Type5_Cust101_VLAN101",
-		    "host_vrf_name":  "VRF1011",
-		    "ip":  "10.101.33.42/24",
-		    "gw":  "10.101.33.1",
-		    "subnet": "10.101.33.0/24"
-		},
-		{
-		    "vlan":  "1012",
-		    "vlan_name": "Type2_Cust101_VLAN1012",
-		    "host_vrf_name":  "VRF1012",
-		    "ip":  "10.101.2.42/24",
-		    "gw":  "10.101.2.1",
-		    "subnet": "10.101.2.0/24"
-		},
-		{
-		    "vlan":  "1013",
-		    "vlan_name": "Type2_Cust101_VLAN1013",
-		    "host_vrf_name":  "VRF1013",
-		    "ip":  "10.101.3.42/24",
-		    "gw":  "10.101.3.1",
-		    "subnet": "10.101.3.0/24"
-		},
-		
-		
-		{
-		    "vlan":  "1021",
-		    "vlan_name": "Type5_Cust102_VLAN1021",
-		    "host_vrf_name":  "VRF1021",
-		    "ip":  "10.102.33.42/24",
-		    "gw":  "10.102.33.1",
-		    "subnet": "10.101.33.0/24"
-		},
-		{
-		    "vlan":  "1022",
-		    "vlan_name": "Type2_Cust102_VLAN1022",
-		    "host_vrf_name":  "VRF1022",
-		    "ip":  "10.102.2.42/24",
-		    "gw":  "10.102.2.1",
-		    "subnet": "10.101.2.0/24"
-		},
-		{
-		    "vlan":  "1023",
-		    "vlan_name": "Type2_Cust102_VLAN1023",
-		    "host_vrf_name":  "VRF1023",
-		    "ip":  "10.102.3.42/24",
-		    "gw":  "10.102.3.1",
-		    "subnet": "10.101.3.0/24"
-		},
-		
-	    ],	    
-	    "customers":  [],	
-	    
-	    
+            "loopback": [],
+            "BGP": [],
+            "host_vrf": [
+                {
+                    "vlan": "1011",
+                    "vlan_name": "Type5_Cust101_VLAN101",
+                    "host_vrf_name": "VRF1011",
+                    "ip": "10.101.33.42/24",
+                    "gw": "10.101.33.1",
+                    "subnet": "10.101.33.0/24"
+                },
+                {
+                    "vlan": "1012",
+                    "vlan_name": "Type2_Cust101_VLAN1012",
+                    "host_vrf_name": "VRF1012",
+                    "ip": "10.101.2.42/24",
+                    "gw": "10.101.2.1",
+                    "subnet": "10.101.2.0/24"
+                },
+                {
+                    "vlan": "1013",
+                    "vlan_name": "Type2_Cust101_VLAN1013",
+                    "host_vrf_name": "VRF1013",
+                    "ip": "10.101.3.42/24",
+                    "gw": "10.101.3.1",
+                    "subnet": "10.101.3.0/24"
+                },
+                {
+                    "vlan": "1021",
+                    "vlan_name": "Type5_Cust102_VLAN1021",
+                    "host_vrf_name": "VRF1021",
+                    "ip": "10.102.33.42/24",
+                    "gw": "10.102.33.1",
+                    "subnet": "10.101.33.0/24"
+                },
+                {
+                    "vlan": "1022",
+                    "vlan_name": "Type2_Cust102_VLAN1022",
+                    "host_vrf_name": "VRF1022",
+                    "ip": "10.102.2.42/24",
+                    "gw": "10.102.2.1",
+                    "subnet": "10.101.2.0/24"
+                },
+                {
+                    "vlan": "1023",
+                    "vlan_name": "Type2_Cust102_VLAN1023",
+                    "host_vrf_name": "VRF1023",
+                    "ip": "10.102.3.42/24",
+                    "gw": "10.102.3.1",
+                    "subnet": "10.101.3.0/24"
+                }
+            ],
+            "customers": []
         },
-	"HOST43":  {
-            "device_id":  "43",
-	    "device_role": "host",
-            "ethernet":  [],	    	    	    
-	    "host_ethernet":  [
+        "HOST43": {
+            "device_id": "43",
+            "device_role": "host",
+            "ethernet": [],
+            "host_ethernet": [
                 {
                     "int_num": "1",
                     "des": "Towards_Leaf1"
                 },
-		{
+                {
                     "int_num": "2",
                     "des": "Towards_Leaf2"
-                },				
+                }
             ],
-            "loopback":  [],            
-            "BGP":  [],	    
-	    "host_vrf":  [
-	    	{
-		    "vlan":  "1011",
-		    "vlan_name": "Type5_Cust101_VLAN101",
-		    "host_vrf_name":  "VRF1011",
-		    "ip":  "10.101.35.43/24",
-		    "gw":  "10.101.35.1",
-		    "subnet": "10.101.35.0/24"
-		},
-		{
-		    "vlan":  "1012",
-		    "vlan_name": "Type2_Cust101_VLAN1012",
-		    "host_vrf_name":  "VRF1012",
-		    "ip":  "10.101.2.43/24",
-		    "gw":  "10.101.2.1",		    
-		    "subnet": "10.101.2.0/24"
-		},
-		{
-		    "vlan":  "1013",
-		    "vlan_name": "Type2_Cust101_VLAN1013",
-		    "host_vrf_name":  "VRF1013",
-		    "ip":  "10.101.3.43/24",
-		    "gw":  "10.101.3.1",		    
-		    "subnet": "10.101.3.0/24"
-		},
-		
-		
-		{
-		    "vlan":  "1021",
-		    "vlan_name": "Type5_Cust102_VLAN1021",
-		    "host_vrf_name":  "VRF1021",
-		    "ip":  "10.102.35.43/24",
-		    "gw":  "10.102.35.1",		    
-		    "subnet": "10.102.35.0/24"
-		},
-		{
-		    "vlan":  "1022",
-		    "vlan_name": "Type2_Cust102_VLAN1022",
-		    "host_vrf_name":  "VRF1022",
-		    "ip":  "10.102.2.43/24",
-		    "gw":  "10.102.2.1",		    
-		    "subnet": "10.102.2.0/24"
-		},
-		{
-		    "vlan":  "1023",
-		    "vlan_name": "Type2_Cust102_VLAN1023",
-		    "host_vrf_name":  "VRF1023",
-		    "ip":  "10.102.3.43/24",
-		    "gw":  "10.102.3.1",		    
-		    "subnet": "10.102.3.0/24"
-		},
-		
-	    ],	    
-	    "customers":  [],	 	    
-        },
-    },
+            "loopback": [],
+            "BGP": [],
+            "host_vrf": [
+                {
+                    "vlan": "1011",
+                    "vlan_name": "Type5_Cust101_VLAN101",
+                    "host_vrf_name": "VRF1011",
+                    "ip": "10.101.35.43/24",
+                    "gw": "10.101.35.1",
+                    "subnet": "10.101.35.0/24"
+                },
+                {
+                    "vlan": "1012",
+                    "vlan_name": "Type2_Cust101_VLAN1012",
+                    "host_vrf_name": "VRF1012",
+                    "ip": "10.101.2.43/24",
+                    "gw": "10.101.2.1",
+                    "subnet": "10.101.2.0/24"
+                },
+                {
+                    "vlan": "1013",
+                    "vlan_name": "Type2_Cust101_VLAN1013",
+                    "host_vrf_name": "VRF1013",
+                    "ip": "10.101.3.43/24",
+                    "gw": "10.101.3.1",
+                    "subnet": "10.101.3.0/24"
+                },
+                {
+                    "vlan": "1021",
+                    "vlan_name": "Type5_Cust102_VLAN1021",
+                    "host_vrf_name": "VRF1021",
+                    "ip": "10.102.35.43/24",
+                    "gw": "10.102.35.1",
+                    "subnet": "10.102.35.0/24"
+                },
+                {
+                    "vlan": "1022",
+                    "vlan_name": "Type2_Cust102_VLAN1022",
+                    "host_vrf_name": "VRF1022",
+                    "ip": "10.102.2.43/24",
+                    "gw": "10.102.2.1",
+                    "subnet": "10.102.2.0/24"
+                },
+                {
+                    "vlan": "1023",
+                    "vlan_name": "Type2_Cust102_VLAN1023",
+                    "host_vrf_name": "VRF1023",
+                    "ip": "10.102.3.43/24",
+                    "gw": "10.102.3.1",
+                    "subnet": "10.102.3.0/24"
+                }
+            ],
+            "customers": []
+        }
+    }
 }
+
+
+
+
+
