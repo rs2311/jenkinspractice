@@ -7,7 +7,7 @@ interface Port-Channel {{ entry['portchannel_num'] }}
 interface Port-Channel {{ entry['portchannel_num'] }}.{{ port_entry['subint_num'] }}
    description {{ port_entry['des'] }}
    encapsulation dot1q vlan {{ port_entry['subint_num'] }}
-   ip address {{ port_entry['subnet'] }}
+   ip address {{ port_entry['subnet'] | ipaddr(1) }}
 !
 {% endfor %}
 !
