@@ -1546,7 +1546,7 @@
             "device_role": "FW",
             "ethernet": [],
             "host_ethernet": [],
-            "loopback_0_ip": 10.0.250.23/32,
+            "loopback_0_ip": "10.0.250.23/32",
             "portchannel": [
                 {
                     "portchannel_num": "23",
@@ -1570,12 +1570,12 @@
             "BGP": [
                 {
                     "nei": "10.201.23.0",
-		            "remote-as": "65201"
+		    "remote-as": "65201",
                     "des": "Towards-SL1-Customer201"
                 },
                 {
                     "nei": "10.202.23.0",
-		            "remote-as": "65202"
+		    "remote-as": "65202",
                     "des": "Towards-SL1-Customer202"
                 }
             ]
