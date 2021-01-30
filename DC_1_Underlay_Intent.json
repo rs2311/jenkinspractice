@@ -892,7 +892,7 @@
                     "cust_id": "102",
                     "cust_name": "C102",
                     "l3_vni": "10001020",
-                    "l3_loopback_ip": "10.102.0.32/32",
+                    "l3_loopback_subnet": "10.102.0.32/32",
                     "portchannel": [],
                     "type5_routes": [
                         {
