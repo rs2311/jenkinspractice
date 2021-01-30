@@ -1,9 +1,4 @@
 
-
-
-
-
-
 {
     "Devices": {
         "Spine1": {
@@ -1556,7 +1551,7 @@
                 {
                     "portchannel_num": "23",
                     "des": "Portchannel Towards Service Leaf",
-                    "ethernet_interfaces": [ "1" ]
+                    "ethernet_interfaces": [ "1" ],
                     "portchannel_subint": [
                         {
                             "subint_num": "201",
@@ -1571,7 +1566,7 @@
                     ]
                 }
             ],
-	        "BGP_ASN": "65231",
+	    "BGP_ASN": "65231",
             "BGP": [
                 {
                     "nei": "10.201.23.0",
