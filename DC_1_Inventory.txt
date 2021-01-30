@@ -14,3 +14,4 @@ CL36 ansible_host=192.168.181.36 ansible_user=admin ansible_ssh_pass=admin ansib
 HOST41 ansible_host=192.168.181.41 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 HOST42 ansible_host=192.168.181.42 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 HOST43 ansible_host=192.168.181.43 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
+FW23 ansible_host=192.168.181.23 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
