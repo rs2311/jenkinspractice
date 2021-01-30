@@ -1,0 +1,31 @@
+{% for entry in Devices['FW23']['portchannel'] %}
+interface Port-Channel {{ entry['portchannel_num'] }}
+   no switchport
+   des {{ entry['des'] }}
+!
+{% for port_entry in entry['portchannel_subint'] %}
+interface Port-Channel {{ entry['portchannel_num'] }}.{{ port_entry['subint_num'] }}
+   description {{ port_entry['des'] }}
+   encapsulation dot1q vlan {{ port_entry['subint_num'] }}
+   ip address {{ port_entry['subnet'] }}
+!
+{% endfor %}
+!
+{% for ethernet_entry in entry['ethernet_interfaces'] %}
+interface ethernet {{ ethernet_entry }}
+   channel-group {{ entry['des'] }} mode active
+{% endfor %}
+{% endfor %}
+
+ip routing
+!
+router bgp {{ Devices['FW23']['BGP_ASN'] }}
+   router-id {{ Devices['FW23']['loopback_0_ip'] }}
+!
+{% for entry in Devices['FW23']['BGP'] %}
+   neighbor {{ entry['nei'] }} remote-as {{ entry['remote-as'] }}
+   neighbor {{ entry['nei'] }} description {{ entry['des'] }}
+!
+{% endfor %}
+!
+
