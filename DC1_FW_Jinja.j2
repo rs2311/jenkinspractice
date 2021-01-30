@@ -20,7 +20,7 @@ interface ethernet {{ ethernet_entry }}
 ip routing
 !
 router bgp {{ Devices[SW]['BGP_ASN'] }}
-   router-id {{ Devices[SW]['loopback_0_ip'] }}
+   router-id {{ Devices[SW]['loopback_0_ip'] ipaddr("address") }}
 !
 {% for entry in Devices[SW]['BGP'] %}
    neighbor {{ entry['nei'] }} remote-as {{ entry['remote-as'] }}
