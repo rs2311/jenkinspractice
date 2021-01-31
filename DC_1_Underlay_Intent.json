@@ -1,4 +1,8 @@
 
+
+
+  
+
 {
     "Devices": {
         "Spine1": {
@@ -1356,7 +1360,7 @@
             "host_vrf": [
                 {
                     "vlan": "2011",
-                    "vlan_name": "Type5_Cust201_VLAN1011",
+                    "vlan_name": "Type5_Cust201_VLAN2011",
                     "host_vrf_name": "VRF2011",
                     "ip": "10.201.31.41/24",
                     "gw": "10.201.31.1",
@@ -1364,7 +1368,7 @@
                 },
                 {
                     "vlan": "2012",
-                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "vlan_name": "Type2_Cust201_VLAN2012",
                     "host_vrf_name": "VRF2012",
                     "ip": "10.201.2.41/24",
                     "gw": "10.201.2.1",
@@ -1372,7 +1376,7 @@
                 },
                 {
                     "vlan": "2013",
-                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "vlan_name": "Type2_Cust201_VLAN2013",
                     "host_vrf_name": "VRF2013",
                     "ip": "10.201.3.41/24",
                     "gw": "10.201.3.1",
@@ -1380,7 +1384,7 @@
                 },
                 {
                     "vlan": "2021",
-                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "vlan_name": "Type5_Cust202_VLAN2021",
                     "host_vrf_name": "VRF2021",
                     "ip": "10.202.31.41/24",
                     "gw": "10.202.31.1",
@@ -1388,7 +1392,7 @@
                 },
                 {
                     "vlan": "2022",
-                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "vlan_name": "Type2_Cust202_VLAN2022",
                     "host_vrf_name": "VRF2022",
                     "ip": "10.202.2.41/24",
                     "gw": "10.202.2.1",
@@ -1396,7 +1400,7 @@
                 },
                 {
                     "vlan": "2023",
-                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "vlan_name": "Type2_Cust202_VLAN2023",
                     "host_vrf_name": "VRF2023",
                     "ip": "10.202.3.41/24",
                     "gw": "10.202.3.1",
@@ -1424,7 +1428,7 @@
             "host_vrf": [
                 {
                     "vlan": "2011",
-                    "vlan_name": "Type5_Cust201_VLAN101",
+                    "vlan_name": "Type5_Cust201_VLAN201",
                     "host_vrf_name": "VRF2011",
                     "ip": "10.201.33.42/24",
                     "gw": "10.201.33.1",
@@ -1432,7 +1436,7 @@
                 },
                 {
                     "vlan": "2012",
-                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "vlan_name": "Type2_Cust201_VLAN2012",
                     "host_vrf_name": "VRF2012",
                     "ip": "10.201.2.42/24",
                     "gw": "10.201.2.1",
@@ -1440,7 +1444,7 @@
                 },
                 {
                     "vlan": "2013",
-                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "vlan_name": "Type2_Cust201_VLAN2013",
                     "host_vrf_name": "VRF2013",
                     "ip": "10.201.3.42/24",
                     "gw": "10.201.3.1",
@@ -1448,7 +1452,7 @@
                 },
                 {
                     "vlan": "2021",
-                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "vlan_name": "Type5_Cust202_VLAN2021",
                     "host_vrf_name": "VRF2021",
                     "ip": "10.202.33.42/24",
                     "gw": "10.202.33.1",
@@ -1456,7 +1460,7 @@
                 },
                 {
                     "vlan": "2022",
-                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "vlan_name": "Type2_Cust202_VLAN2022",
                     "host_vrf_name": "VRF2022",
                     "ip": "10.202.2.42/24",
                     "gw": "10.202.2.1",
@@ -1464,7 +1468,7 @@
                 },
                 {
                     "vlan": "2023",
-                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "vlan_name": "Type2_Cust202_VLAN2023",
                     "host_vrf_name": "VRF2023",
                     "ip": "10.202.3.42/24",
                     "gw": "10.202.3.1",
@@ -1492,7 +1496,7 @@
             "host_vrf": [
                 {
                     "vlan": "2011",
-                    "vlan_name": "Type5_Cust201_VLAN101",
+                    "vlan_name": "Type5_Cust201_VLAN201",
                     "host_vrf_name": "VRF2011",
                     "ip": "10.201.35.43/24",
                     "gw": "10.201.35.1",
@@ -1500,7 +1504,7 @@
                 },
                 {
                     "vlan": "2012",
-                    "vlan_name": "Type2_Cust201_VLAN1012",
+                    "vlan_name": "Type2_Cust201_VLAN2012",
                     "host_vrf_name": "VRF2012",
                     "ip": "10.201.2.43/24",
                     "gw": "10.201.2.1",
@@ -1508,7 +1512,7 @@
                 },
                 {
                     "vlan": "2013",
-                    "vlan_name": "Type2_Cust201_VLAN1013",
+                    "vlan_name": "Type2_Cust201_VLAN2013",
                     "host_vrf_name": "VRF2013",
                     "ip": "10.201.3.43/24",
                     "gw": "10.201.3.1",
@@ -1516,7 +1520,7 @@
                 },
                 {
                     "vlan": "2021",
-                    "vlan_name": "Type5_Cust202_VLAN1021",
+                    "vlan_name": "Type5_Cust202_VLAN2021",
                     "host_vrf_name": "VRF2021",
                     "ip": "10.202.35.43/24",
                     "gw": "10.202.35.1",
@@ -1524,7 +1528,7 @@
                 },
                 {
                     "vlan": "2022",
-                    "vlan_name": "Type2_Cust202_VLAN1022",
+                    "vlan_name": "Type2_Cust202_VLAN2022",
                     "host_vrf_name": "VRF2022",
                     "ip": "10.202.2.43/24",
                     "gw": "10.202.2.1",
@@ -1532,7 +1536,7 @@
                 },
                 {
                     "vlan": "2023",
-                    "vlan_name": "Type2_Cust202_VLAN1023",
+                    "vlan_name": "Type2_Cust202_VLAN2023",
                     "host_vrf_name": "VRF2023",
                     "ip": "10.202.3.43/24",
                     "gw": "10.202.3.1",
