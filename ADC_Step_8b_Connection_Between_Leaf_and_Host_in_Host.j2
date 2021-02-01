@@ -1,0 +1,33 @@
+{##### Ethernet Configuration towards Host Network #####}
+{##### Applicable for host #####}
+
+{% for entry in Devices[SW]['host_ethernet'] %}
+interface eth {{ entry['int_num'] }}
+   switchport
+   switchport mode trunk
+   des {{ entry['des'] }}
+{% endfor %}
+
+{########## Host VRF Configuration #############}
+{########## Applicable for host ############}
+
+{% for entry in Devices[SW]['host_vrf'] %}
+vrf instance {{ entry['host_vrf_name'] }}
+   rd {{ entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
+!
+ip routing vrf {{ entry['host_vrf_name'] }}
+ip route vrf {{ entry['host_vrf_name'] }} 0.0.0.0/0 {{ entry['subnet'] | ipaddr('first_usable') }}
+{% endfor %}
+
+{##### Host L2 VLAN and L3 SVI Configuration #####}
+{##### Applicable for host #####}
+
+{% for entry in Devices[SW]['host_vrf'] %}
+!
+vlan {{ entry['vlan'] }}
+   name {{ entry['vlan_name'] }}
+!
+interface vlan {{ entry['vlan'] }}
+   vrf forwarding {{ entry['host_vrf_name'] }}
+   ip address {{ entry['subnet'] | ipaddr(Devices[SW]['device_id']) }}
+{% endfor %}
