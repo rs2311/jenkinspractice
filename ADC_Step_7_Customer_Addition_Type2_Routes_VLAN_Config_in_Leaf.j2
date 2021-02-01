@@ -28,19 +28,3 @@ interface Vxlan1
 {% endfor %}
 !
 
-{##### Type2 Routes BGP Configuration #####}
-{##### Applicable for leaf #####}
-!
-{% for entry in Devices[SW]['customers'] %}
-{% for vlan_entry in entry['type2_routes'] %}
-!
-router bgp 65000
-!
-   vlan {{ vlan_entry['vlan'] }}
-   rd {{ vlan_entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
-   route-target import {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
-   route-target export {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
-   redistribute learned
-!
-{% endfor %}
-{% endfor %}
