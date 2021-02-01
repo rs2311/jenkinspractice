@@ -11,15 +11,15 @@
       eos_command:
         commands: enable
         
-    - name:  DCX_New_Customer_VRF_Addition_Txt
+    - name:  ADC_Customer_Addition_Txt
       template:
-        src:  DCX_New_Customer_VRF_Addition.j2
-        dest: DCX_New_Customer_VRF_Addition_Txt.txt
+        src:  ADC_Customer_Addition.j2
+        dest: ADC_Customer_Addition.txt
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-    - name:  DCX_New_Customer_VRF_Addition
+    - name:  ADC_Customer_Addition
       eos_config:
-        src:  DCX_New_Customer_VRF_Addition.j2
+        src:  ADC_Customer_Addition.j2
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
