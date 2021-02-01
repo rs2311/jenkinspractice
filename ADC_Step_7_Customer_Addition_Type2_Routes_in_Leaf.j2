@@ -41,7 +41,6 @@ router bgp 65000
    route-target import {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
    route-target export {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
    redistribute learned
-   exit
 !
 {% endfor %}
 {% endfor %}
