@@ -1,1 +1,25 @@
+---
+- hosts: "{{SW}}"
+  gather_facts: false
+  connection: network_cli
 
+  vars_files:
+   - ./DC_1_Underlay_Intent.json
+
+  tasks:
+    - name: Enable
+      eos_command:
+        commands: enable
+        
+    - name:  DCX_New_Customer_VRF_Addition_Txt
+      template:
+        src:  DCX_New_Customer_VRF_Addition.j2
+        dest: DCX_New_Customer_VRF_Addition_Txt.txt
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  DCX_New_Customer_VRF_Addition
+      eos_config:
+        src:  DCX_New_Customer_VRF_Addition.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
