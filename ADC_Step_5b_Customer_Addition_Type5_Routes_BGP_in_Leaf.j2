@@ -1,3 +1,21 @@
+{###### Task 5 Route Addition ##############}
+{###### Type5 Routes Classic L3 ############}
+{###### Applicable for leaf ############}
+
+
+{% for entry in Devices[SW]['customers'] %}
+{% for vlan_entry in entry['type5_routes'] %}
+!
+vlan {{ vlan_entry['vlan'] }}
+   name {{ vlan_entry['name'] }}
+!
+interface vlan {{ vlan_entry['vlan'] }}
+   vrf forwarding {{ entry['cust_name'] }}
+   ip address {{ vlan_entry['subnet'] | ipaddr(1) }}
+!
+{% endfor %}
+{% endfor %}
+
 {##### Type5 Routes Classic L3 BGP Configuration #####}
 {##### Applicable for Leaf #####}
 
