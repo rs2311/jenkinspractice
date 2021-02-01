@@ -1,4 +1,3 @@
-
 ---
 - hosts: "{{SW}}"
   gather_facts: false
@@ -33,7 +32,26 @@
     - name:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
       eos_config:
         src:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_5_Customer_Addition_in_Leaf_TXT
+      template:
+        src:  ADC_Step_5_Customer_Addition_in_Leaf.j2
+        dest: ADC_Step_5_Customer_Addition_in_Leaf.txt
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
       when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
       ignore_errors: yes
+
+
+
+
+
+
 
 
