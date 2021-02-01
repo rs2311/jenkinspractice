@@ -1,0 +1,17 @@
+{##### Port Channel Config #####}
+{##### Applicable for Leaf #####}
+{##### For now Service Leaf is planned to use this #####}
+
+!
+{% for entry in Devices[SW]['portchannel'] %}
+
+interface Port-Channel {{ entry['portchannel_num'] }}
+   no switchport
+   des {{ entry['des'] }}
+   
+{% for ethernet_entry in entry['ethernet_interfaces'] %}
+interface ethernet {{ ethernet_entry }}
+   channel-group {{ entry['portchannel_num'] }} mode active
+{% endfor %}
+{% endfor %}
+! 
