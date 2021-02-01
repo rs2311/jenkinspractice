@@ -15,3 +15,39 @@ interface ethernet {{ ethernet_entry }}
 {% endfor %}
 {% endfor %}
 ! 
+{##### Port Channel Sub-Interface Config #####}
+{##### Applicable for Service leaf #####}
+!
+{% for entry in Devices[SW]['customers'] %}
+{% for portchannel_entry in entry['portchannel'] %}
+{% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
+!
+interface Port-Channel {{ portchannel_entry['portchannel_num'] }}.{{ portchannel_subint_entry['subint_num'] }}
+   vrf forwarding {{ entry['cust_name'] }}
+   enc dot1q vlan {{ portchannel_subint_entry['subint_num'] }}
+   ip address {{ portchannel_subint_entry['subnet'] | ipaddr(0) }}
+   description {{ portchannel_subint_entry['des'] }}
+   
+{% endfor %}
+{% endfor %}
+{% endfor %}
+!   
+
+{##### Port Channel Config #####}
+{##### BGP Config #####}
+{% for entry in Devices[SW]['customers'] %}
+{% for portchannel_entry in entry['portchannel'] %}
+{% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
+
+{##### Applicable for Service leaf #####}
+router bgp 65000
+   vrf {{ entry['cust_name'] }}
+      neighbor {{ portchannel_subint_entry['remote_ip'] }} remote-as {{ entry['fw_asn'] }}
+      neighbor {{ portchannel_subint_entry['remote_ip'] }} local-as {{ entry['local_asn'] }} no-prepend replace-as
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+!
+
+
