@@ -8,7 +8,7 @@ ip routing vrf {{cust_name}}
 !
 interface loopback {{cust_id}}
    vrf forwarding {{cust_name}}
-   ip address {{l3_loopback_subnet | ipaddr(Devices[SW]['device_id']) }}
+   ip address {{l3_loopback_subnet | ipaddr(Devices[SW]['device_id']) | ipaddr("address")}}
 !
 interface Vxlan1
    vxlan vrf {{cust_name}} vni {{l3_vni}}
