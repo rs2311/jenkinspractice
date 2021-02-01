@@ -42,10 +42,10 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-    - name:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
+    - name:  ADC_Step_5_Customer_Addition_in_Leaf.j2
       eos_config:
-        src:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
-      when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
+        src:  ADC_Step_5_Customer_Addition_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
 
