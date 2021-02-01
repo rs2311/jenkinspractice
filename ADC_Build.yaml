@@ -42,11 +42,18 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-    - name:  ADC_Step_5_Customer_Addition_in_Leaf.j2
+    - name:  ADC_Step_5_Customer_Addition_Type5_Routes_in_Leaf.j2
       eos_config:
-        src:  ADC_Step_5_Customer_Addition_in_Leaf.j2
+        src:  ADC_Step_5_Customer_Addition_Type5_Routes_in_Leaf.j2
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
+     
+    - name:  ADC_Step_6_Customer_Addition_Type2_Routes_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_6_Customer_Addition_Type2_Routes_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
 
 
 
