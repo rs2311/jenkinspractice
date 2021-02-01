@@ -47,9 +47,15 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-    - name:  ADC_Step_7_Customer_Addition_Type2_Routes_in_Leaf.j2
+    - name:  ADC_Step_7_Customer_Addition_Type2_Routes_VLAN_Config_in_Leaf.j2
       eos_config:
-        src:  ADC_Step_7_Customer_Addition_Type2_Routes_in_Leaf.j2
+        src:  ADC_Step_7_Customer_Addition_Type2_Routes_VLAN_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_8_Customer_Addition_Type2_Routes_BGP_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_8_Customer_Addition_Type2_Routes_BGP_Config_in_Leaf.j2
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
