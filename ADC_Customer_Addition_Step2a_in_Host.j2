@@ -5,7 +5,7 @@ interface Vlan{{type5_vlan_id}}
    vrf forwarding VRF{{type5_vlan_id}}
    ip address {{type5_vlan_subnet | ipaddr(Devices[SW]['device_id'])}}
 !
-ip route vrf VRF{{type5_vlan_id}} 0.0.0.0/0 {{type5_vlan_subnet | ipaddr(1)}}
+ip route vrf VRF{{type5_vlan_id}} 0.0.0.0/0 {{type5_vlan_subnet | ipaddr(1) | ipaddr("address")}}
 !
 ip routing vrf VRF{{type5_vlan_id}}
 !
