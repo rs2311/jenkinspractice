@@ -47,11 +47,18 @@
       eos_command:
         commands: enable
         
-    - name:  ADC_Customer_Addition_Step2a_in_Host.j2
+    - name:  ADC_Customer_Addition_Step2a_Type5_VLAN_in_Host.j2
       eos_config:
-        src:  ADC_Customer_Addition_Step2a_in_Host.j2
+        src:  ADC_Customer_Addition_Step2a_Type5_VLAN_in_Host.j2
       when: (Devices[HOST]['device_role'] == 'host')
       ignore_errors: yes
+      
+    - name:  ADC_Customer_Addition_Step2b_Type2_VLAN_in_Host.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step2b_Type2_VLAN_in_Host.j2
+      when: (Devices[HOST]['device_role'] == 'host')
+      ignore_errors: yes
+      
 
 
 
