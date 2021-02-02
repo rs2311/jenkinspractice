@@ -1,5 +1,5 @@
 ---
-- hosts: "{{SW}}","{{HOST}}"
+- hosts: "{{SW}},{{HOST}}"
   gather_facts: false
   connection: network_cli
 
