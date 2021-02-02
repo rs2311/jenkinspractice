@@ -24,7 +24,7 @@ vlan {{type5_vlan_id}}
    name {{type5_vlan_name}}
 !
 interface vlan {{type5_vlan_id}}
-   vrf forwarding {{cust_id}}
+   vrf forwarding {{cust_name}}
    ip address {{type5_vlan_subnet | ipaddr(1)}}
 !
 {##### Type5 Routes Classic L3 BGP Configuration #####}
@@ -45,7 +45,7 @@ vlan {{type2_vlan_id}}
    name {{type2_vlan_name}}
 !
 interface vlan {{type2_vlan_id}}
-   vrf forwarding {{cust_id}}
+   vrf forwarding {{cust_name}}
    ip address {{type2_vlan_subnet | ipaddr(1)}}
 !
 
