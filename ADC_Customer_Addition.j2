@@ -38,3 +38,41 @@ router bgp 65000
       redistribute connected
 
 
+{##### Type2 Routes VLAN Creation #####}
+{##### Applicable for leaf #####}
+!
+vlan {{type2_vlan_id}}
+   name {{type2_vlan_name}}
+!
+interface vlan {{type2_vlan_id}}
+   vrf forwarding {{cust_id}}
+   ip address {{type2_vlan_subnet | ipaddr(1)}}
+!
+
+{##### Type2 Routes Vxlan VNI Entry #####}
+{##### Applicable for leaf #####}
+
+!
+interface Vxlan1
+   vxlan vlan {{type2_vlan_id}} vni {{l2_vni}}
+!
+{##### Type2 Routes BGP Configuration #####}
+{##### Applicable for leaf #####}
+!
+router bgp 65000
+   vlan {{type2_vlan_id}}
+   rd {{type2_vlan_id}}:{{ Devices[SW]['device_id'] }}
+   route-target both {{type2_vlan_id}}:{{type2_vlan_id}}
+   redistribute learned
+!
+
+
+
+
+
+
+
+
+
+
+
