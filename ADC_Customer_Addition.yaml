@@ -1,5 +1,5 @@
 ---
-- hosts: "{{SW}},{{HOST}}"
+- hosts: "{{SW}}"
   gather_facts: false
   connection: network_cli
 
@@ -11,13 +11,6 @@
       eos_command:
         commands: enable
         
-#    - name:  ADC_Customer_Addition_Txt
-#      template:
-#        src:  ADC_Customer_Addition.j2
-#        dest: ADC_Customer_Addition.txt
-#      when: (Devices[SW]['device_role'] == 'leaf')
-#      ignore_errors: yes
-
     - name:  ADC_Customer_Addition_Step1a_in_Leaf.j2
       eos_config:
         src:  ADC_Customer_Addition_Step1a_in_Leaf.j2
@@ -42,13 +35,25 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
+
+---
+- hosts: "{{HOST}}"
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./DC_1_Underlay_Intent.json
+
+  tasks:
+    - name: Enable
+      eos_command:
+        commands: enable
+        
     - name:  ADC_Customer_Addition_Step2a_in_Host.j2
       eos_config:
         src:  ADC_Customer_Addition_Step2a_in_Host.j2
       when: (Devices[SW]['device_role'] == 'host')
       ignore_errors: yes
-
-
 
 
 
