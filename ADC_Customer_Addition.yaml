@@ -35,8 +35,6 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-
----
 - hosts: "{{HOST}}"
   gather_facts: false
   connection: network_cli
