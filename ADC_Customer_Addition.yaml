@@ -59,6 +59,24 @@
       when: (Devices[HOST]['device_role'] == 'host')
       ignore_errors: yes
       
+- hosts: "{{SL}}"
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./DC_1_Underlay_Intent.json
+
+  tasks:
+    - name: Enable
+      eos_command:
+        commands: enable
+        
+    - name:  ADC_Customer_Addition_Step3a_SL_to_FW_in_Leaf.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step3a_SL_to_FW_in_Leaf.j2
+      ignore_errors: yes
+      
+
 
 
 
