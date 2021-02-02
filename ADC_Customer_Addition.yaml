@@ -18,8 +18,33 @@
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
 
-    - name:  ADC_Customer_Addition
+    - name:  ADC_Customer_Addition_Step1a.j2
       eos_config:
-        src:  ADC_Customer_Addition.j2
+        src:  ADC_Customer_Addition_Step1a.j2
       when: (Devices[SW]['device_role'] == 'leaf')
       ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1b.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1b.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1c.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1c.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1d.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1d.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+
+
+
+
+
+
