@@ -1,1 +1,19 @@
 
+{##### Type2 Routes VLAN Creation #####}
+{##### Applicable for leaf #####}
+!
+vlan {{type2_vlan_id}}
+   name {{type2_vlan_name}}
+!
+interface vlan {{type2_vlan_id}}
+   vrf forwarding {{cust_name}}
+   ip address {{type2_vlan_subnet | ipaddr(1)}}
+!
+
+{##### Type2 Routes Vxlan VNI Entry #####}
+{##### Applicable for leaf #####}
+
+!
+interface Vxlan1
+   vxlan vlan {{type2_vlan_id}} vni {{type2_vlan_vni}}
+!
