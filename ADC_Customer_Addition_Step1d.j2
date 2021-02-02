@@ -3,12 +3,10 @@
 {##### Applicable for leaf #####}
 !
 router bgp 65000
-{% for entry in Devices[SW]['customers'] %}
-{% for vlan_entry in entry['type2_routes'] %}
-   vlan {{ vlan_entry['vlan'] }}
-   rd {{ vlan_entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
-   route-target both {{ vlan_entry['l2_vni'] }}:{{ vlan_entry['vlan'] }}
+
+   vlan {{type2_vlan_id}}
+   rd {{type2_vlan_id}}:{{Devices[SW]['device_id']}}
+   route-target both {{type2_vlan_id}}:{{type2_vlan_vni}}
    redistribute learned
 !
-{% endfor %}
-{% endfor %}
+
