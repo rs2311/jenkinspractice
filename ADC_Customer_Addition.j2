@@ -36,7 +36,8 @@ router bgp 65000
       route-target import evpn {{cust_id}}:{{cust_id}}
       route-target export evpn {{cust_id}}:{{cust_id}}
       redistribute connected
-
+      exit
+   exit
 
 {##### Type2 Routes VLAN Creation #####}
 {##### Applicable for leaf #####}
