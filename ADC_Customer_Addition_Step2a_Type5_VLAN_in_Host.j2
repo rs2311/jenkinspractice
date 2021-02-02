@@ -14,17 +14,4 @@ ip route vrf VRF{{type5_vlan_id}} 0.0.0.0/0 {{type5_vlan_subnet | ipaddr(1) | ip
 ip routing vrf VRF{{type5_vlan_id}}
 !
 
-vrf instance VRF{{type2_vlan_id}}
-   rd {{Devices[HOST]['device_id']}}:{{type2_vlan_id}}
-!
-vlan {{type2_vlan_id}}
-   name {{type2_vlan_name}}
-!
-interface Vlan{{type2_vlan_id}}
-   vrf forwarding VRF{{type2_vlan_id}}
-   ip address {{type2_vlan_subnet | ipaddr(Devices[HOST]['device_id'])}}
-!
-ip route vrf VRF{{type2_vlan_id}} 0.0.0.0/0 {{type2_vlan_subnet | ipaddr(1) | ipaddr("address")}}
-!
-ip routing vrf VRF{{type2_vlan_id}}
-!
+
