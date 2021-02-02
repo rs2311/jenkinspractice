@@ -50,7 +50,7 @@
     - name:  ADC_Customer_Addition_Step2a_in_Host.j2
       eos_config:
         src:  ADC_Customer_Addition_Step2a_in_Host.j2
-      when: (Devices[SW]['device_role'] == 'host')
+      when: (Devices[HOST]['device_role'] == 'host')
       ignore_errors: yes
 
 
