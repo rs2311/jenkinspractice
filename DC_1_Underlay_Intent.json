@@ -467,6 +467,7 @@
                     "des": "Underlay Loopback for VXLAN"
                 }
             ],
+	    "portchannel_towards_fw": "23",
             "portchannel": [
                 {
                     "portchannel_num": "23",
