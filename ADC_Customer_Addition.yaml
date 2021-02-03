@@ -71,6 +71,26 @@
       eos_command:
         commands: enable
         
+    - name:  ADC_Customer_Addition_Step1a_in_Leaf.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1a_in_Leaf.j2
+      ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1b_in_Leaf.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1b_in_Leaf.j2
+      ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1c_in_Leaf.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1c_in_Leaf.j2
+      ignore_errors: yes
+
+    - name:  ADC_Customer_Addition_Step1d_in_Leaf.j2
+      eos_config:
+        src:  ADC_Customer_Addition_Step1d_in_Leaf.j2
+      ignore_errors: yes          
+        
     - name:  ADC_Customer_Addition_Step3a_SL_to_FW_in_Leaf.j2
       eos_config:
         src:  ADC_Customer_Addition_Step3a_SL_to_FW_in_Leaf.j2
@@ -87,7 +107,7 @@
     - name: Enable
       eos_command:
         commands: enable
-        
+              
     - name:  ADC_Customer_Addition_Step3b_FW_to_SL_in_FW.j2
       eos_config:
         src:  ADC_Customer_Addition_Step3b_FW_to_SL_in_FW.j2
