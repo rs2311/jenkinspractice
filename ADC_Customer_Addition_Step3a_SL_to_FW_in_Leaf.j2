@@ -4,5 +4,12 @@
 interface Port-Channel {{ Devices[SL]['portchannel_towards_fw'] }}.{{sub_int_num}}
    vrf forwarding {{cust_name}}
    enc dot1q vlan {{sub_int_num}}
-   ip address {{ sl_fw_subnet | ipaddr(1) }}
+   ip address {{ sl_fw_subnet | ipaddr(0) }}
    description {{ desc }}
+   
+   
+{##### Applicable for Service leaf #####}
+router bgp 65000
+   vrf {{cust_name}}
+      neighbor {{ sl_fw_subnet | ipaddr(1) }} remote-as {{ Devices[SL]['fw_asn'] }}
+      neighbor {{ sl_fw_subnet | ipaddr(1) }} local-as {{ Devices[SL]['local_asn'] }} no-prepend replace-as
