@@ -1552,6 +1552,7 @@
             "ethernet": [],
             "host_ethernet": [],
             "loopback_0_ip": "10.0.250.23/32",
+	    "portchannel_towards_sl": "23",
             "portchannel": [
                 {
                     "portchannel_num": "23",
