@@ -4,5 +4,5 @@
 interface Port-Channel {{ Devices[FW]['portchannel_towards_sl'] }}.{{sub_int_num}}
    vrf forwarding {{cust_name}}
    enc dot1q vlan {{sub_int_num}}
-   ip address {{ sl_fw_subnet | ipaddr(2) }}
+   ip address {{ sl_fw_subnet | ipaddr(1) }}
    description {{ desc }}
