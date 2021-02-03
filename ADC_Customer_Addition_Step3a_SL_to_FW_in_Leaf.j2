@@ -11,5 +11,5 @@ interface Port-Channel {{ Devices[SL]['portchannel_towards_fw'] }}.{{sub_int_num
 {##### Applicable for Service leaf #####}
 router bgp 65000
    vrf {{cust_name}}
-      neighbor {{ sl_fw_subnet | ipaddr(1) }} remote-as {{fw_asn}}
-      neighbor {{ sl_fw_subnet | ipaddr(1) }} local-as {{customer_sl_local_asn}} no-prepend replace-as
+      neighbor {{ sl_fw_subnet | ipaddr(1) | ipaddr("address") }} remote-as {{fw_asn}}
+      neighbor {{ sl_fw_subnet | ipaddr(1) | ipaddr("address") }} local-as {{customer_sl_local_asn}} no-prepend replace-as
