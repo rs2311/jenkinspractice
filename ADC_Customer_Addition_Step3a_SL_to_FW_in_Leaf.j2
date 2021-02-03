@@ -1,7 +1,7 @@
 {##### Service Leaf to FW Port Channel #####}
 {##### Applicable for Leaf #####}
 
-interface Port-Channel {{Devices[SL]['portchannel_towards_fw']}}.{{sub_int_num}}
+interface Port-Channel {{ Devices[SL]['portchannel_towards_fw'] }}.{{sub_int_num}}
    vrf forwarding {{cust_name}}
    enc dot1q vlan {{sub_int_num}}
    ip address {{ sl_fw_subnet | ipaddr(1) }}
