@@ -6,9 +6,8 @@ interface Port-Channel {{Devices[FW]['portchannel_towards_sl']}}.{{sub_int_num}}
    ip address {{sl_fw_subnet | ipaddr(1)}}
    description {{desc}}
    
-{##### Applicable for Service leaf #####}
+{##### Applicable for Firewall #####}
 router bgp {{fw_asn}}
-   vrf {{cust_name}}
       neighbor {{ sl_fw_subnet | ipaddr(0) | ipaddr("address") }} remote-as {{customer_sl_local_asn}}
       neighbor {{ sl_fw_subnet | ipaddr(0) | ipaddr("address") }} des Towards SL
 
