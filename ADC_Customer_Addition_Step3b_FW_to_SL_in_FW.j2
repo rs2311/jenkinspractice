@@ -9,6 +9,6 @@ interface Port-Channel {{Devices[FW]['portchannel_towards_sl']}}.{{sub_int_num}}
 {##### Applicable for Service leaf #####}
 router bgp {{fw_asn}}
    vrf {{cust_name}}
-      neighbor {{ fw_sl_subnet | ipaddr(0) | ipaddr("address") }} remote-as {{customer_sl_local_asn}}
-      neighbor {{ fw_sl_subnet | ipaddr(0) | ipaddr("address") }} des Towards SL
+      neighbor {{ sl_fw_subnet | ipaddr(0) | ipaddr("address") }} remote-as {{customer_sl_local_asn}}
+      neighbor {{ sl_fw_subnet | ipaddr(0) | ipaddr("address") }} des Towards SL
 
