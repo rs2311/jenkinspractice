@@ -1,13 +1,13 @@
 {##### Service Leaf to FW Port Channel #####}
 {##### Applicable for FW #####}
 
-interface Port-Channel {{ Devices[FW]['portchannel_towards_sl'] }}.{{sub_int_num}}
+interface Port-Channel {{Devices[FW]['portchannel_towards_sl']}}.{{sub_int_num}}
    enc dot1q vlan {{sub_int_num}}
-   ip address {{ sl_fw_subnet | ipaddr(1) }}
-   description {{ desc }}
+   ip address {{sl_fw_subnet | ipaddr(1)}}
+   description {{desc}}
    
 {##### Applicable for Service leaf #####}
-router bgp {{fw_asn}
+router bgp {{fw_asn}}
    vrf {{cust_name}}
       neighbor {{ fw_sl_subnet | ipaddr(0) | ipaddr("address") }} remote-as {{customer_sl_local_asn}}
       neighbor {{ fw_sl_subnet | ipaddr(0) | ipaddr("address") }} des Towards SL
