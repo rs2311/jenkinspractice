@@ -1,5 +1,5 @@
 [SW]
-Spine1 ansible_host=192.168.81.1 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
+Spine1 ansible_host=192.168.181.1 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos
 Spine2 ansible_host=192.168.181.2 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 BL11 ansible_host=192.168.181.11 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
 BL12 ansible_host=192.168.181.12 ansible_user=admin ansible_ssh_pass=admin ansible_network_os=eos 
