@@ -2,7 +2,7 @@
 {##### Applicable for Spine #####}
 {##### Applicable for Leaf #####}
 
-{% for entry in Devices[SW]['loopback'] %}
+{% for entry in result.json.Devices[SW]['loopback'] %}
 {% if entry['loop_num'] == '0' %}
 !
 router bgp 65000
@@ -15,7 +15,7 @@ router bgp 65000
 {##### Applicable for spine #####}
 {##### Applicable for leaf #####}
 
-{% for entry in Devices[SW]['BGP'] %}
+{% for entry in result.json.Devices[SW]['BGP'] %}
 router bgp 65000
    neighbor IBGP-EVPN peer group
    neighbor IBGP-EVPN update-source lo 0
