@@ -3,7 +3,7 @@
 {##### Applicable for Firewall #####}
 
 
-{% for entry in Devices[SW]['portchannel'] %}
+{% for entry in result.json.Devices[SW]['portchannel'] %}
 interface Port-Channel {{ entry['portchannel_num'] }}
    no switchport
    des {{ entry['des'] }}
@@ -24,10 +24,10 @@ interface ethernet {{ ethernet_entry }}
 
 ip routing
 !
-router bgp {{ Devices[SW]['BGP_ASN'] }}
-   router-id {{ Devices[SW]['loopback_0_ip'] | ipaddr("address") }}
+router bgp {{ result.json.Devices[SW]['BGP_ASN'] }}
+   router-id {{ result.json.Devices[SW]['loopback_0_ip'] | ipaddr("address") }}
 !
-{% for entry in Devices[SW]['BGP'] %}
+{% for entry in result.json.Devices[SW]['BGP'] %}
    neighbor {{ entry['nei'] }} remote-as {{ entry['remote-as'] }}
    neighbor {{ entry['nei'] }} description {{ entry['des'] }}
 !
