@@ -35,7 +35,7 @@ interface Port-Channel {{ portchannel_entry['portchannel_num'] }}.{{ portchannel
 
 {##### Port Channel Config #####}
 {##### BGP Config #####}
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 {% for portchannel_entry in entry['portchannel'] %}
 {% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
 
