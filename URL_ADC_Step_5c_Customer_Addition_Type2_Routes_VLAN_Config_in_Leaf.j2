@@ -1,7 +1,7 @@
 {##### Type2 Routes VLAN Creation #####}
 {##### Applicable for leaf #####}
 !
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type2_routes'] %}
 !
 vlan {{ vlan_entry['vlan'] }}
@@ -18,7 +18,7 @@ interface vlan {{ vlan_entry['vlan'] }}
 {##### Type2 Routes Vxlan VNI Entry #####}
 {##### Applicable for leaf #####}
 
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 {% for vlan_entry in entry['type2_routes'] %}
 !
 interface Vxlan1
