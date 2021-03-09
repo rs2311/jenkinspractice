@@ -13,7 +13,7 @@ interface eth {{ entry['int_num'] }}
 
 {% for entry in result.json.Devices[SW]['host_vrf'] %}
 vrf instance {{ entry['host_vrf_name'] }}
-   rd {{ entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
+   rd {{ entry['vlan'] }}:{{ result.json.Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['host_vrf_name'] }}
 ip route vrf {{ entry['host_vrf_name'] }} 0.0.0.0/0 {{ entry['subnet'] | ipaddr('first_usable') }}
@@ -29,5 +29,5 @@ vlan {{ entry['vlan'] }}
 !
 interface vlan {{ entry['vlan'] }}
    vrf forwarding {{ entry['host_vrf_name'] }}
-   ip address {{ entry['subnet'] | ipaddr(Devices[SW]['device_id']) }}
+   ip address {{ entry['subnet'] | ipaddr(result.json.Devices[SW]['device_id']) }}
 {% endfor %}
