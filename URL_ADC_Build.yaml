@@ -11,9 +11,9 @@
       eos_command:
         commands: enable
 
-    - name:  ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
+    - name:  URL_ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
       eos_config:
-        src:  ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
+        src:  URL_ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
       when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
       ignore_errors: yes      
 
