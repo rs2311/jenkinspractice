@@ -1,7 +1,7 @@
 {##### Ethernet Configuration towards Host Network #####}
 {##### Applicable for host #####}
 
-{% for entry in Devices[SW]['host_ethernet'] %}
+{% for entry in result.json.Devices[SW]['host_ethernet'] %}
 interface eth {{ entry['int_num'] }}
    switchport
    switchport mode trunk
@@ -11,7 +11,7 @@ interface eth {{ entry['int_num'] }}
 {########## Host VRF Configuration #############}
 {########## Applicable for host ############}
 
-{% for entry in Devices[SW]['host_vrf'] %}
+{% for entry in result.json.Devices[SW]['host_vrf'] %}
 vrf instance {{ entry['host_vrf_name'] }}
    rd {{ entry['vlan'] }}:{{ Devices[SW]['device_id'] }}
 !
@@ -22,7 +22,7 @@ ip route vrf {{ entry['host_vrf_name'] }} 0.0.0.0/0 {{ entry['subnet'] | ipaddr(
 {##### Host L2 VLAN and L3 SVI Configuration #####}
 {##### Applicable for host #####}
 
-{% for entry in Devices[SW]['host_vrf'] %}
+{% for entry in result.json.Devices[SW]['host_vrf'] %}
 !
 vlan {{ entry['vlan'] }}
    name {{ entry['vlan_name'] }}
