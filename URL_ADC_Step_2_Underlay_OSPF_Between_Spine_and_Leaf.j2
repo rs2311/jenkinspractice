@@ -1,0 +1,11 @@
+{##### OSPF Enablement #####}
+{##### Applicable for Spine #####}
+{##### Applicable for Leaf #####}
+{% for entry in Devices[SW]['loopback'] %}
+{% if entry['loop_num'] == '0' %}
+router ospf 10
+   router-id {{ entry['ip_address'] }}   
+! 
+{% endif %}
+{% endfor %}
+!
