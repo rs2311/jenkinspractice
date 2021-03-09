@@ -1,0 +1,35 @@
+{##### Firewall Port Channel #####}
+{##### Firewall BGP Peerings #####}
+{##### Applicable for Firewall #####}
+
+
+{% for entry in Devices[SW]['portchannel'] %}
+interface Port-Channel {{ entry['portchannel_num'] }}
+   no switchport
+   des {{ entry['des'] }}
+!
+{% for port_entry in entry['portchannel_subint'] %}
+interface Port-Channel {{ entry['portchannel_num'] }}.{{ port_entry['subint_num'] }}
+   description {{ port_entry['des'] }}
+   encapsulation dot1q vlan {{ port_entry['subint_num'] }}
+   ip address {{ port_entry['subnet'] | ipaddr(1) }}
+!
+{% endfor %}
+!
+{% for ethernet_entry in entry['ethernet_interfaces'] %}
+interface ethernet {{ ethernet_entry }}
+   channel-group {{ entry['portchannel_num'] }} mode active
+{% endfor %}
+{% endfor %}
+
+ip routing
+!
+router bgp {{ Devices[SW]['BGP_ASN'] }}
+   router-id {{ Devices[SW]['loopback_0_ip'] | ipaddr("address") }}
+!
+{% for entry in Devices[SW]['BGP'] %}
+   neighbor {{ entry['nei'] }} remote-as {{ entry['remote-as'] }}
+   neighbor {{ entry['nei'] }} description {{ entry['des'] }}
+!
+{% endfor %}
+!
