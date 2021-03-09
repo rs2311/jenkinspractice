@@ -1,0 +1,31 @@
+{##### OSPF and BGP Enablement #####}
+{##### Applicable for Spine #####}
+{##### Applicable for Leaf #####}
+
+{% for entry in Devices[SW]['loopback'] %}
+{% if entry['loop_num'] == '0' %}
+!
+router bgp 65000
+   router-id {{ entry['ip_address'] }}   
+{% endif %}
+{% endfor %}
+!
+
+{##### BGP EVPN Configuration #####}
+{##### Applicable for spine #####}
+{##### Applicable for leaf #####}
+
+{% for entry in Devices[SW]['BGP'] %}
+router bgp 65000
+   neighbor IBGP-EVPN peer group
+   neighbor IBGP-EVPN update-source lo 0
+   neighbor IBGP-EVPN send-community
+   neighbor IBGP-EVPN remote-as 65000
+   neighbor {{ entry['nei'] }} peer group IBGP-EVPN
+   neighbor {{ entry['nei'] }} description {{ entry['des'] }}   
+{% if entry['is_routereflector'] %}
+   neighbor IBGP-EVPN route-reflector-client
+{% endif %}
+   add evpn
+      neighbor IBGP-EVPN activate
+{% endfor %}
