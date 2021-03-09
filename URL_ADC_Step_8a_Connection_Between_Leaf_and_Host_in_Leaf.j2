@@ -1,7 +1,7 @@
 {##### Ethernet Configuration towards Host Network #####}
 {##### Applicable for host #####}
 
-{% for entry in Devices[SW]['host_ethernet'] %}
+{% for entry in result.json.Devices[SW]['host_ethernet'] %}
 interface eth {{ entry['int_num'] }}
    switchport
    switchport mode trunk
