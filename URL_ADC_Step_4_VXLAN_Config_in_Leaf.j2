@@ -1,0 +1,9 @@
+{##### Base VXLAN Config #####}
+{##### Applicable for Leaf #####}
+!
+int vxlan 1
+   vxlan source-int lo 1
+   vxlan udp-port 4789
+!
+ip virtual-router mac-address 0c:fd:01:01:01:01
+!
