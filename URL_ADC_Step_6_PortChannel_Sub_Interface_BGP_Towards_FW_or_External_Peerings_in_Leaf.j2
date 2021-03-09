@@ -3,7 +3,7 @@
 {##### For now Service Leaf is planned to use this #####}
 
 !
-{% for entry in Devices[SW]['portchannel'] %}
+{% for entry in result.json.Devices[SW]['portchannel'] %}
 
 interface Port-Channel {{ entry['portchannel_num'] }}
    no switchport
@@ -18,7 +18,7 @@ interface ethernet {{ ethernet_entry }}
 {##### Port Channel Sub-Interface Config #####}
 {##### Applicable for Service leaf #####}
 !
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 {% for portchannel_entry in entry['portchannel'] %}
 {% for portchannel_subint_entry in portchannel_entry['portchannel_subint'] %}
 !
