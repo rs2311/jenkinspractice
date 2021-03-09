@@ -4,7 +4,7 @@ ip routing
 {##### Applicable for Spine #####}
 {##### Applicable for Leaf #####}
 !
-{% for entry in Devices[SW]['ethernet'] %}
+{% for entry in result.json.Devices[SW]['ethernet'] %}
 interface eth {{ entry['int_num'] }}
    no switchport
    ip address {{ entry['ip_address'] }}
@@ -16,7 +16,7 @@ interface eth {{ entry['int_num'] }}
 {##### Applicable for Spine #####}
 {##### Applicable for Leaf #####}
 
-{% for entry in Devices[SW]['loopback'] %}
+{% for entry in result.json.Devices[SW]['loopback'] %}
 interface loopback {{ entry['loop_num'] }}
    ip address {{ entry['ip_address'] }}/32
    des {{ entry['des'] }}
