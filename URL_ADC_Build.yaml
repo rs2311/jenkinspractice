@@ -14,7 +14,7 @@
         method: GET
         headers:
           Content-Type: "application/json"
-      register:
+      register: result
            
     - name: Enable
       eos_command:
@@ -23,7 +23,7 @@
     - name:  URL_ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
       eos_config:
         src:  URL_ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
-      when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
+      when: (result.Devices[SW]['device_role'] == 'leaf' or 'spine')
       ignore_errors: yes      
 
     - name:  ADC_Step_2_Underlay_OSPF_Between_Spine_and_Leaf.j2
