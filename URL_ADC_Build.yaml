@@ -1,0 +1,87 @@
+---
+- hosts: "{{SW}}"
+  gather_facts: false
+  connection: network_cli
+
+  vars_files:
+   - ./DC_1_Underlay_Intent.json
+
+  tasks:
+    - name: Enable
+      eos_command:
+        commands: enable
+
+    - name:  ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
+      eos_config:
+        src:  ADC_Step_1_Underlay_P2P_Connections_Between_Spine_and_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
+      ignore_errors: yes      
+
+    - name:  ADC_Step_2_Underlay_OSPF_Between_Spine_and_Leaf.j2
+      eos_config:
+        src:  ADC_Step_2_Underlay_OSPF_Between_Spine_and_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
+      ignore_errors: yes
+
+    - name:  ADC_Step_3_Underlay_BGP_EVPN_Between_Spine_and_Leaf.j2
+      eos_config:
+        src:  ADC_Step_3_Underlay_BGP_EVPN_Between_Spine_and_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf' or 'spine')
+      ignore_errors: yes      
+
+    - name:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_4_VXLAN_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_5a_Customer_Addition_Type5_Routes_VRF_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_5a_Customer_Addition_Type5_Routes_VRF_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+     
+    - name:  ADC_Step_5b_Customer_Addition_Type5_Routes_BGP_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_5b_Customer_Addition_Type5_Routes_BGP_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_5c_Customer_Addition_Type2_Routes_VLAN_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_5c_Customer_Addition_Type2_Routes_VLAN_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_5d_Customer_Addition_Type2_Routes_BGP_Config_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_5d_Customer_Addition_Type2_Routes_BGP_Config_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_6_PortChannel_Sub_Interface_BGP_Towards_FW_or_External_Peerings_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_6_PortChannel_Sub_Interface_BGP_Towards_FW_or_External_Peerings_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+
+    - name:  ADC_Step_7_FW_Addition.j2
+      eos_config:
+        src:  ADC_Step_7_FW_Addition.j2
+      when: (Devices[SW]['device_role'] == 'fw')
+      ignore_errors: yes
+
+    - name:  ADC_Step_8a_Connection_Between_Leaf_and_Host_in_Leaf.j2
+      eos_config:
+        src:  ADC_Step_8a_Connection_Between_Leaf_and_Host_in_Leaf.j2
+      when: (Devices[SW]['device_role'] == 'leaf')
+      ignore_errors: yes
+    
+    - name:  ADC_Step_8b_Connection_Between_Leaf_and_Host_in_Host.j2
+      eos_config:
+        src:  ADC_Step_8b_Connection_Between_Leaf_and_Host_in_Host.j2
+      when: (Devices[SW]['device_role'] == 'host')
+      ignore_errors: yes
+      
+      
+
