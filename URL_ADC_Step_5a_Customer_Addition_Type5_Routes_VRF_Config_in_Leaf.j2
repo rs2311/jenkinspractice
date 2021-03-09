@@ -1,21 +1,21 @@
 {##### Type5 Routes Classic L3 ######}
 {##### Applicable for Leaf #####}
 
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 vrf instance {{ entry['cust_name'] }}
-   rd {{ entry['cust_id'] }}:{{ Devices[SW]['device_id'] }}
+   rd {{ entry['cust_id'] }}:{{ result.json.Devices[SW]['device_id'] }}
 !
 ip routing vrf {{ entry['cust_name'] }}
 !
 interface loopback{{ entry['cust_id'] }}
    vrf forwarding {{ entry['cust_name'] }}
-   ip address {{ entry['l3_loopback_subnet'] | ipaddr(Devices[SW]['device_id']) | ipaddr('address') }}/32
+   ip address {{ entry['l3_loopback_subnet'] | ipaddr(result.json.Devices[SW]['device_id']) | ipaddr('address') }}/32
 {% endfor %}
 
 {##### Type5 Routes Classic L3 ######}
 {##### Applicable for Leaf #####}
 
-{% for entry in Devices[SW]['customers'] %}
+{% for entry in result.json.Devices[SW]['customers'] %}
 interface Vxlan1
    vxlan vrf {{ entry['cust_name'] }} vni {{ entry['l3_vni'] }}
 {% endfor %}
