@@ -1,0 +1,25 @@
+ip routing
+!
+{##### Uplink and Downlink Ethernet Configuration #####}
+{##### Applicable for Spine #####}
+{##### Applicable for Leaf #####}
+!
+{% for entry in Devices[SW]['ethernet'] %}
+interface eth {{ entry['int_num'] }}
+   no switchport
+   ip address {{ entry['ip_address'] }}
+   des {{ entry['des'] }}
+   ip ospf area 0.0.0.0
+{% endfor %}
+!
+{##### Loopback Configuration #####}
+{##### Applicable for Spine #####}
+{##### Applicable for Leaf #####}
+
+{% for entry in Devices[SW]['loopback'] %}
+interface loopback {{ entry['loop_num'] }}
+   ip address {{ entry['ip_address'] }}/32
+   des {{ entry['des'] }}
+   ip ospf area 0.0.0.0
+{% endfor %}
+!
