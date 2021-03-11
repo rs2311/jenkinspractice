@@ -35,24 +35,6 @@
             ],
             "device_id": "33",
             "device_role": "leaf"
-        },
-        "CL35": {
-            "customers": [
-                {
-                    "cust_id": "101",
-                    "cust_name": "C101",
-                    "l3_loopback_ip": "10.101.0.35/32",
-                    "l3_vni": "10001010"
-                },
-                {
-                    "cust_id": "102",
-                    "cust_name": "C102",
-                    "l3_loopback_ip": "10.102.0.35/32",
-                    "l3_vni": "10001020"
-                }
-            ],
-            "device_id": "33",
-            "device_role": "leaf"
         }
     }
 }
