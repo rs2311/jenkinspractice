@@ -1,0 +1,200 @@
+def build_ok = true
+
+pipeline {
+    agent any
+    
+    parameters {
+        choice(name: 'DEVICE1', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE2', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE3', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE4', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE5', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE6', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE7', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE8', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE9', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+        choice(name: 'DEVICE10', choices: ['Null', 'Spine1', 'Spine2', 'BL11', 'BL12', 'SL21', 'SL22', 'CL31', 'CL32', 'CL33', 'CL34', 'CL35', 'CL36', 'HOST41', 'HOST42', 'HOST43', 'FW23' ], description: 'Select Switch')
+    }
+    
+
+    stages {
+        stage('GIT PATH') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/rs2311/jenkinspractice.git'
+            }
+        }
+        stage('DC_1_Underlay_Config DEVICE1') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE1}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                        currentBuild.result = 'FAILURE'
+                        build_ok = false
+        		        echo err.toString()
+                    }
+                }
+            }
+        }
+        
+        stage('DC_1_Underlay_Config DEVICE2') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE2}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                        currentBuild.result = 'FAILURE'
+                		build_ok = false
+        		        echo err.toString()
+                    }
+                }
+            }
+        }
+
+       stage('DC_1_Underlay_Config DEVICE3') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE3}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                        currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+        
+        stage('DC_1_Underlay_Config DEVICE4') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE4}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+
+       stage('DC_1_Underlay_Config DEVICE5') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE5}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+        
+        stage('DC_1_Underlay_Config DEVICE6') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE6}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+       stage('DC_1_Underlay_Config DEVICE7') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE7}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+        
+        stage('DC_1_Underlay_Config DEVICE8') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE8}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+       stage('DC_1_Underlay_Config DEVICE9') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE9}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+        
+        stage('DC_1_Underlay_Config DEVICE10') {
+            steps {
+                // Get some code from a GitHub repository
+                script{
+                    try {
+                        // do something that fails
+                        ansiblePlaybook extras: '-e SW=${DEVICE10}', installation: 'abcd', inventory: 'DC_1_Inventory.txt', playbook: 'ADC_Build.yaml'
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+                    }
+                    catch (Exception err) {
+                       currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
+
+    }
+}
