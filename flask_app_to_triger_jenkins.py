@@ -62,7 +62,6 @@ def update(sno):
         hostname = request.form['hostname']
         mgmt_ip = request.form['mgmt_ip']
         device_sno = actual_sno(hostname)
-        #device_sno = request.form['device_sno']
         date_time = datetime.utcnow()
         device_update = Device.query.filter_by(sno=sno).first()
         device_update.hostname = hostname
@@ -85,44 +84,41 @@ def actual_sno(hostname):
 # ensure you you update device name, below is CL31
 # ensure junkins_url ip address
 # refer flask-jenkins-github-ansible-arista pipeline in centos jenkins vm created local
-
-@app.route('/jenkins', methods=['GET', 'POST'])
-def jenkins_trigger():
-    #jenkins_job_name = "URL-test2"
-    #jenkins_job_name = "Flask-to-Jenkins-Name-Print"
+@app.route('/configure/<int:sno>', methods=['GET', 'POST'])
+def configure(sno):
+    device_configure = Device.query.filter_by(sno=sno).first()
+    hostname = device_configure.hostname
     jenkins_job_name = "Flask-Jenkins-Github-Ansible-Arista"
-    Jenkins_url = "http://192.168.181.204:8080"
+    Jenkins_url = "http://192.168.181.205:8080"
     jenkins_user = "admin"
     jenkins_pwd = "admin"
     buildWithParameters = True
     jenkins_params = {'token': 'Token_Ravi',
-                      'result2':'success',
-                      'result1': 'success',
-                      'name': 'CL33'
+                      'name': hostname
                       }
-
     try:
-        auth= (jenkins_user, jenkins_pwd)
-        crumb_data= requests.get("{0}/crumbIssuer/api/json".format(Jenkins_url),auth = auth,headers={'content-type': 'application/json'})
+        auth = (jenkins_user, jenkins_pwd)
+        crumb_data = requests.get("{0}/crumbIssuer/api/json".format(Jenkins_url),auth = auth,headers={'content-type': 'application/json'})
         if str(crumb_data.status_code) == "200":
-
             if buildWithParameters:
                 data = requests.get("{0}/job/{1}/buildWithParameters".format(Jenkins_url,jenkins_job_name),auth=auth,params=jenkins_params,headers={'content-type': 'application/json','Jenkins-Crumb':crumb_data.json()['crumb']})
             else:
                 data = requests.get("{0}/job/{1}/build".format(Jenkins_url,jenkins_job_name),auth=auth,params=jenkins_params,headers={'content-type': 'application/json','Jenkins-Crumb':crumb_data.json()['crumb']})
 
             if str(data.status_code) == "201":
-                print ("Jenkins job is triggered")
+                print("Jenkins job is triggered")
             else:
-                print ("Failed to trigger the Jenkins job")
-
+                print("Failed to trigger the Jenkins job")
         else:
             print("Couldn't fetch Jenkins-Crumb")
             #raise
 
     except Exception as e:
-        print ("Failed triggering the Jenkins job")
-        print ("Error: " + str(e))
+        print("Failed triggering the Jenkins job")
+        print("Error: " + str(e))
+
+    return(f"{device_configure.hostname} configuration is in progress, please check in jenkins page")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
